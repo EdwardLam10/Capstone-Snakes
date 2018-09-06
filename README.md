@@ -1,3 +1,5 @@
 # Capstone-Snakes
-Team:
-Edward
+
+## Team
+Edward  
+Joshua

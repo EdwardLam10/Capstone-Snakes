@@ -2,4 +2,6 @@
 
 ## Team
 Edward  
-Joshua
+Joshua  
+Ruoqiong Lin  
+Shani Saar

@@ -1,19 +1,19 @@
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.image.Image;
-import javafx.scene.shape.Rectangle;
-import org.w3c.dom.css.Rect;
+package SnakeUtil;
 
-import java.awt.*;
-import java.util.*;
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
+
+import java.util.Vector;
 
 import static javafx.scene.paint.Color.BLACK;
 import static javafx.scene.paint.Color.BLUE;
 
 public class Snake {
-    Snake(String HeadPic) {
+    public Snake(String HeadPic) {
 
         //Creating Head Cirlce to be added to Vector
-        Rectangle headRectangle = new Rectangle(30,30,45,45);
+        Rectangle headRectangle = new Rectangle(300,300,45,45);
         headRectangle.setStroke(BLACK);
         Image headPic = new Image(HeadPic);
         headRectangle.setFill(new ImagePattern(headPic));
@@ -28,19 +28,34 @@ public class Snake {
         bodCir.setFill(BLUE);
         bodCir.setStroke(BLACK);
         //Setting X/Y of new body part
-        bodCir.setX(SnakeVec.lastElement().getX());
-        bodCir.setY(SnakeVec.lastElement().getY() - 30);
+//        bodCir.setX(SnakeVec.lastElement().getX());
+//        bodCir.setY(SnakeVec.lastElement().getY() - 45);
+
+        switch(lastDir) {
+            case "UP":
+                bodCir.setX(SnakeVec.lastElement().getX());
+                bodCir.setY(SnakeVec.lastElement().getY() - 45);
+            case "DOWN":
+                bodCir.setX(SnakeVec.lastElement().getX());
+                bodCir.setY(SnakeVec.lastElement().getY() + 45);
+            case "LEFT":
+                bodCir.setX(SnakeVec.lastElement().getX() - 45);
+                bodCir.setY(SnakeVec.lastElement().getY());
+            case "RIGHT":
+                bodCir.setX(SnakeVec.lastElement().getX() + 45);
+                bodCir.setY(SnakeVec.lastElement().getY());
+        }
 
         //Adding to SnakeVec
         SnakeVec.addElement(bodCir);
         System.out.println("Here");
     }
 
-    void move(String Direction) {
+    void move() {
         double tmpX;
         double tmpY;
 
-        switch(Direction) {
+        switch(CurrentDir) {
             case "UP":
                 //tmp keeping old head location
                 tmpX = SnakeVec.firstElement().getX();
@@ -97,7 +112,11 @@ public class Snake {
         }
     }
 
+    public String getCurrentDir() { return CurrentDir; }
+    public void setCurrentDir(String tmp) { CurrentDir = tmp; }
+
 
     Vector<Rectangle> SnakeVec = new Vector();
-    String lastDir;
+    String lastDir = "RIGHT";
+    String CurrentDir = "UP";
 }

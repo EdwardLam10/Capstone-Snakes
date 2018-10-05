@@ -8,13 +8,21 @@ public class main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        String headPic = "Josh.jpg";
+        String headPic = "SnakeHead.jpg";
 
-        Snake snake1 = new Snake(headPic);
-        Scenes mainScenes = new Scenes(primaryStage, snake1);
+        Snake yourSnake = new Snake("Josh.jpg");
+        Snake theirSnake = new Snake("Ruby.jpg");
+        Scenes mainScenes = new Scenes(primaryStage, yourSnake, theirSnake);
 
         primaryStage.setTitle("Main Menu");
         mainScenes.set2MM(primaryStage);
         primaryStage.show();
+
+        primaryStage.setOnCloseRequest(event -> {
+            primaryStage.close();
+            mainScenes.endGame();
+        });
+
     }
+
 }

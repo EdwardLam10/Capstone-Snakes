@@ -22,36 +22,7 @@ public class Snake {
         SnakeVec.add(headRectangle);
     }
 
-    void grow() {
-        //Creating a new portion to add.
-        Rectangle bodCir = new Rectangle(45,45);
-        bodCir.setFill(BLUE);
-        bodCir.setStroke(BLACK);
-        //Setting X/Y of new body part
-//        bodCir.setX(SnakeVec.lastElement().getX());
-//        bodCir.setY(SnakeVec.lastElement().getY() - 45);
-
-        switch(lastDir) {
-            case "UP":
-                bodCir.setX(SnakeVec.lastElement().getX());
-                bodCir.setY(SnakeVec.lastElement().getY() - 45);
-            case "DOWN":
-                bodCir.setX(SnakeVec.lastElement().getX());
-                bodCir.setY(SnakeVec.lastElement().getY() + 45);
-            case "LEFT":
-                bodCir.setX(SnakeVec.lastElement().getX() - 45);
-                bodCir.setY(SnakeVec.lastElement().getY());
-            case "RIGHT":
-                bodCir.setX(SnakeVec.lastElement().getX() + 45);
-                bodCir.setY(SnakeVec.lastElement().getY());
-        }
-
-        //Adding to SnakeVec
-        SnakeVec.addElement(bodCir);
-        System.out.println("Here");
-    }
-
-    void move() {
+    void move(boolean grow) {
         double tmpX;
         double tmpY;
 
@@ -62,47 +33,47 @@ public class Snake {
                 tmpY = SnakeVec.firstElement().getY();
 
                 //Changing the location of the head.
-                //Set head Y to the Y of the current Y+10
                 SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() - 45);
-                lastDir = "UP";
 
                 //updating rest of the snake to follow the head
-                update(tmpX, tmpY);
+                update(tmpX, tmpY, grow);
+                System.out.println("UP");
                 break;
             case "DOWN":
                 tmpX = SnakeVec.firstElement().getX();
                 tmpY = SnakeVec.firstElement().getY();
 
                 SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() + 45);
-                lastDir = "DOWN";
-                update(tmpX, tmpY);
+                update(tmpX, tmpY, grow);
+                System.out.println("DOWN");
                 break;
             case "RIGHT":
                 tmpX = SnakeVec.firstElement().getX();
                 tmpY = SnakeVec.firstElement().getY();
 
                 SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() + 45);
-                lastDir = "RIGHT";
-                update(tmpX, tmpY);
+                update(tmpX, tmpY, grow);
+                System.out.println("RIGHT");
                 break;
             case "LEFT":
                 tmpX = SnakeVec.firstElement().getX();
                 tmpY = SnakeVec.firstElement().getY();
 
                 SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() - 45);
-                lastDir = "LEFT";
-                update(tmpX, tmpY);
+                update(tmpX, tmpY, grow);
+                System.out.println("LEFT");
                 break;
         }
     }
 
-    private void update(double X, double Y) {
+    //X/Y is the old location of the head
+    private void update(double X, double Y, boolean grow) {
         //REALLY CONFUSING????? TOOK LIKE A WHOLE DAYS WTF
         double prevX = X;
         double prevY = Y;
         double tmpX = X;
         double tmpY = Y;
-        for(int i = 1; i < SnakeVec.size(); i++) {
+        for (int i = 1; i < SnakeVec.size(); i++) {
             prevX = SnakeVec.elementAt(i).getX();
             prevY = SnakeVec.elementAt(i).getY();
             SnakeVec.elementAt(i).setX(tmpX);
@@ -110,13 +81,19 @@ public class Snake {
             tmpX = prevX;
             tmpY = prevY;
         }
+        if(grow) {
+            Rectangle BodRect = new Rectangle(45,45);
+            BodRect.setStroke(BLACK);
+            BodRect.setFill(BLUE);
+            BodRect.setX(tmpX);
+            BodRect.setY(tmpY);
+            SnakeVec.addElement(BodRect);
+        }
     }
 
-    public String getCurrentDir() { return CurrentDir; }
     public void setCurrentDir(String tmp) { CurrentDir = tmp; }
 
 
     Vector<Rectangle> SnakeVec = new Vector();
-    String lastDir = "RIGHT";
-    String CurrentDir = "UP";
+    private String CurrentDir = "UP";
 }

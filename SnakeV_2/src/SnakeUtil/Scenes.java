@@ -19,6 +19,7 @@ public class Scenes {
     public Scenes(Stage PrimaryStage, Snake yourSnake, Snake enemySnake) {
         makeMainMenu(PrimaryStage);
         makeGame(yourSnake, enemySnake);
+        makeSettings();
     }
 
     public void endGame() {
@@ -35,10 +36,15 @@ public class Scenes {
         //Setting
         mainMenu = new Scene(mainMenuLayout, 720, 720);
 
-        Button start = new Button("Start");
-        start.setStyle("-fx-font: 24 arial;");
+        Button startButton = new Button("Start");
+        startButton.setStyle("-fx-font: 24 arial;");
         //Having the start button send you to game Scene.
-        start.setOnAction(e -> { primaryStage.setScene(game); });
+        startButton.setOnAction(e -> { primaryStage.setScene(game); });
+
+        Button settingsButton = new Button("Settings");
+        settingsButton.setStyle("-fx-font: 24 arial;");
+        //Having the settings button send you to settings
+        settingsButton.setOnAction(e -> { primaryStage.setScene(settings); });
 
         Label top = new Label("\n Welcome to Snake Online \n");
         Label left = new Label("\n Player 1 \n");
@@ -69,7 +75,7 @@ public class Scenes {
         rvbox.setAlignment(Pos.CENTER);
 
         VBox cvbox = new VBox();
-        cvbox.getChildren().addAll(top, center, bottom, start);
+        cvbox.getChildren().addAll(top, center, bottom, startButton, settingsButton);
         cvbox.setAlignment(Pos.CENTER);
 
         //Setting the top, bottom, center, right and left nodes to the pane
@@ -150,6 +156,9 @@ public class Scenes {
         };
         gameTimer.scheduleAtFixedRate(task, 1,  750);
     }
+    private void makeSettings() {
+
+    };
 
 
     //SETS AND GETS

@@ -26,40 +26,61 @@ public class Snake {
         double tmpX;
         double tmpY;
 
+        //Switch statement moves the head of the snake, and calls update function which moves teh rest of
+        //the snakes based on location of the head
         switch(CurrentDir) {
             case "UP":
                 //tmp keeping old head location
-                tmpX = SnakeVec.firstElement().getX();
-                tmpY = SnakeVec.firstElement().getY();
+                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
                 //Changing the location of the head.
-                SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() - 45);
+                SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() - 45); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+
+                /*
+                 Net code can be implemented here to change the location of the head based on the direction.
+                 */
 
                 //updating rest of the snake to follow the head
                 update(tmpX, tmpY, grow);
                 System.out.println("UP");
                 break;
             case "DOWN":
-                tmpX = SnakeVec.firstElement().getX();
-                tmpY = SnakeVec.firstElement().getY();
+                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
-                SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() + 45);
+                SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() + 45); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+
+                /*
+                 Net code can be implemented here to change the location of the head based on the direction.
+                 */
+
                 update(tmpX, tmpY, grow);
                 System.out.println("DOWN");
                 break;
             case "RIGHT":
-                tmpX = SnakeVec.firstElement().getX();
-                tmpY = SnakeVec.firstElement().getY();
+                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
-                SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() + 45);
+                SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() + 45); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+
+                /*
+                 Net code can be implemented here to change the location of the head based on the direction.
+                 */
+
                 update(tmpX, tmpY, grow);
                 System.out.println("RIGHT");
                 break;
             case "LEFT":
-                tmpX = SnakeVec.firstElement().getX();
-                tmpY = SnakeVec.firstElement().getY();
+                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
-                SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() - 45);
+                SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() - 45); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+
+                /*
+                 Net code can be implemented here to change the location of the head based on the direction.
+                 */
+
                 update(tmpX, tmpY, grow);
                 System.out.println("LEFT");
                 break;

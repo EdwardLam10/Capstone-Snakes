@@ -102,7 +102,6 @@ public class Scenes {
             @Override
             public void handle(KeyEvent event) {
                 switch (event.getCode()) {
-                    //FOR YOUR SNAKE
                     case UP:
                         yourSnake.setCurrentDir("UP");
                         break;
@@ -120,7 +119,7 @@ public class Scenes {
                         gameLayout.getChildren().add(yourSnake.SnakeVec.lastElement());
                         break;
 
-                    //FOR THEIR SNAKE
+                    //MOVING 2ND SNAKE
                     case W:
                         theirSnake.setCurrentDir("UP");
                         break;

@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.util.Timer;
@@ -22,6 +23,7 @@ public class Scenes {
         makeSettings();
     }
 
+    //Cancels the timer and removes any functions still queued on the gameTimer
     public void endGame() {
         gameTimer.cancel();
         gameTimer.purge();
@@ -156,8 +158,34 @@ public class Scenes {
         gameTimer.scheduleAtFixedRate(task, 1,  750);
     }
     private void makeSettings() {
-
+        //SET SCENE TO ALERT SCREEN TO TEST
     };
+    private void makeAlertStage(String winPlayer, Stage primaryStage) {
+        //Ends and stops snakes from moving.
+        endGame();
+        gameOverWindow.setTitle("Game Over!");
+
+        //This keeps the user from clicking on anything other than the alert box.
+        gameOverWindow.initModality(Modality.APPLICATION_MODAL);
+        VBox gameOverLayout = new VBox();
+
+        //Text to show who has won.
+        Label gameOverLabel = new Label(winPlayer+" has won!");
+
+        //Option 1 @ Game Over: Sends player back to main menu to play again.
+        Button gameOverButton = new Button("Play Again");
+        gameOverButton.setOnAction(e -> primaryStage.setScene(mainMenu));
+
+        //Option 2 @ Game Over: Rage Quit and exit program.
+        Button gameOverButton2 = new Button("Exit");
+        gameOverButton2.setOnAction(e -> primaryStage.close());
+
+        gameOverLayout.getChildren().addAll(gameOverLabel, gameOverButton, gameOverButton2);
+
+        Scene gameOverScene = new Scene(gameOverLayout,500,300);
+        primaryStage.setScene(gameOverScene);
+    }
+
 
 
     //SETS AND GETS
@@ -172,6 +200,8 @@ public class Scenes {
     private Scene game;
     //Creating Settings Scene
     private Scene settings;
+    //Game Over Alert
+    private Stage gameOverWindow = new Stage();
     //Timer for the game (helps dictate how fast the snake moves)
     private Timer gameTimer = new Timer();
 }

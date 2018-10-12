@@ -8,10 +8,10 @@ public class main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        String headPic = "SnakeHead.jpg";
+        String headPic = "Resources/SnakeHead.jpg";
 
-        Snake yourSnake = new Snake("Josh.jpg");
-        Snake theirSnake = new Snake("Ruby.jpg");
+        Snake yourSnake = new Snake("Resources/Josh.jpg");
+        Snake theirSnake = new Snake("Resources/Ruby.jpg");
         Scenes mainScenes = new Scenes(primaryStage, yourSnake, theirSnake);
 
         primaryStage.setTitle("Main Menu");

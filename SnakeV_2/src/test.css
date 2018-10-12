@@ -6,3 +6,9 @@
     /* change background size so that it covers everything */
     -fx-background-size: cover;
 }
+
+.label {
+    /* setting font of the labels */
+    -fx-font: 24 arial;
+    /*  */
+}

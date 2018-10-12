@@ -11,6 +11,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -19,7 +20,7 @@ public class Scenes {
     //Class Constructor
     public Scenes(Stage PrimaryStage, Snake yourSnake, Snake enemySnake) {
         makeMainMenu(PrimaryStage);
-        makeGame(yourSnake, enemySnake);
+        makeGame(yourSnake, enemySnake, PrimaryStage);
         makeSettings();
     }
 
@@ -85,7 +86,7 @@ public class Scenes {
         mainMenuLayout.setRight(rvbox);
         mainMenuLayout.setCenter(cvbox);
     }
-    private void makeGame(Snake yourSnake, Snake theirSnake) {
+    private void makeGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
         //Creating gameLayout
         Pane gameLayout = new Pane();
         //Adding the initial Head of the snake (or whatever is in the SnakeVector atm)
@@ -116,6 +117,10 @@ public class Scenes {
                     case LEFT:
                         yourSnake.setCurrentDir("LEFT");
                         break;
+                    /*
+                        THIS CASE IS
+                        FOR TESTING ONLY
+                     */
                     case P:
                         yourSnake.move(true);
                         gameLayout.getChildren().add(yourSnake.SnakeVec.lastElement());
@@ -134,10 +139,20 @@ public class Scenes {
                     case A:
                         theirSnake.setCurrentDir("LEFT");
                         break;
+                    /*
+                        THIS CASE IS
+                        FOR TESTING ONLY
+                     */
                     case O:
                         theirSnake.move(true);
                         gameLayout.getChildren().add(theirSnake.SnakeVec.lastElement());
                         break;
+                    /*
+                        THIS CASE IS
+                        FOR TESTING ONLY
+                     */
+                    case I:
+                        makeAlertStage("Edward", primaryStage);
                 }
             }
         };
@@ -171,19 +186,40 @@ public class Scenes {
 
         //Text to show who has won.
         Label gameOverLabel = new Label(winPlayer+" has won!");
+        gameOverLabel.setStyle("-fx-font: 24 arial;");
+        gameOverLabel.setTextAlignment(TextAlignment.CENTER);
+
 
         //Option 1 @ Game Over: Sends player back to main menu to play again.
         Button gameOverButton = new Button("Play Again");
-        gameOverButton.setOnAction(e -> primaryStage.setScene(mainMenu));
+        gameOverButton.setStyle("-fx-font: 24 arial;");
+        gameOverButton.setOnAction(e -> {
+            primaryStage.setScene(mainMenu);
+            gameOverWindow.close();
+        });
+
 
         //Option 2 @ Game Over: Rage Quit and exit program.
         Button gameOverButton2 = new Button("Exit");
-        gameOverButton2.setOnAction(e -> primaryStage.close());
+        gameOverButton2.setStyle("-fx-font: 24 arial;");
+        gameOverButton2.setOnAction(e -> {
+            primaryStage.close();
+            gameOverWindow.close();
+        });
 
         gameOverLayout.getChildren().addAll(gameOverLabel, gameOverButton, gameOverButton2);
+        gameOverLayout.setAlignment(Pos.CENTER);
 
-        Scene gameOverScene = new Scene(gameOverLayout,500,300);
-        primaryStage.setScene(gameOverScene);
+        Scene gameOverScene = new Scene(gameOverLayout,200,150);
+        gameOverWindow.setScene(gameOverScene);
+        //Setting the Opacity of the alert window
+        gameOverWindow.setOpacity(0.95);
+        gameOverWindow.show();
+        //If you X out of the Game Over alert, you will be sent back to the main menu.
+        gameOverWindow.setOnCloseRequest(e -> {
+            primaryStage.setScene(mainMenu);
+            gameOverWindow.close();
+        });
     }
 
 

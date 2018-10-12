@@ -22,6 +22,9 @@ public class Snake {
         SnakeVec.add(headRectangle);
     }
 
+    //Moves the head of the snake with a Boolean to tell whether or not the snake grows on this move,
+    //Bool true = does grow
+    //Bool false = does not grow
     void move(boolean grow) {
         double tmpX;
         double tmpY;
@@ -87,6 +90,10 @@ public class Snake {
         }
     }
 
+    //Updates the rest of the snake to follow the head, also contains grow to tell whether or not the snake will grow
+    //on this move,
+    //Bool true = does grow
+    //Bool false = does not grow
     //X/Y is the old location of the head
     private void update(double X, double Y, boolean grow) {
         //REALLY CONFUSING????? TOOK LIKE A WHOLE DAYS WTF
@@ -114,7 +121,7 @@ public class Snake {
 
     public void setCurrentDir(String tmp) { CurrentDir = tmp; }
 
-
+    //Vector of Rectangles to represent the snake itself
     Vector<Rectangle> SnakeVec = new Vector();
     private String CurrentDir = "UP";
 }

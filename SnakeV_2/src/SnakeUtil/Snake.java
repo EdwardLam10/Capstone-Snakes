@@ -3,6 +3,7 @@ package SnakeUtil;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
+import org.w3c.dom.css.Rect;
 
 import java.util.Vector;
 
@@ -10,10 +11,12 @@ import static javafx.scene.paint.Color.BLACK;
 import static javafx.scene.paint.Color.BLUE;
 
 public class Snake {
+    //Class constructor
+    //Creates the first node of the snake with the picture passed through the address HeadPic
     public Snake(String HeadPic) {
 
         //Creating Head Cirlce to be added to Vector
-        Rectangle headRectangle = new Rectangle(300,300,45,45);
+        Rectangle headRectangle = new Rectangle(45,45);
         headRectangle.setStroke(BLACK);
         Image headPic = new Image(HeadPic);
         headRectangle.setFill(new ImagePattern(headPic));
@@ -119,9 +122,31 @@ public class Snake {
         }
     }
 
+    //Restart Snake, removes all nodes in the snake except for head node.
+    //Sets the head back to X and Y.
+    public void restartSnake(double X, double Y) {
+        while(SnakeVec.size() > 1) {
+            SnakeVec.removeElementAt(SnakeVec.size()-1);
+        }
+        SnakeVec.firstElement().setX(X);
+        SnakeVec.firstElement().setY(Y);
+        CurrentDir = "UP";
+    }
+
+    //Collision Detection
+//    public Boolean collisionDetection(Vector<Rectangle> otherSnake) {
+//        //TODO
+//    }   
+
+    //Regular sets and gets as needed
     public void setCurrentDir(String tmp) { CurrentDir = tmp; }
+    public void setHeadLoc(double X, double Y) {
+        SnakeVec.firstElement().setX(X);
+        SnakeVec.firstElement().setY(Y);
+    }
+    public Vector<Rectangle> getSnake() { return SnakeVec; }
 
     //Vector of Rectangles to represent the snake itself
-    Vector<Rectangle> SnakeVec = new Vector();
+    private Vector<Rectangle> SnakeVec = new Vector();
     private String CurrentDir = "UP";
 }

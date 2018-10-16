@@ -136,7 +136,7 @@ public class Snake {
     //Collision Detection
 //    public Boolean collisionDetection(Vector<Rectangle> otherSnake) {
 //        //TODO
-//    }   
+//    }
 
     //Regular sets and gets as needed
     public void setCurrentDir(String tmp) { CurrentDir = tmp; }

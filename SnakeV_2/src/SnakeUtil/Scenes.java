@@ -183,7 +183,7 @@ public class Scenes {
 
 
         //Option 1 @ Game Over: Sends player back to main menu to play again.
-        Button gameOverButton = new Button("Play Again");
+        Button gameOverButton = new Button("Main Menu");
         gameOverButton.setStyle("-fx-font: 24 arial;");
         gameOverButton.setOnAction(e -> {
             primaryStage.setScene(mainMenu);
@@ -215,8 +215,8 @@ public class Scenes {
     }
     private void startGame(Snake yourSnake, Snake theirSnake) {
         //sets/resets each snake to only the head node and location
-        yourSnake.restartSnake(100,360);
-        theirSnake.restartSnake(980,360);
+        yourSnake.restartSnake(980,360);
+        theirSnake.restartSnake(100,360);
 
         gameLayout = new Pane();
         gameLayout.getChildren().addAll(yourSnake.getSnake());

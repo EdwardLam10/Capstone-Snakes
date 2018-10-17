@@ -1,5 +1,6 @@
 package SnakeUtil;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.*;
@@ -21,7 +22,7 @@ public class Scenes {
     public Scenes(Stage PrimaryStage, Snake yourSnake, Snake enemySnake) {
         makeMainMenu(PrimaryStage);
         makeGame(yourSnake, enemySnake, PrimaryStage);
-        makeSettings();
+        makeSettings(PrimaryStage);
     }
 
     //Cancels the timer and removes any functions still queued on the gameTimer
@@ -172,100 +173,184 @@ public class Scenes {
         };
         gameTimer.scheduleAtFixedRate(task, 1,  750);
     }
-    private void makeSettings() {
+    private void makeSettings(Stage primaryStage) {
+
         BorderPane setting = new BorderPane();
-        
-        Label space1 = new Label("  ");
-        space1.setStyle("-fx-font: 24 arial;");
-        Label space2 = new Label("  ");
-        space2.setStyle("-fx-font: 24 arial;");
-        Label space3 = new Label("  ");
-        space3.setStyle("-fx-font: 24 arial;");
-        Label space4 = new Label("  ");
-        space4.setStyle("-fx-font: 24 arial;");
-        
+
+        settings = new Scene(setting, 720, 720);
+
         Label setting_title = new Label("Setting \n   ");
         setting_title.setStyle("-fx-font: 50 arial;");
         setting_title.setTextAlignment(TextAlignment.CENTER);
-        
-        Label set_skin = new Label("   \n Set color of skin \n   ");
+
+        Label set_skin = new Label("   \n Set color of \n skin \n   ");
         set_skin.setStyle("-fx-font: 24 arial;");
         set_skin.setTextAlignment(TextAlignment.CENTER);
-        
-        Label current_skin = new Label("   \n Current color of skin \n   ");
+
+        Label current_skin = new Label("   \n Current color of \n skin \n   ");
         current_skin.setStyle("-fx-font: 24 arial;");
         current_skin.setTextAlignment(TextAlignment.CENTER);
-        
-        Label set_background = new Label("   \n Set color of background \n   ");
+
+        Label set_background = new Label("   \n Set color of \n background \n   ");
         set_background.setStyle("-fx-font: 24 arial;");
         set_background.setTextAlignment(TextAlignment.CENTER);
-        
-        Label current_background = new Label("   \n Current color of background \n   ");
+
+        Label current_background = new Label("   \n Current color of\n  background \n   ");
         current_background.setStyle("-fx-font: 24 arial;");
         current_background.setTextAlignment(TextAlignment.CENTER);
-        
-        Button cur_color_skin = new Button("Blue");
-        cur_color_skin.setStyle("-fx-background-color: #00ffff; -fx-font-size: 2em; ");
-        
-        Button cur_color_bg = new Button("Gray");
-        cur_color_bg.setStyle("-fx-background-color: #d3d3d3; -fx-font-size: 2em; ");
-        
+
+        Button cur_color_skin = new Button("Current \n Skin");
+        cur_color_skin.setStyle("-fx-font-size: 2em; ");
+        cur_color_skin.setTextAlignment(TextAlignment.CENTER);
+
+        Button cur_color_bg = new Button("Current \n Background");
+        cur_color_bg.setStyle("-fx-font-size: 2em; ");
+        cur_color_bg.setTextAlignment(TextAlignment.CENTER);
+
+        VBox back = new VBox();
+        Button back_btn = new Button("Back");
+        back_btn.setStyle("-fx-font-size: 2em; ");
+        back.getChildren().add(back_btn);
+
         VBox title = new VBox();
         title.getChildren().add(setting_title);
         title.setAlignment(Pos.CENTER);
-        
-		//For the Skin
+
         HBox skin_title = new HBox();
         VBox skin_set = new VBox();
         VBox skin_cur = new VBox();
-        HBox color_skin = new HBox();
-        
+        HBox color_skin = new HBox(10);
+
         Button skin_color1 = new Button("Red");
-        skin_color1.setStyle("-fx-background-color: #800000; -fx-font-size: 2em; ");
+        skin_color1.setStyle("-fx-background-color: Red; -fx-font-size: 2em; ");
         Button skin_color2 = new Button("Green");
-        skin_color2.setStyle("-fx-background-color: #228B22; -fx-font-size: 2em; ");
+        skin_color2.setStyle("-fx-background-color: Green; -fx-font-size: 2em; ");
         Button skin_color3 = new Button("White");
-        skin_color3.setStyle("-fx-background-color: #ffffff; -fx-font-size: 2em; ");
+        skin_color3.setStyle("-fx-background-color: White; -fx-font-size: 2em; ");
         Button skin_color4 = new Button("Yellow");
-        skin_color4.setStyle("-fx-background-color: #ffff00; -fx-font-size: 2em; ");
+        skin_color4.setStyle("-fx-background-color: Yellow; -fx-font-size: 2em; ");
         Button skin_color5 = new Button("Pink");
-        skin_color5.setStyle("-fx-background-color: #db7093; -fx-font-size: 2em; ");
-        color_skin.getChildren().addAll(skin_color1, space1, skin_color2, space2, skin_color3, space3, skin_color4, space4, skin_color5);
-        
+        skin_color5.setStyle("-fx-background-color: Pink; -fx-font-size: 2em; ");
+        Button skin_color6 = new Button("Blue");
+        skin_color6.setStyle("-fx-background-color: Blue; -fx-font-size: 2em; ");
+        color_skin.getChildren().addAll(skin_color1, skin_color2, skin_color3, skin_color4, skin_color5, skin_color6);
+
         skin_cur.getChildren().addAll(current_skin, cur_color_skin);
         skin_set.getChildren().addAll(set_skin, color_skin);
         skin_title.getChildren().addAll(skin_set, skin_cur);
         skin_title.setAlignment(Pos.CENTER);
         skin_cur.setAlignment(Pos.CENTER);
         skin_set.setAlignment(Pos.CENTER);
-        
-		//For the Background
+
         HBox background_title = new HBox();
         VBox background_set = new VBox();
         VBox background_cur = new VBox();
-        HBox color_background = new HBox();
-        
+        HBox color_background = new HBox(10);
+
         Button bg_color1 = new Button("Black");
-        bg_color1.setStyle("-fx-background-color: #000000; -fx-font-size: 2em; ");
+        bg_color1.setStyle("-fx-background-color: Black; -fx-font-size: 2em; ");
         Button bg_color2 = new Button("White");
-        bg_color2.setStyle("-fx-background-color: #ffffff; -fx-font-size: 2em; ");
+        bg_color2.setStyle("-fx-background-color: White; -fx-font-size: 2em; ");
         Button bg_color3 = new Button("Red");
-        bg_color3.setStyle("-fx-background-color: #ff0000; -fx-font-size: 2em; ");
+        bg_color3.setStyle("-fx-background-color: Red; -fx-font-size: 2em; ");
         Button bg_color4 = new Button("Purple");
-        bg_color4.setStyle("-fx-background-color: #9932cc; -fx-font-size: 2em; ");
+        bg_color4.setStyle("-fx-background-color: Purple; -fx-font-size: 2em; ");
         Button bg_color5 = new Button("Yellow");
-        bg_color5.setStyle("-fx-background-color: #ffff00; -fx-font-size: 2em; ");
-        color_background.getChildren().addAll(bg_color1, bg_color2, bg_color3, bg_color4, bg_color5);
-        
+        bg_color5.setStyle("-fx-background-color: Yellow; -fx-font-size: 2em; ");
+        Button bg_color6 = new Button("Gray");
+        bg_color6.setStyle("-fx-background-color: Gray; -fx-font-size: 2em; ");
+        color_background.getChildren().addAll(bg_color1, bg_color2, bg_color3, bg_color4, bg_color5, bg_color6);
+
         background_cur.getChildren().addAll(current_background, cur_color_bg);
         background_set.getChildren().addAll(set_background, color_background);
         background_title.getChildren().addAll(background_set, background_cur);
         background_cur.setAlignment(Pos.CENTER);
         background_set.setAlignment(Pos.CENTER);
         background_title.setAlignment(Pos.CENTER);
-        
+
         VBox all = new VBox();
-        all.getChildren().addAll(title, skin_title, background_title);
+        all.getChildren().addAll(back, title, skin_title, background_title);
+
+        setting.setCenter(all);
+
+        back_btn.setOnAction(e -> { primaryStage.setScene(mainMenu); });
+
+        //START WRITING CONDITIONS TO CHANGE THE DIFFERENT COLORS TO CURRENT COLOR
+        skin_color1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                cur_color_skin.setStyle("-fx-background-color: Red; -fx-font-size: 2em; ");
+            }
+        });
+        skin_color2.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                cur_color_skin.setStyle("-fx-background-color: Green; -fx-font-size: 2em; ");
+            }
+        });
+        skin_color3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                cur_color_skin.setStyle("-fx-background-color: White; -fx-font-size: 2em; ");
+            }
+        });
+        skin_color4.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                cur_color_skin.setStyle("-fx-background-color: Yellow; -fx-font-size: 2em; ");
+            }
+        });
+        skin_color5.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                cur_color_skin.setStyle("-fx-background-color: Pink; -fx-font-size: 2em; ");
+            }
+        });
+        skin_color6.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                cur_color_skin.setStyle("-fx-background-color: Blue; -fx-font-size: 2em; ");
+            }
+        });
+
+        bg_color1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                cur_color_bg.setStyle("-fx-background-color: Black; -fx-font-size: 2em; ");
+            }
+        });
+        bg_color2.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                cur_color_bg.setStyle("-fx-background-color: White; -fx-font-size: 2em; ");
+            }
+        });
+        bg_color3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                cur_color_bg.setStyle("-fx-background-color: Red; -fx-font-size: 2em; ");
+            }
+        });
+        bg_color4.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                cur_color_bg.setStyle("-fx-background-color: Purple; -fx-font-size: 2em; ");
+            }
+        });
+        bg_color5.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                cur_color_bg.setStyle("-fx-background-color: Yellow; -fx-font-size: 2em; ");
+            }
+        });
+        bg_color6.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                cur_color_bg.setStyle("-fx-background-color: Gray; -fx-font-size: 2em; ");
+            }
+        });
+
+
     };
     private void makeAlertStage(String winPlayer, Stage primaryStage) {
         //Ends and stops snakes from moving.

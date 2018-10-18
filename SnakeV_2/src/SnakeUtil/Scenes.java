@@ -180,31 +180,27 @@ public class Scenes {
         settings = new Scene(setting, 720, 720);
 
         Label setting_title = new Label("Setting \n   ");
-        setting_title.setStyle("-fx-font: 50 arial;");
-        setting_title.setTextAlignment(TextAlignment.CENTER);
-
         Label set_skin = new Label("   \n Set color of \n skin \n   ");
-        set_skin.setStyle("-fx-font: 24 arial;");
-        set_skin.setTextAlignment(TextAlignment.CENTER);
-
         Label current_skin = new Label("   \n Current color of \n skin \n   ");
-        current_skin.setStyle("-fx-font: 24 arial;");
-        current_skin.setTextAlignment(TextAlignment.CENTER);
-
         Label set_background = new Label("   \n Set color of \n background \n   ");
-        set_background.setStyle("-fx-font: 24 arial;");
-        set_background.setTextAlignment(TextAlignment.CENTER);
-
         Label current_background = new Label("   \n Current color of\n  background \n   ");
-        current_background.setStyle("-fx-font: 24 arial;");
-        current_background.setTextAlignment(TextAlignment.CENTER);
-
         Button cur_color_skin = new Button("Current \n Skin");
-        cur_color_skin.setStyle("-fx-font-size: 2em; ");
-        cur_color_skin.setTextAlignment(TextAlignment.CENTER);
-
         Button cur_color_bg = new Button("Current \n Background");
+
+        setting_title.setStyle("-fx-font: 50 arial;");
+        set_skin.setStyle("-fx-font: 24 arial;");
+        current_skin.setStyle("-fx-font: 24 arial;");
+        set_background.setStyle("-fx-font: 24 arial;");
+        current_background.setStyle("-fx-font: 24 arial;");
+        cur_color_skin.setStyle("-fx-font-size: 2em; ");
         cur_color_bg.setStyle("-fx-font-size: 2em; ");
+
+        setting_title.setTextAlignment(TextAlignment.CENTER);
+        set_skin.setTextAlignment(TextAlignment.CENTER);
+        current_skin.setTextAlignment(TextAlignment.CENTER);
+        set_background.setTextAlignment(TextAlignment.CENTER);
+        current_background.setTextAlignment(TextAlignment.CENTER);
+        cur_color_skin.setTextAlignment(TextAlignment.CENTER);
         cur_color_bg.setTextAlignment(TextAlignment.CENTER);
 
         VBox back = new VBox();
@@ -276,6 +272,7 @@ public class Scenes {
         back_btn.setOnAction(e -> { primaryStage.setScene(mainMenu); });
 
         //START WRITING CONDITIONS TO CHANGE THE DIFFERENT COLORS TO CURRENT COLOR
+        //FOR THE SKIN
         skin_color1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -313,6 +310,7 @@ public class Scenes {
             }
         });
 
+        //FOR THE BACKGROUND
         bg_color1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {

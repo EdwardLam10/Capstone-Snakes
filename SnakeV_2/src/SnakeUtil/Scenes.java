@@ -100,7 +100,7 @@ public class Scenes {
 
         //Setting the Scene with the gameLayout that now contains a snake/snakes
         game = new Scene(gameLayout,1080,720);
-        game.setUserAgentStylesheet(colorfulcss);
+        game.setUserAgentStylesheet(colorfulcss(other));
 
         //The Event Handler for the Game Scene.
         //Takes in a Keystroke and will handle which key is pressed using a switch statement

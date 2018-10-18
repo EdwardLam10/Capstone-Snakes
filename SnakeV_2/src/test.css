@@ -7,8 +7,6 @@
     -fx-background-size: cover;
 }
 
-.label {
-    /* setting font of the labels */
-    -fx-font: 24 arial;
-    /*  */
+.other {
+    -fx-background-color: BLUE;
 }

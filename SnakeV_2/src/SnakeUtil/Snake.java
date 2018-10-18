@@ -117,8 +117,8 @@ public class Snake {
         }
         if(grow) {
             Rectangle BodRect = new Rectangle(45,45);
-            BodRect.setStroke(snakeoutline);
-            BodRect.setFill(snakefill);
+            BodRect.setStroke(snakeOutline);
+            BodRect.setFill(snakeFill);
             BodRect.setX(tmpX);
             BodRect.setY(tmpY);
             SnakeVec.addElement(BodRect);
@@ -150,15 +150,25 @@ public class Snake {
         SnakeVec.firstElement().setY(Y);
     }
     public Vector<Rectangle> getSnake() { return SnakeVec; }
-    public void setFillColor(Paint newCOlor) {
-        snakefill = newCOlor;
+
+    public Paint getSnakeFill() {
+        return snakeFill;
+    }
+    public void setSnakeFill(Paint snakeFill) {
+        this.snakeFill = snakeFill;
+    }
+
+    public Paint getSnakeoutline() {
+        return snakeOutline;
+    }
+    public void setSnakeoutline(Paint snakeoutline) {
+        this.snakeOutline = snakeoutline;
     }
 
     //Vector of Rectangles to represent the snake itself
     private Vector<Rectangle> SnakeVec = new Vector();
     private String CurrentDir = "UP";
-    private Paint snakeoutline = BLACK;
-    private Paint snakefill = RED;
-    private String HeadPicture = "Link to picture for head";
+    private Paint snakeOutline = BLACK;
+    private Paint snakeFill = RED;
 
 }

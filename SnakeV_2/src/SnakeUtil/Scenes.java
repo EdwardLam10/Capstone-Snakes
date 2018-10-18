@@ -22,7 +22,7 @@ public class Scenes {
     public Scenes(Stage PrimaryStage, Snake yourSnake, Snake enemySnake) {
         makeMainMenu(PrimaryStage);
         makeGame(yourSnake, enemySnake, PrimaryStage);
-        makeSettings(PrimaryStage);
+        makeSettings(PrimaryStage, yourSnake);
     }
 
     //Cancels the timer and removes any functions still queued on the gameTimer
@@ -173,7 +173,7 @@ public class Scenes {
         };
         gameTimer.scheduleAtFixedRate(task, 1,  750);
     }
-    private void makeSettings(Stage primaryStage) {
+    public void makeSettings(Stage primaryStage, Snake yourSnake) {
 
         BorderPane setting = new BorderPane();
 

@@ -11,8 +11,6 @@ import javafx.scene.layout.*;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
-import javax.swing.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -20,7 +18,7 @@ public class Scenes {
 
     //Class Constructor
     public Scenes(Stage PrimaryStage, Snake yourSnake, Snake enemySnake) {
-        makeMainMenu(PrimaryStage);
+        makeMainMenu(PrimaryStage, yourSnake, enemySnake);
         makeGame(yourSnake, enemySnake, PrimaryStage);
         makeSettings(PrimaryStage, yourSnake);
     }
@@ -33,7 +31,7 @@ public class Scenes {
 
 
     //Private Function to set all the settings for the main menu
-    private void makeMainMenu(Stage primaryStage) {
+    private void makeMainMenu(Stage primaryStage, Snake yourSnake, Snake enemySnake) {
         //Instantiating the BorderPane class *layout* for mainMenu Scene
         BorderPane mainMenuLayout = new BorderPane();
 
@@ -43,7 +41,10 @@ public class Scenes {
         Button startButton = new Button("Start");
         startButton.setStyle("-fx-font: 24 arial;");
         //Having the start button send you to game Scene.
-        startButton.setOnAction(e -> { primaryStage.setScene(game); });
+        startButton.setOnAction(e -> {
+            primaryStage.setScene(game);
+            startGame(yourSnake,enemySnake);
+        });
 
         Button settingsButton = new Button("Settings");
         settingsButton.setStyle("-fx-font: 24 arial;");
@@ -89,15 +90,17 @@ public class Scenes {
     }
     private void makeGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
         //Creating gameLayout
-        Pane gameLayout = new Pane();
+        gameLayout = new Pane();
         //Adding the initial Head of the snake (or whatever is in the SnakeVector atm)
         //to the layout
-        gameLayout.getChildren().addAll(yourSnake.SnakeVec);
-        gameLayout.getChildren().addAll(theirSnake.SnakeVec);
+        gameLayout.getChildren().addAll(yourSnake.getSnake());
+        gameLayout.getChildren().addAll(theirSnake.getSnake());
+
+        String colorfulcss = "test.css";
 
         //Setting the Scene with the gameLayout that now contains a snake/snakes
         game = new Scene(gameLayout,1080,720);
-        game.setUserAgentStylesheet("test.css");
+        game.setUserAgentStylesheet(colorfulcss);
 
         //The Event Handler for the Game Scene.
         //Takes in a Keystroke and will handle which key is pressed using a switch statement
@@ -124,7 +127,7 @@ public class Scenes {
                      */
                     case P:
                         yourSnake.move(true);
-                        gameLayout.getChildren().add(yourSnake.SnakeVec.lastElement());
+                        gameLayout.getChildren().add(yourSnake.getSnake().lastElement());
                         break;
 
                     //MOVING 2ND SNAKE
@@ -146,7 +149,7 @@ public class Scenes {
                      */
                     case O:
                         theirSnake.move(true);
-                        gameLayout.getChildren().add(theirSnake.SnakeVec.lastElement());
+                        gameLayout.getChildren().add(theirSnake.getSnake().lastElement());
                         break;
                     /*
                         THIS CASE IS
@@ -162,16 +165,6 @@ public class Scenes {
         //Note: KeyEvent has other variables so you can change when the eventHandler executes,
         //      For example you can have it execute when the key is released instead of pressed.
         game.addEventFilter(KeyEvent.KEY_PRESSED, eventHandler);
-
-        //Creating the task to pass through the Timer to be executed every X ms
-        //task to be executed every X ms is yourSnake.move(false);
-        TimerTask task = new TimerTask() {
-            public void run() {
-                yourSnake.move(false);
-                theirSnake.move(false);
-            }
-        };
-        gameTimer.scheduleAtFixedRate(task, 1,  750);
     }
     public void makeSettings(Stage primaryStage, Snake yourSnake) {
 
@@ -350,9 +343,11 @@ public class Scenes {
 
 
     };
+
     private void makeAlertStage(String winPlayer, Stage primaryStage) {
         //Ends and stops snakes from moving.
         endGame();
+        gameOverWindow = new Stage();
         gameOverWindow.setTitle("Game Over!");
 
         //This keeps the user from clicking on anything other than the alert box.
@@ -366,7 +361,7 @@ public class Scenes {
 
 
         //Option 1 @ Game Over: Sends player back to main menu to play again.
-        Button gameOverButton = new Button("Play Again");
+        Button gameOverButton = new Button("Main Menu");
         gameOverButton.setStyle("-fx-font: 24 arial;");
         gameOverButton.setOnAction(e -> {
             primaryStage.setScene(mainMenu);
@@ -396,7 +391,29 @@ public class Scenes {
             gameOverWindow.close();
         });
     }
+    private void startGame(Snake yourSnake, Snake theirSnake) {
+        //sets/resets each snake to only the head node and location
+        yourSnake.restartSnake(980,360);
+        theirSnake.restartSnake(100,360);
 
+        gameLayout = new Pane();
+        gameLayout.getChildren().addAll(yourSnake.getSnake());
+        gameLayout.getChildren().addAll(theirSnake.getSnake());
+
+        game.setRoot(gameLayout);
+
+        gameTimer = new Timer();
+        //Creating the task to pass through the Timer to be executed every X ms
+        //task to be executed every X ms is yourSnake.move(false);
+        TimerTask task = new TimerTask() {
+            public void run() {
+                yourSnake.move(false);
+                theirSnake.move(false);
+            }
+        };
+        gameTimer.scheduleAtFixedRate(task, 1,  750);
+
+    }
 
 
     //SETS AND GETS
@@ -409,10 +426,12 @@ public class Scenes {
     private Scene mainMenu;
     //Creating Game Scene
     private Scene game;
+    //Game layout
+    private Pane gameLayout;
     //Creating Settings Scene
     private Scene settings;
     //Game Over Alert
-    private Stage gameOverWindow = new Stage();
+    private Stage gameOverWindow;
     //Timer for the game (helps dictate how fast the snake moves)
-    private Timer gameTimer = new Timer();
+    private Timer gameTimer;
 }

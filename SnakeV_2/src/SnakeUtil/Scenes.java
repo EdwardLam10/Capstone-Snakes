@@ -96,11 +96,11 @@ public class Scenes {
         gameLayout.getChildren().addAll(yourSnake.getSnake());
         gameLayout.getChildren().addAll(theirSnake.getSnake());
 
-        String colorfulcss = "test.css";
+
 
         //Setting the Scene with the gameLayout that now contains a snake/snakes
         game = new Scene(gameLayout,1080,720);
-        game.setUserAgentStylesheet(colorfulcss(other));
+        game.setUserAgentStylesheet(colorfulcss);
 
         //The Event Handler for the Game Scene.
         //Takes in a Keystroke and will handle which key is pressed using a switch statement

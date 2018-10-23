@@ -136,12 +136,15 @@ public class Snake {
         CurrentDir = "UP";
     }
 
-//    //Collision Detection
-//    public Boolean collisionDetection(Vector<Rectangle> otherSnake) {
-//        SnakeVec.firstElement().intersects(otherSnake.firstElement().getB)
-//        BOUNDSINLOCAL
-//        return true;
-//    }
+    //Collision Detection
+    public Boolean collisionDetection(Vector<Rectangle> otherSnake) {
+        for(int i = 0; i < otherSnake.size(); i++) {
+            if(SnakeVec.firstElement().intersects(otherSnake.elementAt(i).getBoundsInLocal())){
+                return true;
+            }
+        }
+        return false;
+    }
 
     //Regular sets and gets as needed
     public void setCurrentDir(String tmp) { CurrentDir = tmp; }

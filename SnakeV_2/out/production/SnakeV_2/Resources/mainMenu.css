@@ -13,3 +13,7 @@
 #colorful {
     -fx-background-image: url("Background.jpg");
 }
+
+#notcolorful {
+    -fx-background-color: GREEN;
+}

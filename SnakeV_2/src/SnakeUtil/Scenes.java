@@ -31,15 +31,15 @@ public class Scenes {
     }
 
 
-    //Private Function to set all the settings for the main menu
+     //Private Function to set all the settings for the main menu
     private void makeMainMenu(Stage primaryStage, Snake yourSnake, Snake enemySnake) {
         //Instantiating the BorderPane class *layout* for mainMenu Scene
         BorderPane mainMenuLayout = new BorderPane();
 
         //Setting
         mainMenu = new Scene(mainMenuLayout, 720, 720);
-        mainMenu.setUserAgentStylesheet("Resources/mainMenu.css");
 
+<<<<<<< HEAD
         //CHANGE
         mainMenuLayout.setId("colorful");
 
@@ -57,6 +57,37 @@ public class Scenes {
         Button endButton = new Button("End");
         endButton.setOnAction(e -> {
             primaryStage.close();
+=======
+        /* startButton = new Button("Start");
+        startButton.setStyle("-fx-font: 24 arial;");
+        //Having the start button send you to game Scene.
+        startButton.setOnAction(e -> {
+            primaryStage.setScene(game);
+            startGame(yourSnake,enemySnake);
+        });*/
+
+        Label start = new Label("\n Start: \n");
+        start.setStyle("-fx-font: 24 arial;");
+        start.setTextAlignment(TextAlignment.CENTER);
+
+        Button settingsButton = new Button("Settings");
+        settingsButton.setStyle("-fx-font: 24 arial;");
+        //Having the settings button send you to settings
+        settingsButton.setOnAction(e -> { primaryStage.setScene(settings); });
+
+        Button localGame = new Button("Local Game");
+        localGame.setStyle("-fx-font: 24 arial;");
+        localGame.setOnAction(e -> {
+            primaryStage.setScene(game);
+            startGame(yourSnake,enemySnake);
+        });
+
+        Button playWithRandom = new Button("Play with Random Player");
+        playWithRandom.setStyle("-fx-font: 24 arial;");
+        playWithRandom.setOnAction(e -> {
+            primaryStage.setScene(game);
+            startGame(yourSnake,enemySnake);
+>>>>>>> efb37241706b35aa9ed6121590b898459f056c75
         });
 
         Label top = new Label("\n Welcome to Snake Online \n");
@@ -64,6 +95,13 @@ public class Scenes {
         Label right = new Label("\n Player 2 \n");
         Label bottom = new Label("\n Waiting for second player to enter \n" + "\n Waiting for both players to click ready \n" + "\n Once both players have clicked ready \n" + "please click start \n");
         Label center = new Label("\n Waiting for Player to to enter \n");
+
+        //changing the font and size of the text
+        top.setStyle("-fx-font: 24 arial;");
+        left.setStyle("-fx-font: 24 arial;");
+        right.setStyle("-fx-font: 24 arial;");
+        bottom.setStyle("-fx-font: 24 arial;");
+        center.setStyle("-fx-font: 24 arial;");
 
         //cnetering the text within each box
         top.setTextAlignment(TextAlignment.CENTER);
@@ -81,7 +119,11 @@ public class Scenes {
         rvbox.setAlignment(Pos.CENTER);
 
         VBox cvbox = new VBox();
+<<<<<<< HEAD
         cvbox.getChildren().addAll(top, center, bottom, startButton, settingsButton, endButton);
+=======
+        cvbox.getChildren().addAll(top, center, bottom, start,localGame, playWithRandom, settingsButton);
+>>>>>>> efb37241706b35aa9ed6121590b898459f056c75
         cvbox.setAlignment(Pos.CENTER);
 
         //Setting the top, bottom, center, right and left nodes to the pane
@@ -272,24 +314,28 @@ public class Scenes {
             @Override
             public void handle(ActionEvent event) {
                 cur_color_skin.setStyle("-fx-background-color: Red; -fx-font-size: 2em; ");
+                yourSnake.getSnakeFill(RED);
             }
         });
         skin_color2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 cur_color_skin.setStyle("-fx-background-color: Green; -fx-font-size: 2em; ");
+                yourSnake.getSnakeFill(GREEN);
             }
         });
         skin_color3.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 cur_color_skin.setStyle("-fx-background-color: White; -fx-font-size: 2em; ");
+                yourSnake.getSnakeFill(WHITE);
             }
         });
         skin_color4.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 cur_color_skin.setStyle("-fx-background-color: Yellow; -fx-font-size: 2em; ");
+                yourSnake.getSnakeFill(YELLOW);
             }
         });
         skin_color5.setOnAction(new EventHandler<ActionEvent>() {

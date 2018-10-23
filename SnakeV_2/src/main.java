@@ -20,7 +20,6 @@ public class main extends Application {
 
         primaryStage.setOnCloseRequest(event -> {
             primaryStage.close();
-            mainScenes.endGame();
         });
 
     }

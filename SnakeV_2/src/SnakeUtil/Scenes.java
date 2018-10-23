@@ -37,9 +37,11 @@ public class Scenes {
 
         //Setting
         mainMenu = new Scene(mainMenuLayout, 720, 720);
+        mainMenu.setUserAgentStylesheet("Resources/mainMenu.css");
+
+        mainMenuLayout.setId("colorful");
 
         Button startButton = new Button("Start");
-        startButton.setStyle("-fx-font: 24 arial;");
         //Having the start button send you to game Scene.
         startButton.setOnAction(e -> {
             primaryStage.setScene(game);
@@ -47,7 +49,7 @@ public class Scenes {
         });
 
         Button settingsButton = new Button("Settings");
-        settingsButton.setStyle("-fx-font: 24 arial;");
+//        settingsButton.setStyle("-fx-font: 24 arial;");
         //Having the settings button send you to settings
         settingsButton.setOnAction(e -> { primaryStage.setScene(settings); });
 
@@ -56,13 +58,6 @@ public class Scenes {
         Label right = new Label("\n Player 2 \n");
         Label bottom = new Label("\n Waiting for second player to enter \n" + "\n Waiting for both players to click ready \n" + "\n Once both players have clicked ready \n" + "please click start \n");
         Label center = new Label("\n Waiting for Player to to enter \n");
-
-        //changing the font and size of the text
-        top.setStyle("-fx-font: 24 arial;");
-        left.setStyle("-fx-font: 24 arial;");
-        right.setStyle("-fx-font: 24 arial;");
-        bottom.setStyle("-fx-font: 24 arial;");
-        center.setStyle("-fx-font: 24 arial;");
 
         //cnetering the text within each box
         top.setTextAlignment(TextAlignment.CENTER);
@@ -96,7 +91,7 @@ public class Scenes {
         gameLayout.getChildren().addAll(yourSnake.getSnake());
         gameLayout.getChildren().addAll(theirSnake.getSnake());
 
-
+        String colorfulcss = "Resources/test.css";
 
         //Setting the Scene with the gameLayout that now contains a snake/snakes
         game = new Scene(gameLayout,1080,720);

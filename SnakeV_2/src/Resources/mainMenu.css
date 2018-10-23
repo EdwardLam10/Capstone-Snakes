@@ -1,0 +1,15 @@
+.label {
+    -fx-font: 24 arial;
+}
+
+.button {
+    -fx-font: 24 arial;
+    -fx-background-color: WHITE;
+    -fx-border-color: BLACK;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+}
+
+#colorful {
+    -fx-background-image: url("Background.jpg");
+}

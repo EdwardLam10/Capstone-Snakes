@@ -1,16 +1,13 @@
 package SnakeUtil;
 
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
-import org.w3c.dom.css.Rect;
 
 import java.util.Vector;
 
 import static javafx.scene.paint.Color.BLACK;
-import static javafx.scene.paint.Color.BLUE;
 import static javafx.scene.paint.Color.RED;
 
 public class Snake {
@@ -151,7 +148,7 @@ public class Snake {
     }
     public Vector<Rectangle> getSnake() { return SnakeVec; }
 
-    public Paint getSnakeFill() {
+    public Paint getSnakeFill(java.awt.Color yellow) {
         return snakeFill;
     }
     public void setSnakeFill(Paint snakeFill) {

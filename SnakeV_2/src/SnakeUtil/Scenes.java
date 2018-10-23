@@ -14,6 +14,8 @@ import javafx.stage.Stage;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static java.awt.Color.*;
+
 public class Scenes {
 
     //Class Constructor

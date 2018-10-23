@@ -14,13 +14,14 @@ public class main extends Application {
         Snake theirSnake = new Snake("Resources/Ruby.jpg");
         Scenes mainScenes = new Scenes(primaryStage, yourSnake, theirSnake);
 
-        primaryStage.setTitle("Main Menu");
-        mainScenes.set2MM(primaryStage);
-        primaryStage.show();
-
         primaryStage.setOnCloseRequest(event -> {
             primaryStage.close();
         });
+
+
+        primaryStage.setTitle("Main Menu");
+        mainScenes.set2MM(primaryStage);
+        primaryStage.show();
 
     }
 

@@ -1,5 +1,6 @@
 package SnakeUtil;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -40,6 +41,25 @@ public class Scenes {
         //Setting
         mainMenu = new Scene(mainMenuLayout, 720, 720);
 
+<<<<<<< HEAD
+        //CHANGE
+        mainMenuLayout.setId("colorful");
+
+        Button startButton = new Button("Start");
+        //Having the start button send you to game Scene.
+        startButton.setOnAction(e -> {
+            primaryStage.setScene(game);
+            startGame(yourSnake,enemySnake,primaryStage);
+        });
+
+        Button settingsButton = new Button("Settings");
+        //Having the settings button send you to settings
+        settingsButton.setOnAction(e -> { primaryStage.setScene(settings); });
+
+        Button endButton = new Button("End");
+        endButton.setOnAction(e -> {
+            primaryStage.close();
+=======
         /* startButton = new Button("Start");
         startButton.setStyle("-fx-font: 24 arial;");
         //Having the start button send you to game Scene.
@@ -69,6 +89,7 @@ public class Scenes {
         playWithRandom.setOnAction(e -> {
             primaryStage.setScene(game);
             startGame(yourSnake,enemySnake);
+>>>>>>> efb37241706b35aa9ed6121590b898459f056c75
         });
 
         Label top = new Label("\n Welcome to Snake Online \n");
@@ -100,7 +121,11 @@ public class Scenes {
         rvbox.setAlignment(Pos.CENTER);
 
         VBox cvbox = new VBox();
+<<<<<<< HEAD
+        cvbox.getChildren().addAll(top, center, bottom, startButton, settingsButton, endButton);
+=======
         cvbox.getChildren().addAll(top, center, bottom, start,localGame, playWithRandom, settingsButton);
+>>>>>>> efb37241706b35aa9ed6121590b898459f056c75
         cvbox.setAlignment(Pos.CENTER);
 
         //Setting the top, bottom, center, right and left nodes to the pane
@@ -191,6 +216,7 @@ public class Scenes {
         BorderPane setting = new BorderPane();
 
         settings = new Scene(setting, 720, 720);
+        settings.setUserAgentStylesheet("Resources/settings.css");
 
         Label setting_title = new Label("Setting \n   ");
         Label set_skin = new Label("   \n Set color of \n skin \n   ");
@@ -332,6 +358,7 @@ public class Scenes {
             @Override
             public void handle(ActionEvent event) {
                 cur_color_bg.setStyle("-fx-background-color: Black; -fx-font-size: 2em; ");
+                gameLayout.setId("BlackBG");
             }
         });
         bg_color2.setOnAction(new EventHandler<ActionEvent>() {
@@ -344,6 +371,7 @@ public class Scenes {
             @Override
             public void handle(ActionEvent event) {
                 cur_color_bg.setStyle("-fx-background-color: Red; -fx-font-size: 2em; ");
+                gameLayout.setId("RedBG");
             }
         });
         bg_color4.setOnAction(new EventHandler<ActionEvent>() {
@@ -414,7 +442,8 @@ public class Scenes {
             gameOverWindow.close();
         });
     }
-    private void startGame(Snake yourSnake, Snake theirSnake) {
+
+    private void startGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
         //sets/resets each snake to only the head node and location
         yourSnake.restartSnake(980,360);
         theirSnake.restartSnake(100,360);
@@ -430,14 +459,26 @@ public class Scenes {
         //task to be executed every X ms is yourSnake.move(false);
         TimerTask task = new TimerTask() {
             public void run() {
-                yourSnake.move(false);
-                theirSnake.move(false);
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        yourSnake.move(false);
+                        theirSnake.move(false);
+                        if(yourSnake.collisionDetection(theirSnake.getSnake())) {
+                            endGame();
+                            makeAlertStage("Josh", primaryStage);
+                        } else if(theirSnake.collisionDetection(yourSnake.getSnake())) {
+                            endGame();
+                            makeAlertStage("Ruby", primaryStage);
+                        }
+
+                    }
+                });
             }
         };
         gameTimer.scheduleAtFixedRate(task, 1,  750);
 
     }
-
 
     //SETS AND GETS
 

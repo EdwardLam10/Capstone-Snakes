@@ -42,7 +42,14 @@ public class Scenes {
         mainMenu = new Scene(mainMenuLayout, 720, 720);
         mainMenu.setUserAgentStylesheet("Resources/Background.css");
 
-        mainMenuLayout.setId("colorful");
+
+        /* startButton = new Button("Start");
+        startButton.setStyle("-fx-font: 24 arial;");
+        //Having the start button send you to game Scene.
+        startButton.setOnAction(e -> {
+            primaryStage.setScene(game);
+            startGame(yourSnake,enemySnake);
+        });*/
 
         Label start = new Label("\n Start: \n");
         start.setStyle("-fx-font: 24 arial;");

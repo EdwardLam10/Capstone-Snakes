@@ -8,9 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7635bcc6-dc04-4847-836e-0e2e4db8c3ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/Resources/mainMenu.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/Resources/settings.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/Resources/test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/Resources/Hex.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/Resources/SnakeHead.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/Resources/startButton.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$11.class" afterDir="false" />
@@ -28,12 +28,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Snake.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resources/mainMenu.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resources/settings.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resources/test.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Snake.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -144,13 +139,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="439" column="33" selection-start-line="439" selection-start-column="33" selection-end-line="439" selection-end-column="33" />
+            <state relative-caret-position="374">
+              <caret line="142" column="4" selection-start-line="142" selection-start-column="4" selection-end-line="142" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Scenes#0;class#Scenes#0" />
                 <element signature="method#endGame#0;class#Scenes#0" />
-                <element signature="method#makeMainMenu#0;class#Scenes#0" />
                 <element signature="method#makeAlertStage#0;class#Scenes#0" />
               </folding>
             </state>
@@ -160,7 +154,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="-714">
               <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
               <folding>
                 <element signature="method#move#0;class#Snake#0" />
@@ -232,7 +226,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1615" />
@@ -373,15 +367,15 @@
       <workItem from="1540316320897" duration="765000" />
       <workItem from="1540319142790" duration="33000" />
       <workItem from="1540321543270" duration="9736000" />
-      <workItem from="1540503440929" duration="687000" />
+      <workItem from="1540503440929" duration="1838000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42834000" />
+    <option name="totallyTimeSpent" value="43985000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1549" height="837" extended-state="7" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14486921" />
@@ -507,13 +501,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="439" column="33" selection-start-line="439" selection-start-column="33" selection-end-line="439" selection-end-column="33" />
+        <state relative-caret-position="374">
+          <caret line="142" column="4" selection-start-line="142" selection-start-column="4" selection-end-line="142" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Scenes#0;class#Scenes#0" />
             <element signature="method#endGame#0;class#Scenes#0" />
-            <element signature="method#makeMainMenu#0;class#Scenes#0" />
             <element signature="method#makeAlertStage#0;class#Scenes#0" />
           </folding>
         </state>
@@ -521,7 +514,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="-714">
           <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
           <folding>
             <element signature="method#move#0;class#Snake#0" />

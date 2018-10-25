@@ -267,7 +267,7 @@ public class Scenes {
         VBox background_cur = new VBox();
         HBox color_background = new HBox(10);
 
-        Button bg_color1 = new Button("Black");
+        Button bg_color1 = new Button("Blimp");
         bg_color1.setStyle("-fx-background-color: Black; -fx-font-size: 2em; ");
         Button bg_color2 = new Button("White");
         bg_color2.setStyle("-fx-background-color: White; -fx-font-size: 2em; ");
@@ -344,8 +344,10 @@ public class Scenes {
         bg_color1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                cur_color_bg.setStyle("-fx-background-color: Black; -fx-font-size: 2em; ");
-                gameLayout.setId("BlackBG");
+                cur_color_bg.setId("Blimp");
+                gameLayout.setId("Blimp");
+                setting.setId("Blimp");
+                mainMenuLayout.setId("Blimp");
             }
         });
         bg_color2.setOnAction(new EventHandler<ActionEvent>() {
@@ -437,8 +439,8 @@ public class Scenes {
 
     private void startGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
         //sets/resets each snake to only the head node and location
-        yourSnake.restartSnake(950,360);
-        theirSnake.restartSnake(100,360);
+        yourSnake.restartSnake(950,350);
+        theirSnake.restartSnake(100,350);
 
 //        gameLayout = new BorderPane();
 //        gameLayout.getChildren().addAll(yourSnake.getSnake());
@@ -472,8 +474,7 @@ public class Scenes {
 
     }
 
-    //SETS AND GETS
-
+    //Sets Scene of the primaryStage to main menu Scene
     public void set2MM(Stage primaryStage) {
         primaryStage.setScene(mainMenu);
     }

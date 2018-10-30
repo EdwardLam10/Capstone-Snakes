@@ -1,6 +1,7 @@
 package online_snake;
 
 import java.awt.Point;
+import java.util.ArrayList;
 
 public enum Direction {
 	UP,
@@ -26,5 +27,14 @@ public enum Direction {
 			dest.y = dest.y + 1;
 		}
 		return dest;
+	}
+	
+	public static ArrayList<Direction> getDirections() {
+		ArrayList<Direction> arr = new ArrayList<>();
+		arr.add(UP);
+		arr.add(DOWN);
+		arr.add(LEFT);
+		arr.add(RIGHT);
+		return arr;
 	}
 }

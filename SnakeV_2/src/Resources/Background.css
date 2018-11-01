@@ -40,3 +40,9 @@
     -fx-background-repeat: no-repeat;
     -fx-background-size: cover;
 }
+
+#Train {
+    -fx-background-image: url("Train.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}

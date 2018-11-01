@@ -155,7 +155,7 @@ public class Snake {
     }
     public Vector<Rectangle> getSnake() { return SnakeVec; }
 
-    public Paint getSnakeFill() {
+    public Paint getSnakeFill(java.awt.Color yellow) {
         return snakeFill;
     }
     public void setSnakeFill(Paint snakeFill) {

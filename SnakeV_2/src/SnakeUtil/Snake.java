@@ -18,7 +18,7 @@ public class Snake {
     public Snake(String HeadPic) {
 
         //Creating Head Cirlce to be added to Vector
-        Rectangle headRectangle = new Rectangle(50,50);
+        Rectangle headRectangle = new Rectangle(35,35);
         headRectangle.setStroke(BLACK);
         Image headPic = new Image(HeadPic);
         headRectangle.setFill(new ImagePattern(headPic));
@@ -43,7 +43,7 @@ public class Snake {
                 tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
                 //Changing the location of the head.
-                SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() - 50); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+                SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() - 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
                 /*
                  Net code can be implemented here to change the location of the head based on the direction.
@@ -57,7 +57,7 @@ public class Snake {
                 tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
                 tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
-                SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() + 50); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+                SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() + 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
                 /*
                  Net code can be implemented here to change the location of the head based on the direction.
@@ -70,7 +70,7 @@ public class Snake {
                 tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
                 tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
-                SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() + 50); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+                SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() + 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
                 /*
                  Net code can be implemented here to change the location of the head based on the direction.
@@ -83,7 +83,7 @@ public class Snake {
                 tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
                 tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
-                SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() - 50); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+                SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() - 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
                 /*
                  Net code can be implemented here to change the location of the head based on the direction.
@@ -115,7 +115,7 @@ public class Snake {
             tmpY = prevY;
         }
         if(grow) {
-            Rectangle BodRect = new Rectangle(50,50);
+            Rectangle BodRect = new Rectangle(35,35);
             BodRect.setStroke(snakeOutline);
             BodRect.setFill(snakeFill);
             BodRect.setX(tmpX);
@@ -126,13 +126,13 @@ public class Snake {
 
     //Restart Snake, removes all nodes in the snake except for head node.
     //Sets the head back to X and Y.
-    public void restartSnake(double X, double Y) {
+    public void restartSnake(double X, double Y, String direction) {
         while(SnakeVec.size() > 1) {
             SnakeVec.removeElementAt(SnakeVec.size()-1);
         }
         SnakeVec.firstElement().setX(X);
         SnakeVec.firstElement().setY(Y);
-        CurrentDir = "UP";
+        CurrentDir = direction;
     }
 
     //Collision Detection

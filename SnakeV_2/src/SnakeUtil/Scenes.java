@@ -39,7 +39,7 @@ public class Scenes {
         mainMenuLayout = new BorderPane();
 
         //Setting
-        mainMenu = new Scene(mainMenuLayout, 1080, 720);
+        mainMenu = new Scene(mainMenuLayout, 1085, 735);
         mainMenu.setUserAgentStylesheet("Resources/Background.css");
 
 
@@ -130,7 +130,7 @@ public class Scenes {
         gameLayout.setId("colorful");
 
         //Setting the Scene with the gameLayout that now contains a snake/snakes
-        game = new Scene(gameLayout,1080,720);
+        game = new Scene(gameLayout,1085,735);
         game.setUserAgentStylesheet("Resources/Background.css");
 
         gameLayout.setId("Blimp");
@@ -203,7 +203,7 @@ public class Scenes {
 
         BorderPane setting = new BorderPane();
 
-        settings = new Scene(setting, 1080, 720);
+        settings = new Scene(setting, 1085, 735);
         settings.setUserAgentStylesheet("Resources/Background.css");
 
         setting.setId("colorful");
@@ -452,8 +452,8 @@ public class Scenes {
 
     private void startGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
         //sets/resets each snake to only the head node and location
-        yourSnake.restartSnake(1000,0);
-        theirSnake.restartSnake(0,0);
+        yourSnake.restartSnake(1050,700, "LEFT");
+        theirSnake.restartSnake(0,0, "RIGHT");
 
 //        gameLayout = new BorderPane();
 //        gameLayout.getChildren().addAll(yourSnake.getSnake());

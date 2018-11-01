@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static java.awt.Color.*;
+import static javafx.scene.paint.Color.*;
 
 public class Scenes {
 
@@ -27,51 +27,58 @@ public class Scenes {
     }
 
     //Cancels the timer and removes any functions still queued on the gameTimer
-    public void endGame() {
+    private void endGame() {
         gameTimer.cancel();
         gameTimer.purge();
     }
 
 
-     //Private Function to set all the settings for the main menu
+    //Private Function to set all the settings for the main menu
     private void makeMainMenu(Stage primaryStage, Snake yourSnake, Snake enemySnake) {
         //Instantiating the BorderPane class *layout* for mainMenu Scene
-        BorderPane mainMenuLayout = new BorderPane();
+        mainMenuLayout = new BorderPane();
 
         //Setting
-        mainMenu = new Scene(mainMenuLayout, 720, 720);
+        mainMenu = new Scene(mainMenuLayout, 1080, 720);
+        mainMenu.setUserAgentStylesheet("Resources/Background.css");
 
 
-        /* startButton = new Button("Start");
+        mainMenuLayout.setId("Blimp");
+
+
+        Button startButton = new Button("Start");
         startButton.setStyle("-fx-font: 24 arial;");
         //Having the start button send you to game Scene.
         startButton.setOnAction(e -> {
             primaryStage.setScene(game);
-            startGame(yourSnake,enemySnake);
-        });*/
+            startGame(yourSnake,enemySnake, primaryStage);
+        });
 
-        Label start = new Label("\n Start: \n");
+        /*Label start = new Label("\n Start: \n");
         start.setStyle("-fx-font: 24 arial;");
-        start.setTextAlignment(TextAlignment.CENTER);
+        start.setTextAlignment(TextAlignment.CENTER);*/
 
         Button settingsButton = new Button("Settings");
         settingsButton.setStyle("-fx-font: 24 arial;");
         //Having the settings button send you to settings
-        settingsButton.setOnAction(e -> { primaryStage.setScene(settings); });
+        settingsButton.setOnAction(e -> {
+            primaryStage.setScene(settings);
+        });
 
-        Button localGame = new Button("Local Game");
-        localGame.setStyle("-fx-font: 24 arial;");
+       /* Button localGame = new Button("Local Game");
         localGame.setOnAction(e -> {
             primaryStage.setScene(game);
-            startGame(yourSnake,enemySnake);
+            startGame(yourSnake,enemySnake, primaryStage);
         });
 
         Button playWithRandom = new Button("Play with Random Player");
-        playWithRandom.setStyle("-fx-font: 24 arial;");
         playWithRandom.setOnAction(e -> {
             primaryStage.setScene(game);
-            startGame(yourSnake,enemySnake);
-        });
+            startGame(yourSnake,enemySnake, primaryStage);
+        });*/
+
+        Button exit = new Button("Exit");
+        exit.setOnAction(e -> primaryStage.close());
 
         Label top = new Label("\n Welcome to Snake Online \n");
         Label left = new Label("\n Player 1 \n");
@@ -80,13 +87,13 @@ public class Scenes {
         Label center = new Label("\n Waiting for Player to to enter \n");
 
         //changing the font and size of the text
-        top.setStyle("-fx-font: 24 arial;");
+        top.setStyle("-fx-font: 24 Gruppo;");
         left.setStyle("-fx-font: 24 arial;");
         right.setStyle("-fx-font: 24 arial;");
         bottom.setStyle("-fx-font: 24 arial;");
         center.setStyle("-fx-font: 24 arial;");
 
-        //cnetering the text within each box
+        //centering the text within each box
         top.setTextAlignment(TextAlignment.CENTER);
         left.setTextAlignment(TextAlignment.CENTER);
         right.setTextAlignment(TextAlignment.CENTER);
@@ -103,7 +110,7 @@ public class Scenes {
 
         VBox cvbox = new VBox();
 
-        cvbox.getChildren().addAll(top, center, bottom, start,localGame, playWithRandom, settingsButton);
+        cvbox.getChildren().addAll(top, center, bottom, startButton, settingsButton, exit);
         cvbox.setAlignment(Pos.CENTER);
 
         //Setting the top, bottom, center, right and left nodes to the pane
@@ -114,16 +121,19 @@ public class Scenes {
     private void makeGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
         //Creating gameLayout
         gameLayout = new Pane();
+
         //Adding the initial Head of the snake (or whatever is in the SnakeVector atm)
         //to the layout
         gameLayout.getChildren().addAll(yourSnake.getSnake());
         gameLayout.getChildren().addAll(theirSnake.getSnake());
 
-        String colorfulcss = "Resources/test.css";
+        gameLayout.setId("colorful");
 
         //Setting the Scene with the gameLayout that now contains a snake/snakes
         game = new Scene(gameLayout,1080,720);
-        game.setUserAgentStylesheet(colorfulcss);
+        game.setUserAgentStylesheet("Resources/Background.css");
+
+        gameLayout.setId("Blimp");
 
         //The Event Handler for the Game Scene.
         //Takes in a Keystroke and will handle which key is pressed using a switch statement
@@ -189,20 +199,24 @@ public class Scenes {
         //      For example you can have it execute when the key is released instead of pressed.
         game.addEventFilter(KeyEvent.KEY_PRESSED, eventHandler);
     }
-    public void makeSettings(Stage primaryStage, Snake yourSnake) {
+    private void makeSettings(Stage primaryStage, Snake yourSnake) {
 
         BorderPane setting = new BorderPane();
 
-        settings = new Scene(setting, 720, 720);
-        settings.setUserAgentStylesheet("Resources/settings.css");
+        settings = new Scene(setting, 1080, 720);
+        settings.setUserAgentStylesheet("Resources/Background.css");
+
+        setting.setId("colorful");
+        setting.setId("Blimp");
+
 
         Label setting_title = new Label("Setting \n   ");
         Label set_skin = new Label("   \n Set color of \n skin \n   ");
         Label current_skin = new Label("   \n Current color of \n skin \n   ");
         Label set_background = new Label("   \n Set color of \n background \n   ");
         Label current_background = new Label("   \n Current color of\n  background \n   ");
-        Button cur_color_skin = new Button("Current \n Skin");
-        Button cur_color_bg = new Button("Current \n Background");
+        Button cur_color_skin = new Button("               \n\n");
+        Button cur_color_bg = new Button("               \n\n");
 
         setting_title.setStyle("-fx-font: 50 arial;");
         set_skin.setStyle("-fx-font: 24 arial;");
@@ -234,17 +248,17 @@ public class Scenes {
         VBox skin_cur = new VBox();
         HBox color_skin = new HBox(10);
 
-        Button skin_color1 = new Button("Red");
+        Button skin_color1 = new Button("               \n\n");
         skin_color1.setStyle("-fx-background-color: Red; -fx-font-size: 2em; ");
-        Button skin_color2 = new Button("Green");
+        Button skin_color2 = new Button("               \n\n");
         skin_color2.setStyle("-fx-background-color: Green; -fx-font-size: 2em; ");
-        Button skin_color3 = new Button("White");
+        Button skin_color3 = new Button("               \n\n");
         skin_color3.setStyle("-fx-background-color: White; -fx-font-size: 2em; ");
-        Button skin_color4 = new Button("Yellow");
+        Button skin_color4 = new Button("               \n\n");
         skin_color4.setStyle("-fx-background-color: Yellow; -fx-font-size: 2em; ");
-        Button skin_color5 = new Button("Pink");
+        Button skin_color5 = new Button("               \n\n");
         skin_color5.setStyle("-fx-background-color: Pink; -fx-font-size: 2em; ");
-        Button skin_color6 = new Button("Blue");
+        Button skin_color6 = new Button("               \n\n");
         skin_color6.setStyle("-fx-background-color: Blue; -fx-font-size: 2em; ");
         color_skin.getChildren().addAll(skin_color1, skin_color2, skin_color3, skin_color4, skin_color5, skin_color6);
 
@@ -256,26 +270,28 @@ public class Scenes {
         skin_set.setAlignment(Pos.CENTER);
 
         HBox background_title = new HBox();
-        VBox background_set = new VBox();
+        VBox background_set = new VBox(10);
         VBox background_cur = new VBox();
-        HBox color_background = new HBox(10);
 
-        Button bg_color1 = new Button("Black");
-        bg_color1.setStyle("-fx-background-color: Black; -fx-font-size: 2em; ");
-        Button bg_color2 = new Button("White");
-        bg_color2.setStyle("-fx-background-color: White; -fx-font-size: 2em; ");
-        Button bg_color3 = new Button("Red");
-        bg_color3.setStyle("-fx-background-color: Red; -fx-font-size: 2em; ");
-        Button bg_color4 = new Button("Purple");
-        bg_color4.setStyle("-fx-background-color: Purple; -fx-font-size: 2em; ");
-        Button bg_color5 = new Button("Yellow");
+        HBox color_background1 = new HBox(10);
+        //HBox color_background2 = new HBox(10);
+
+        Button bg_color1 = new Button("               \n\n");
+        bg_color1.setId("Blimp");
+        Button bg_color2 = new Button("               \n\n");
+        bg_color2.setId("Sky");
+        Button bg_color3 = new Button("               \n\n");
+        bg_color3.setId("SkyIsland");
+        Button bg_color4 = new Button("               \n\n");
+        bg_color4.setId("Train");
+        Button bg_color5 = new Button("               \n\n");
         bg_color5.setStyle("-fx-background-color: Yellow; -fx-font-size: 2em; ");
-        Button bg_color6 = new Button("Gray");
+        Button bg_color6 = new Button("               \n\n");
         bg_color6.setStyle("-fx-background-color: Gray; -fx-font-size: 2em; ");
-        color_background.getChildren().addAll(bg_color1, bg_color2, bg_color3, bg_color4, bg_color5, bg_color6);
+        color_background1.getChildren().addAll(bg_color1, bg_color2, bg_color3, bg_color4, bg_color5, bg_color6);
 
         background_cur.getChildren().addAll(current_background, cur_color_bg);
-        background_set.getChildren().addAll(set_background, color_background);
+        background_set.getChildren().addAll(set_background, color_background1/*, color_background2*/);
         background_title.getChildren().addAll(background_set, background_cur);
         background_cur.setAlignment(Pos.CENTER);
         background_set.setAlignment(Pos.CENTER);
@@ -294,40 +310,42 @@ public class Scenes {
             @Override
             public void handle(ActionEvent event) {
                 cur_color_skin.setStyle("-fx-background-color: Red; -fx-font-size: 2em; ");
-                yourSnake.getSnakeFill(RED);
+                yourSnake.setSnakeFill(RED);
             }
         });
         skin_color2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 cur_color_skin.setStyle("-fx-background-color: Green; -fx-font-size: 2em; ");
-                yourSnake.getSnakeFill(GREEN);
+                yourSnake.setSnakeFill(GREEN);
             }
         });
         skin_color3.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 cur_color_skin.setStyle("-fx-background-color: White; -fx-font-size: 2em; ");
-                yourSnake.getSnakeFill(WHITE);
+                yourSnake.setSnakeFill(WHITE);
             }
         });
         skin_color4.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 cur_color_skin.setStyle("-fx-background-color: Yellow; -fx-font-size: 2em; ");
-                yourSnake.getSnakeFill(YELLOW);
+                yourSnake.setSnakeFill(YELLOW);
             }
         });
         skin_color5.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 cur_color_skin.setStyle("-fx-background-color: Pink; -fx-font-size: 2em; ");
+                yourSnake.setSnakeFill(PINK);
             }
         });
         skin_color6.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 cur_color_skin.setStyle("-fx-background-color: Blue; -fx-font-size: 2em; ");
+                yourSnake.setSnakeFill(BLUE);
             }
         });
 
@@ -335,27 +353,37 @@ public class Scenes {
         bg_color1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                cur_color_bg.setStyle("-fx-background-color: Black; -fx-font-size: 2em; ");
-                gameLayout.setId("BlackBG");
+                cur_color_bg.setId("Blimp");
+                gameLayout.setId("Blimp");
+                setting.setId("Blimp");
+                mainMenuLayout.setId("Blimp");
             }
         });
         bg_color2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                cur_color_bg.setStyle("-fx-background-color: White; -fx-font-size: 2em; ");
+                cur_color_bg.setId("Sky");
+                gameLayout.setId("Sky");
+                setting.setId("Sky");
+                mainMenuLayout.setId("Sky");
             }
         });
         bg_color3.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                cur_color_bg.setStyle("-fx-background-color: Red; -fx-font-size: 2em; ");
-                gameLayout.setId("RedBG");
+                cur_color_bg.setId("SkyIsland");
+                gameLayout.setId("SkyIsland");
+                setting.setId("SkyIsland");
+                mainMenuLayout.setId("SkyIsland");
             }
         });
         bg_color4.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                cur_color_bg.setStyle("-fx-background-color: Purple; -fx-font-size: 2em; ");
+                cur_color_bg.setId("Train");
+                gameLayout.setId("Train");
+                setting.setId("Train");
+                mainMenuLayout.setId("Train");
             }
         });
         bg_color5.setOnAction(new EventHandler<ActionEvent>() {
@@ -423,12 +451,12 @@ public class Scenes {
 
     private void startGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
         //sets/resets each snake to only the head node and location
-        yourSnake.restartSnake(980,360);
-        theirSnake.restartSnake(100,360);
+        yourSnake.restartSnake(950,350);
+        theirSnake.restartSnake(100,350);
 
-        gameLayout = new Pane();
-        gameLayout.getChildren().addAll(yourSnake.getSnake());
-        gameLayout.getChildren().addAll(theirSnake.getSnake());
+//        gameLayout = new BorderPane();
+//        gameLayout.getChildren().addAll(yourSnake.getSnake());
+//        gameLayout.getChildren().addAll(theirSnake.getSnake());
 
         game.setRoot(gameLayout);
 
@@ -454,12 +482,11 @@ public class Scenes {
                 });
             }
         };
-        gameTimer.scheduleAtFixedRate(task, 1,  750);
+        gameTimer.scheduleAtFixedRate(task, 0,  750);
 
     }
 
-    //SETS AND GETS
-
+    //Sets Scene of the primaryStage to main menu Scene
     public void set2MM(Stage primaryStage) {
         primaryStage.setScene(mainMenu);
     }
@@ -470,6 +497,8 @@ public class Scenes {
     private Scene game;
     //Game layout
     private Pane gameLayout;
+    //MainMenu Layout
+    private BorderPane mainMenuLayout;
     //Creating Settings Scene
     private Scene settings;
     //Game Over Alert

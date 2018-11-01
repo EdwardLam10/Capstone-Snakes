@@ -1,0 +1,48 @@
+.button {
+    -fx-font: 24 arial;
+    -fx-background-color: WHITE;
+    -fx-border-color: BLACK;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+}
+
+#RedBG {
+    -fx-background-color: RED;
+}
+
+#WhiteBG {
+    -fx-background-color: WHITE;
+}
+
+#ColorHex {
+    /* setting background image */
+    -fx-background-image: url("ColorHex.jpg");
+    /* so background image does not repeat to fill emptiness */
+    -fx-background-repeat: no-repeat;
+    /* change background size so that it covers everything */
+    -fx-background-size: cover;
+}
+
+#SkyIsland {
+    -fx-background-image: url("SkyIsland.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+#Blimp {
+    -fx-background-image: url("Blimp.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+#Sky {
+    -fx-background-image: url("Sky.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+#Train {
+    -fx-background-image: url("Train.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}

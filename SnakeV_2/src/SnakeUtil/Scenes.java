@@ -389,6 +389,7 @@ public class Scenes {
 
 
     };
+    //Stops the game and creates the alert screen that shows who won.
     private void makeAlertStage(String winPlayer, Stage primaryStage) {
         //Ends and stops snakes from moving.
         endGame();
@@ -439,8 +440,8 @@ public class Scenes {
 
     private void startGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
         //sets/resets each snake to only the head node and location
-        yourSnake.restartSnake(950,350);
-        theirSnake.restartSnake(100,350);
+        yourSnake.restartSnake(1000,0);
+        theirSnake.restartSnake(0,0);
 
 //        gameLayout = new BorderPane();
 //        gameLayout.getChildren().addAll(yourSnake.getSnake());

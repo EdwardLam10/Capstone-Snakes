@@ -1,5 +1,7 @@
 package SnakeUtil;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import javafx.geometry.Bounds;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.paint.Paint;
@@ -136,12 +138,14 @@ public class Snake {
     //Collision Detection
     public Boolean collisionDetection(Vector<Rectangle> otherSnake) {
         for(int i = 0; i < otherSnake.size(); i++) {
-            if(SnakeVec.firstElement().intersects(otherSnake.elementAt(i).getBoundsInLocal())){
-                return true;
-            }
         }
         return false;
     }
+
+    private Boolean collisioncheck(Rectangle yourHead, Rectangle other) {
+        return true;
+    }
+
 
     //Regular sets and gets as needed
     public void setCurrentDir(String tmp) { CurrentDir = tmp; }

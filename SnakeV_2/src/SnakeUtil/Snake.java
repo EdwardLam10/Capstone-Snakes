@@ -138,12 +138,19 @@ public class Snake {
     //Collision Detection
     public Boolean collisionDetection(Vector<Rectangle> otherSnake) {
         for(int i = 0; i < otherSnake.size(); i++) {
+            if(collisioncheck(otherSnake.elementAt(i))) {
+                return true;
+            }
         }
         return false;
     }
 
-    private Boolean collisioncheck(Rectangle yourHead, Rectangle other) {
-        return true;
+    public Boolean collisioncheck(Rectangle other) {
+        if((SnakeVec.firstElement().getX() == other.getX()) && (SnakeVec.firstElement().getY() == other.getY())) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 

@@ -145,6 +145,15 @@ public class Snake {
         return false;
     }
 
+    public Boolean selfCollision() {
+        for(int i = 1; i < SnakeVec.size(); i++) {
+            if(collisioncheck(SnakeVec.elementAt(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public Boolean collisioncheck(Rectangle other) {
         if((SnakeVec.firstElement().getX() == other.getX()) && (SnakeVec.firstElement().getY() == other.getY())) {
             return true;

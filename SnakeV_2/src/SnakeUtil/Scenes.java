@@ -487,14 +487,12 @@ public class Scenes {
                     public void run() {
                         yourSnake.move(false);
                         theirSnake.move(false);
-                        if(yourSnake.collisionDetection(theirSnake.getSnake())) {
-                            System.out.println("Hit other snake");
-                            endGame();
-                            makeAlertStage("Josh", primaryStage);
-                        } else if(theirSnake.collisionDetection(yourSnake.getSnake())) {
-                            System.out.println("Hit your snake");
+                        if(yourSnake.collisionDetection(theirSnake.getSnake()) || yourSnake.selfCollision()) {
                             endGame();
                             makeAlertStage("Ruby", primaryStage);
+                        } else if(theirSnake.collisionDetection(yourSnake.getSnake()) || theirSnake.selfCollision()) {
+                            endGame();
+                            makeAlertStage("Joshua", primaryStage);
                         } else if(yourSnake.collisioncheck(point)) {
                             System.out.println("hit point");
                             yourSnake.move(true);

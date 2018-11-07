@@ -7,17 +7,14 @@ import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
-import java.awt.*;
-import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -30,7 +27,6 @@ public class Scenes {
         makeMainMenu(PrimaryStage, yourSnake, enemySnake);
         makeGame(yourSnake, enemySnake, PrimaryStage);
         makeSettings(PrimaryStage, yourSnake);
-        makePoint();
     }
 
     //Cancels the timer and removes any functions still queued on the gameTimer
@@ -54,19 +50,16 @@ public class Scenes {
 
 
         Button startButton = new Button("Start");
-        startButton.setStyle("-fx-font: 24 arial;");
         //Having the start button send you to game Scene.
         startButton.setOnAction(e -> {
             primaryStage.setScene(game);
-            startGame(yourSnake, enemySnake, primaryStage);
+            startGame(yourSnake,enemySnake, primaryStage);
         });
 
         /*Label start = new Label("\n Start: \n");
-        start.setStyle("-fx-font: 24 arial;");
         start.setTextAlignment(TextAlignment.CENTER);*/
 
         Button settingsButton = new Button("Settings");
-        settingsButton.setStyle("-fx-font: 24 arial;");
         //Having the settings button send you to settings
         settingsButton.setOnAction(e -> {
             primaryStage.setScene(settings);
@@ -87,25 +80,18 @@ public class Scenes {
         Button exit = new Button("Exit");
         exit.setOnAction(e -> primaryStage.close());
 
-        Label top = new Label("\n Welcome to Snake Online \n");
-        Label left = new Label("\n Player 1 \n");
-        Label right = new Label("\n Player 2 \n");
-        Label bottom = new Label("\n Waiting for second player to enter \n" + "\n Waiting for both players to click ready \n" + "\n Once both players have clicked ready \n" + "please click start \n");
-        Label center = new Label("\n Waiting for Player to to enter \n");
+        Label top = new Label("Welcome to Snake Online");
+        Label left = new Label("Player 1");
+        Label right = new Label("Player 2");
+        //Label bottom = new Label("Waiting for second player to enter \n" + "Waiting for both players to click ready \n" + "Once both players have clicked ready \n" + "please click start \n");
+        Label center = new Label("Waiting for Players to to enter");
 
         //changing the font and size of the text
-        top.setStyle("-fx-font: 24 Gruppo;");
-        left.setStyle("-fx-font: 24 arial;");
-        right.setStyle("-fx-font: 24 arial;");
-        bottom.setStyle("-fx-font: 24 arial;");
-        center.setStyle("-fx-font: 24 arial;");
-
-        //centering the text within each box
-        top.setTextAlignment(TextAlignment.CENTER);
-        left.setTextAlignment(TextAlignment.CENTER);
-        right.setTextAlignment(TextAlignment.CENTER);
-        bottom.setTextAlignment(TextAlignment.CENTER);
-        center.setTextAlignment(TextAlignment.CENTER);
+        top.setFont(Font.font(30));
+        left.setFont(Font.font(30));
+        right.setFont(Font.font(30));
+        //bottom.setFont(Font.font("arial", FontWeight.BOLD,30));
+        center.setFont(Font.font(30));
 
         VBox lvbox = new VBox();
         lvbox.getChildren().add(left);
@@ -115,9 +101,9 @@ public class Scenes {
         rvbox.getChildren().add(right);
         rvbox.setAlignment(Pos.CENTER);
 
-        VBox cvbox = new VBox();
+        VBox cvbox = new VBox(10);
 
-        cvbox.getChildren().addAll(top, center, bottom, startButton, settingsButton, exit);
+        cvbox.getChildren().addAll(top, center, /*bottom,*/ startButton, settingsButton, exit);
         cvbox.setAlignment(Pos.CENTER);
 
         //Setting the top, bottom, center, right and left nodes to the pane
@@ -217,42 +203,31 @@ public class Scenes {
         setting.setId("Blimp");
 
 
-        Label setting_title = new Label("Setting \n   ");
-        Label set_skin = new Label("   \n Set color of \n skin \n   ");
-        Label current_skin = new Label("   \n Current color of \n skin \n   ");
-        Label set_background = new Label("   \n Set color of \n background \n   ");
-        Label current_background = new Label("   \n Current color of\n  background \n   ");
-        Button cur_color_skin = new Button("               \n\n");
-        Button cur_color_bg = new Button("               \n\n");
+        Label setting_title = new Label("Setting");
+        Label set_skin = new Label("Set color of\nskin");
+        Label current_skin = new Label("Current color of\nskin");
+        Label set_background = new Label("Set color of\nbackground");
+        Label current_background = new Label("Current color of\nbackground");
+        Button cur_color_skin = new Button("                               \n\n\n");
+        Button cur_color_bg = new Button("                               \n\n\n");
 
-        setting_title.setStyle("-fx-font: 50 arial;");
-        set_skin.setStyle("-fx-font: 24 arial;");
-        current_skin.setStyle("-fx-font: 24 arial;");
-        set_background.setStyle("-fx-font: 24 arial;");
-        current_background.setStyle("-fx-font: 24 arial;");
-        cur_color_skin.setStyle("-fx-font-size: 2em; ");
-        cur_color_bg.setStyle("-fx-font-size: 2em; ");
-
-        setting_title.setTextAlignment(TextAlignment.CENTER);
-        set_skin.setTextAlignment(TextAlignment.CENTER);
-        current_skin.setTextAlignment(TextAlignment.CENTER);
-        set_background.setTextAlignment(TextAlignment.CENTER);
-        current_background.setTextAlignment(TextAlignment.CENTER);
-        cur_color_skin.setTextAlignment(TextAlignment.CENTER);
-        cur_color_bg.setTextAlignment(TextAlignment.CENTER);
+        setting_title.setFont(Font.font(50));
+        set_skin.setFont(Font.font(30));
+        current_skin.setFont(Font.font(30));
+        set_background.setFont(Font.font(30));
+        current_background.setFont(Font.font(30));
 
         VBox back = new VBox();
         Button back_btn = new Button("Back");
-        back_btn.setStyle("-fx-font-size: 2em; ");
         back.getChildren().add(back_btn);
 
         VBox title = new VBox();
         title.getChildren().add(setting_title);
         title.setAlignment(Pos.CENTER);
 
-        HBox skin_title = new HBox();
-        VBox skin_set = new VBox();
-        VBox skin_cur = new VBox();
+        HBox skin_title = new HBox(10);
+        VBox skin_set = new VBox(10);
+        VBox skin_cur = new VBox(10);
         HBox color_skin = new HBox(10);
 
         Button skin_color1 = new Button("               \n\n");
@@ -276,9 +251,9 @@ public class Scenes {
         skin_cur.setAlignment(Pos.CENTER);
         skin_set.setAlignment(Pos.CENTER);
 
-        HBox background_title = new HBox();
+        HBox background_title = new HBox(10);
         VBox background_set = new VBox(10);
-        VBox background_cur = new VBox();
+        VBox background_cur = new VBox(10);
 
         HBox color_background1 = new HBox(10);
         //HBox color_background2 = new HBox(10);
@@ -304,8 +279,16 @@ public class Scenes {
         background_set.setAlignment(Pos.CENTER);
         background_title.setAlignment(Pos.CENTER);
 
-        VBox all = new VBox();
+        VBox all = new VBox(50);
         all.getChildren().addAll(back, title, skin_title, background_title);
+
+        cur_color_skin.setStyle("-fx-background-color: Red; -fx-font-size: 2em; ");
+        yourSnake.setSnakeFill(RED);
+
+        cur_color_bg.setId("Blimp");
+        gameLayout.setId("Blimp");
+        setting.setId("Blimp");
+        mainMenuLayout.setId("Blimp");
 
         setting.setCenter(all);
 
@@ -456,24 +439,15 @@ public class Scenes {
             gameOverWindow.close();
         });
     }
-    private void makePoint() {
-        point = new Rectangle(35,35);
-        Image apple = new Image("Resources/apple.jpg");
-        point.setFill(new ImagePattern(apple));
-        setPoint();
-        gameLayout.getChildren().add(point);
-    }
 
     private void startGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
-        gameLayout.getChildren().removeAll(yourSnake.getSnake());
-        gameLayout.getChildren().removeAll(theirSnake.getSnake());
-
         //sets/resets each snake to only the head node and location
         yourSnake.restartSnake(1050,700, "LEFT");
         theirSnake.restartSnake(0,0, "RIGHT");
 
-        gameLayout.getChildren().addAll(yourSnake.getSnake());
-        gameLayout.getChildren().addAll(theirSnake.getSnake());
+//        gameLayout = new BorderPane();
+//        gameLayout.getChildren().addAll(yourSnake.getSnake());
+//        gameLayout.getChildren().addAll(theirSnake.getSnake());
 
         game.setRoot(gameLayout);
 
@@ -487,17 +461,12 @@ public class Scenes {
                     public void run() {
                         yourSnake.move(false);
                         theirSnake.move(false);
-                        if(yourSnake.collisionDetection(theirSnake.getSnake()) || yourSnake.selfCollision()) {
+                        if(yourSnake.collisionDetection(theirSnake.getSnake())) {
+                            endGame();
+                            makeAlertStage("Josh", primaryStage);
+                        } else if(theirSnake.collisionDetection(yourSnake.getSnake())) {
                             endGame();
                             makeAlertStage("Ruby", primaryStage);
-                        } else if(theirSnake.collisionDetection(yourSnake.getSnake()) || theirSnake.selfCollision()) {
-                            endGame();
-                            makeAlertStage("Joshua", primaryStage);
-                        } else if(yourSnake.collisioncheck(point)) {
-                            System.out.println("hit point");
-                            yourSnake.move(true);
-                            gameLayout.getChildren().addAll(yourSnake.getSnake().lastElement());
-                            setPoint();
                         }
 
                     }
@@ -506,12 +475,6 @@ public class Scenes {
         };
         gameTimer.scheduleAtFixedRate(task, 0,  750);
 
-    }
-
-    private void setPoint() {
-        Random randomNum = new Random();
-        point.setX(randomNum.nextInt(31) * 35);
-        point.setY(randomNum.nextInt(21) * 35);
     }
 
     //Sets Scene of the primaryStage to main menu Scene
@@ -533,5 +496,4 @@ public class Scenes {
     private Stage gameOverWindow;
     //Timer for the game (helps dictate how fast the snake moves)
     private Timer gameTimer;
-    private Rectangle point;
 }

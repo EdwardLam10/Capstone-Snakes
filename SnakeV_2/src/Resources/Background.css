@@ -1,7 +1,18 @@
 .button {
     -fx-font: 24 arial;
-    -fx-background-color: WHITE;
     -fx-border-color: BLACK;
+    -fx-background-color: WHITE;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+}
+
+.label {
+    -fx-font-family: Papyrus;
+    -fx-font-weight: 900;
+    -fx-text-alignment: center;
+    -fx-background-color: #ccffff;
+    -fx-text-fill: #9932cc;
+    -fx-border-color: #ccffff;
     -fx-background-radius: 6;
     -fx-border-radius: 6;
 }

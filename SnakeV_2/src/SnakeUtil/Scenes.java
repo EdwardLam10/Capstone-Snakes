@@ -7,14 +7,19 @@ import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -25,6 +30,7 @@ public class Scenes {
     //Class Constructor
     public Scenes(Stage PrimaryStage, Snake yourSnake, Snake enemySnake) {
         makeMainMenu(PrimaryStage, yourSnake, enemySnake);
+        makePoint();
         makeGame(yourSnake, enemySnake, PrimaryStage);
         makeSettings(PrimaryStage, yourSnake);
     }
@@ -119,6 +125,7 @@ public class Scenes {
         //to the layout
         gameLayout.getChildren().addAll(yourSnake.getSnake());
         gameLayout.getChildren().addAll(theirSnake.getSnake());
+        gameLayout.getChildren().addAll(point);
 
         gameLayout.setId("colorful");
 
@@ -439,6 +446,13 @@ public class Scenes {
             gameOverWindow.close();
         });
     }
+    private void makePoint() {
+        point = new Rectangle(35,35);
+        Image apple = new Image("Resources/apple.jpg");
+        point.setFill(new ImagePattern(apple));
+        point.setX(15 * 35);
+        point.setY(10 * 35);
+    }
 
     private void startGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
         //sets/resets each snake to only the head node and location
@@ -467,6 +481,20 @@ public class Scenes {
                         } else if(theirSnake.collisionDetection(yourSnake.getSnake())) {
                             endGame();
                             makeAlertStage("Ruby", primaryStage);
+                        } else if(yourSnake.selfCollision()) {
+                            endGame();
+                            makeAlertStage("Ruby", primaryStage);
+                        } else if(theirSnake.selfCollision()) {
+                            endGame();
+                            makeAlertStage("Josh", primaryStage);
+                        } else if (yourSnake.collisioncheck(point)) {
+                            yourSnake.move(true);
+                            theirSnake.move(false);
+                            resetPoint();
+                        } else if (theirSnake.collisioncheck(point)) {
+                            theirSnake.move(true);
+                            yourSnake.move(true);
+                            resetPoint();
                         }
 
                     }
@@ -475,6 +503,11 @@ public class Scenes {
         };
         gameTimer.scheduleAtFixedRate(task, 0,  750);
 
+    }
+    private void resetPoint() {
+        Random rand = new Random();
+        point.setX(rand.nextInt(31) * 35);
+        point.setY(rand.nextInt(21) * 35);
     }
 
     //Sets Scene of the primaryStage to main menu Scene
@@ -496,4 +529,6 @@ public class Scenes {
     private Stage gameOverWindow;
     //Timer for the game (helps dictate how fast the snake moves)
     private Timer gameTimer;
+    //Point
+    private Rectangle point;
 }

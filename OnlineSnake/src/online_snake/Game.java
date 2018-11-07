@@ -122,4 +122,8 @@ public class Game {
 		}
 		return false;
 	}
+	
+	public Snake getPlayerSnake(Player p) {
+		return this._gameBoard.getSnake(p);
+	}
 }

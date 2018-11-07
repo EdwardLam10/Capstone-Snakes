@@ -4,11 +4,17 @@ import java.awt.Point;
 import java.util.ArrayList;
 
 public enum Direction {
-	UP,
-	DOWN,
-	LEFT,
-	RIGHT;
-	
+	UP("UP"),
+	DOWN("DOWN"),
+	LEFT("LEFT"),
+	RIGHT("RIGHT");
+
+	private String _str;
+
+	private Direction(String str) {
+		this._str = str;
+	}
+
 	/**
 	 * 
 	 * @param Point of source
@@ -28,7 +34,7 @@ public enum Direction {
 		}
 		return dest;
 	}
-	
+
 	public static ArrayList<Direction> getDirections() {
 		ArrayList<Direction> arr = new ArrayList<>();
 		arr.add(UP);
@@ -36,5 +42,18 @@ public enum Direction {
 		arr.add(LEFT);
 		arr.add(RIGHT);
 		return arr;
+	} 
+
+	public static Direction enumFromValue(String value) {
+		if (value.equals("UP")) {
+			return UP;
+		} else if(value.equals("DOWN")) {
+			return DOWN;
+		} else if (value.equals("LEFT")) {
+			return LEFT;
+		} else if (value.equals("RIGHT")) {
+			return RIGHT;
+		}
+		return null;
 	}
 }

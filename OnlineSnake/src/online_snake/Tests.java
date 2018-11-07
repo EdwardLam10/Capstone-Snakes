@@ -27,7 +27,7 @@ public class Tests {
 		System.out.println(s1.toString());
 		System.out.println();
 		
-		// Testing Board class
+		// Testing Board clasuts
 		BoardObject[][] board = new BoardObject[10][10];
 		Point[] points1 = new Point[1];
 		for (int i = 0; i < points1.length; i++) {

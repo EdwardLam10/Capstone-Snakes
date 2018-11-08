@@ -1,6 +1,7 @@
 import SnakeUtil.Scenes;
 import SnakeUtil.Snake;
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class main extends Application {
@@ -20,6 +21,7 @@ public class main extends Application {
 
 
         primaryStage.setTitle("Main Menu");
+        //primaryStage.getIcons().add(new Image("Snake"));
         mainScenes.set2MM(primaryStage);
         primaryStage.show();
 

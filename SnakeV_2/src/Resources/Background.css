@@ -58,3 +58,14 @@
     -fx-background-size: cover;
 }
 
+#Cloud {
+    -fx-background-image: url("Cloud.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+#NightSky {
+    -fx-background-image: url("NightSky.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}

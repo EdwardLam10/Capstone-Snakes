@@ -25,6 +25,10 @@ import java.util.TimerTask;
 
 import static javafx.scene.paint.Color.*;
 
+/*
+ADD A HOW TO PLAY SCENE THAT CAN BE ACCESSED THROUGH MAIN MENU!!
+ */
+
 public class Scenes {
 
     //Class Constructor

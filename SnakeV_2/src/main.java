@@ -19,9 +19,10 @@ public class main extends Application {
             primaryStage.close();
         });
 
+        Image snake = new Image(getClass().getResourceAsStream("Resources/SnakeIcon.png"));
 
-        primaryStage.setTitle("Main Menu");
-        //primaryStage.getIcons().add(new Image("Snake"));
+        primaryStage.setTitle("Python: Snake Online");
+        primaryStage.getIcons().add(snake);
         mainScenes.set2MM(primaryStage);
         primaryStage.show();
 

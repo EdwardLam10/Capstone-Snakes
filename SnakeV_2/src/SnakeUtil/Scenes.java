@@ -454,8 +454,7 @@ public class Scenes {
         point = new Rectangle(35,35);
         Image apple = new Image("Resources/apple.jpg");
         point.setFill(new ImagePattern(apple));
-        point.setX(15 * 35);
-        point.setY(10 * 35);
+        resetPoint();
     }
 
     private void startGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
@@ -493,10 +492,12 @@ public class Scenes {
                             makeAlertStage("Josh", primaryStage);
                         } else if (yourSnake.collisioncheck(point)) {
                             yourSnake.move(true);
+                            gameLayout.getChildren().add(yourSnake.getSnake().lastElement());
                             theirSnake.move(false);
                             resetPoint();
                         } else if (theirSnake.collisioncheck(point)) {
                             theirSnake.move(true);
+                            gameLayout.getChildren().add(theirSnake.getSnake().lastElement());
                             yourSnake.move(true);
                             resetPoint();
                         }
@@ -505,7 +506,7 @@ public class Scenes {
                 });
             }
         };
-        gameTimer.scheduleAtFixedRate(task, 0,  750);
+        gameTimer.scheduleAtFixedRate(task, 0,  200);
 
     }
     private void resetPoint() {

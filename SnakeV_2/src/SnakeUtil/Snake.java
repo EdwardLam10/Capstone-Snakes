@@ -95,12 +95,18 @@ public class Snake {
         }
     }
 
+    public void serverMove(double X, double Y, boolean grow) {
+        double oldX = SnakeVec.firstElement().getX();
+        double oldY = SnakeVec.firstElement().getY();
+        update(X, Y, grow);
+    }
+
     //Updates the rest of the snake to follow the head, also contains grow to tell whether or not the snake will grow
     //on this move,
     //Bool true = does grow
     //Bool false = does not grow
     //X/Y is the old location of the head
-    private void update(double X, double Y, boolean grow) {
+    public void update(double X, double Y, boolean grow) {
         //REALLY CONFUSING????? TOOK LIKE A WHOLE DAYS WTF
         double prevX = X;
         double prevY = Y;
@@ -170,6 +176,10 @@ public class Snake {
         SnakeVec.firstElement().setY(Y);
     }
     public Vector<Rectangle> getSnake() { return SnakeVec; }
+
+    public String getSnakeDirection() {
+        return CurrentDir;
+    }
 
     public Paint getSnakeFill(java.awt.Color yellow) {
         return snakeFill;

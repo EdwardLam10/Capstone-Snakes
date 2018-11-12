@@ -514,7 +514,7 @@ public class Scenes {
         point.setY(rand.nextInt(21) * 35);
     }
 
-    private void setPoint(double x, double y) {
+    public void setPoint(double x, double y) {
         point.setX(x);
         point.setY(y);
     }

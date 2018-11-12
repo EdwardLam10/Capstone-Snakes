@@ -95,6 +95,12 @@ public class Snake {
         }
     }
 
+    public void serverMove(double X, double Y, boolean grow) {
+        double oldX = SnakeVec.firstElement().getX();
+        double oldY = SnakeVec.firstElement().getY();
+        update(X, Y, grow);
+    }
+
     //Updates the rest of the snake to follow the head, also contains grow to tell whether or not the snake will grow
     //on this move,
     //Bool true = does grow
@@ -171,6 +177,7 @@ public class Snake {
     }
     public Vector<Rectangle> getSnake() { return SnakeVec; }
 
+    //SNAKE FILL GET/SET
     public Paint getSnakeFill(java.awt.Color yellow) {
         return snakeFill;
     }
@@ -178,11 +185,17 @@ public class Snake {
         this.snakeFill = snakeFill;
     }
 
+    //SNAKE OUTLINE GET/SET
     public Paint getSnakeoutline() {
         return snakeOutline;
     }
     public void setSnakeoutline(Paint snakeoutline) {
         this.snakeOutline = snakeoutline;
+    }
+
+    //SNAKE DIRECTION GET/SET
+    public String getSnakeDirection() {
+        return CurrentDir;
     }
 
     //Vector of Rectangles to represent the snake itself

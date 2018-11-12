@@ -278,9 +278,9 @@ public class Scenes {
         Button bg_color4 = new Button("               \n\n");
         bg_color4.setId("Train");
         Button bg_color5 = new Button("               \n\n");
-        bg_color5.setStyle("-fx-background-color: Yellow; -fx-font-size: 2em; ");
+        bg_color5.setId("Cloud");
         Button bg_color6 = new Button("               \n\n");
-        bg_color6.setStyle("-fx-background-color: Gray; -fx-font-size: 2em; ");
+        bg_color6.setId("NightSky");
         color_background1.getChildren().addAll(bg_color1, bg_color2, bg_color3, bg_color4, bg_color5, bg_color6);
 
         background_cur.getChildren().addAll(current_background, cur_color_bg);
@@ -390,13 +390,19 @@ public class Scenes {
         bg_color5.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                cur_color_bg.setStyle("-fx-background-color: Yellow; -fx-font-size: 2em; ");
+                cur_color_bg.setId("Cloud");
+                gameLayout.setId("Cloud");
+                setting.setId("Cloud");
+                mainMenuLayout.setId("Cloud");
             }
         });
         bg_color6.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                cur_color_bg.setStyle("-fx-background-color: Gray; -fx-font-size: 2em; ");
+                cur_color_bg.setId("NightSky");
+                gameLayout.setId("NightSky");
+                setting.setId("NightSky");
+                mainMenuLayout.setId("NightSky");
             }
         });
 

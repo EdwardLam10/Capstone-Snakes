@@ -1,6 +1,7 @@
 import SnakeUtil.Scenes;
 import SnakeUtil.Snake;
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
@@ -36,7 +37,10 @@ public class main extends Application {
 //        };
 
 
-        primaryStage.setTitle("Main Menu");
+        Image snake = new Image(getClass().getResourceAsStream("Resources/SnakeIcon.png"));
+
+        primaryStage.setTitle("Python: Snake Online");
+        primaryStage.getIcons().add(snake);
         mainScenes.set2MM(primaryStage);
         primaryStage.show();
 

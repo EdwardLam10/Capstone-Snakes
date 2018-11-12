@@ -87,7 +87,7 @@ public class main extends Application {
                 yourSnake.setHeadLoc(X, Y); //<- sets head location to X and Y *X and Y are doubles*
                 yourSnake.serverMove(newX, newY, grows); //<- moves the snake head to newX and newY, grows if true
                   if (grows) {
-                      mainScenes.getGameLayout.getChildren.addAll(yourSnake.getlastelement()); //<-adds new element in snake to board.
+                      mainScenes.getGameLayout().getChildren().addAll(yourSnake.getSnake().lastElement()); //<-adds new element in snake to board.
                   }
                 mainScenes.setPoint(X, Y); //<- sets the location of the point to X and Y *X and Y are doubles*
                 if(end){ //if server sends the end signal, checks for winner and ends game

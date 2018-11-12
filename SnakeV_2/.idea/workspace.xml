@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7635bcc6-dc04-4847-836e-0e2e4db8c3ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/onlinetestcode/TransferPackage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
@@ -67,7 +66,7 @@
     <session id="-1407137047">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="18" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="4" />
@@ -79,20 +78,20 @@
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="5" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="723" />
-          <entry key="java" value="10713" />
+          <entry key="java" value="10759" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="723" />
-          <entry key="JAVA" value="10713" />
+          <entry key="JAVA" value="10759" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -181,22 +180,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="96" column="21" lean-forward="true" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1932#3383#0" expanded="true" />
-                <element signature="e#3382#3383#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/onlinetestcode/TransferPackage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+            <state relative-caret-position="346">
+              <caret line="95" column="44" lean-forward="true" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -204,12 +189,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="516" column="13" selection-start-line="516" selection-start-column="13" selection-end-line="516" selection-end-column="13" />
+            <state relative-caret-position="354">
+              <caret line="526" lean-forward="true" selection-start-line="526" selection-end-line="526" />
               <folding>
                 <element signature="method#makeMainMenu#0;class#Scenes#0" />
                 <element signature="method#makeSettings#0;class#Scenes#0" />
                 <element signature="method#makePoint#0;class#Scenes#0" />
+                <element signature="method#endGame#0;class#Scenes#0" />
                 <element signature="method#resetPoint#0;class#Scenes#0" />
                 <element signature="method#setPoint#0;class#Scenes#0" />
               </folding>
@@ -315,8 +301,8 @@
       <foldersAlwaysOnTop value="false" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -327,18 +313,13 @@
             <path>
               <item name="SnakeV_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="SnakeV_2" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SnakeV_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SnakeV_2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SnakeV_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="SnakeV_2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="onlinetestcode" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SnakeV_2" type="b2602c69:ProjectViewProjectNode" />
@@ -441,17 +422,18 @@
       <workItem from="1541644765832" duration="317000" />
       <workItem from="1541982449207" duration="373000" />
       <workItem from="1541987812135" duration="7937000" />
+      <workItem from="1542061374836" duration="237000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71372000" />
+    <option name="totallyTimeSpent" value="71610000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25642964" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13413817" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -468,7 +450,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32952183" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Messages" order="10" visible="true" weight="0.3262295" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3262295" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -561,6 +543,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/onlinetestcode/TransferPackage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2091">
@@ -575,34 +564,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="516" column="13" selection-start-line="516" selection-start-column="13" selection-end-line="516" selection-end-column="13" />
+        <state relative-caret-position="354">
+          <caret line="526" lean-forward="true" selection-start-line="526" selection-end-line="526" />
           <folding>
             <element signature="method#makeMainMenu#0;class#Scenes#0" />
             <element signature="method#makeSettings#0;class#Scenes#0" />
             <element signature="method#makePoint#0;class#Scenes#0" />
+            <element signature="method#endGame#0;class#Scenes#0" />
             <element signature="method#resetPoint#0;class#Scenes#0" />
             <element signature="method#setPoint#0;class#Scenes#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/onlinetestcode/TransferPackage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="96" column="21" lean-forward="true" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1932#3383#0" expanded="true" />
-            <element signature="e#3382#3383#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="346">
+          <caret line="95" column="44" lean-forward="true" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
         </state>
       </provider>
     </entry>

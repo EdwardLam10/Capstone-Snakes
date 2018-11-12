@@ -514,15 +514,17 @@ public class Scenes {
         point.setY(rand.nextInt(21) * 35);
     }
 
-    public void setPoint(double x, double y) {
-        point.setX(x);
-        point.setY(y);
-    }
-
     //Sets Scene of the primaryStage to main menu Scene
     public void set2MM(Stage primaryStage) {
         primaryStage.setScene(mainMenu);
     }
+
+    public void setPoint(double x, double y) {
+        point.setX(x);
+        point.setY(y);
+    }
+    public Pane getGameLayout() { return gameLayout; }
+
 
     //Creating the Main Menu Scene
     private Scene mainMenu;

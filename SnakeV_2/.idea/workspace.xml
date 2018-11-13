@@ -7,10 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7635bcc6-dc04-4847-836e-0e2e4db8c3ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Snake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -154,11 +152,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="216">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -166,44 +161,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="438" column="42" lean-forward="true" selection-start-line="438" selection-start-column="42" selection-end-line="438" selection-end-column="42" />
-              <folding>
-                <element signature="method#Scenes#0;class#Scenes#0" />
-                <element signature="method#cancelTimer#0;class#Scenes#0" />
-                <element signature="method#makeMainMenu#0;class#Scenes#0" />
-                <element signature="method#makeGame#0;class#Scenes#0" />
-                <element signature="method#makeSettings#0;class#Scenes#0" />
-                <element signature="method#makePoint#0;class#Scenes#0" />
-                <element signature="e#16716#18397#0" expanded="true" />
-                <element signature="e#18396#18397#0" expanded="true" />
-                <element signature="method#endGame#0;class#Scenes#0" />
-                <element signature="e#20622#20623#0" expanded="true" />
-                <element signature="e#20651#20652#0" expanded="true" />
-                <element signature="method#resetPoint#0;class#Scenes#0" />
-                <element signature="method#setPoint#0;class#Scenes#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Resources/Background.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#Snake#0;class#Snake#0" />
-                <element signature="method#move#0;class#Snake#0" />
-                <element signature="method#serverMove#0;class#Snake#0" />
-                <element signature="method#update#0;class#Snake#0" />
-                <element signature="method#restartSnake#0;class#Snake#0" />
-                <element signature="method#collisionDetection#0;class#Snake#0" />
-                <element signature="method#selfCollision#0;class#Snake#0" />
-                <element signature="method#collisioncheck#0;class#Snake#0" />
-                <element signature="method#setHeadLoc#0;class#Snake#0" />
-              </folding>
+            <state relative-caret-position="5737">
+              <caret line="468" column="22" selection-start-line="468" selection-start-column="22" selection-end-line="468" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -211,10 +170,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+            <state relative-caret-position="-267">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
               <folding>
-                <element signature="method#setHeadLoc#0;class#Snake#0" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -297,13 +256,15 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="false" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -332,13 +293,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541796623001" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542077218741" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -427,10 +388,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68618000" />
+    <option name="totallyTimeSpent" value="68743000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1843" height="1096" extended-state="6" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14956406" />
@@ -549,10 +510,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+        <state relative-caret-position="-267">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
           <folding>
-            <element signature="method#setHeadLoc#0;class#Snake#0" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -576,20 +537,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Snake#0;class#Snake#0" />
-            <element signature="method#move#0;class#Snake#0" />
-            <element signature="method#serverMove#0;class#Snake#0" />
-            <element signature="method#update#0;class#Snake#0" />
-            <element signature="method#restartSnake#0;class#Snake#0" />
-            <element signature="method#collisionDetection#0;class#Snake#0" />
-            <element signature="method#selfCollision#0;class#Snake#0" />
-            <element signature="method#collisioncheck#0;class#Snake#0" />
-            <element signature="method#setHeadLoc#0;class#Snake#0" />
-          </folding>
+        <state relative-caret-position="5737">
+          <caret line="468" column="22" selection-start-line="468" selection-start-column="22" selection-end-line="468" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -597,31 +546,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="438" column="42" lean-forward="true" selection-start-line="438" selection-start-column="42" selection-end-line="438" selection-end-column="42" />
-          <folding>
-            <element signature="method#Scenes#0;class#Scenes#0" />
-            <element signature="method#cancelTimer#0;class#Scenes#0" />
-            <element signature="method#makeMainMenu#0;class#Scenes#0" />
-            <element signature="method#makeGame#0;class#Scenes#0" />
-            <element signature="method#makeSettings#0;class#Scenes#0" />
-            <element signature="method#makePoint#0;class#Scenes#0" />
-            <element signature="e#16716#18397#0" expanded="true" />
-            <element signature="e#18396#18397#0" expanded="true" />
-            <element signature="method#endGame#0;class#Scenes#0" />
-            <element signature="e#20622#20623#0" expanded="true" />
-            <element signature="e#20651#20652#0" expanded="true" />
-            <element signature="method#resetPoint#0;class#Scenes#0" />
-            <element signature="method#setPoint#0;class#Scenes#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="216">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>

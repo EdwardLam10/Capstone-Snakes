@@ -2,6 +2,7 @@ package SnakeUtil;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import javafx.geometry.Bounds;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.paint.Paint;
@@ -45,13 +46,13 @@ public class Snake {
                 //Changing the location of the head.
                 SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() - 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
-                /*
-                 Net code can be implemented here to change the location of the head based on the direction.
-                 */
-
                 //updating rest of the snake to follow the head
                 update(tmpX, tmpY, grow);
                 System.out.println("UP");
+
+//                update(SnakeVec.firstElement().getX(), SnakeVec.firstElement().getY() - 35, grow);
+//                System.out.println("UP");
+
                 break;
             case "DOWN":
                 tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
@@ -59,12 +60,13 @@ public class Snake {
 
                 SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() + 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
-                /*
-                 Net code can be implemented here to change the location of the head based on the direction.
-                 */
 
                 update(tmpX, tmpY, grow);
                 System.out.println("DOWN");
+
+//                update(SnakeVec.firstElement().getX(), SnakeVec.firstElement().getY() + 35, grow);
+//                System.out.println("DOWN");
+
                 break;
             case "RIGHT":
                 tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
@@ -72,12 +74,13 @@ public class Snake {
 
                 SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() + 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
-                /*
-                 Net code can be implemented here to change the location of the head based on the direction.
-                 */
 
                 update(tmpX, tmpY, grow);
                 System.out.println("RIGHT");
+
+//                update(SnakeVec.firstElement().getX() + 35, SnakeVec.firstElement().getY(), grow);
+//                System.out.println("RIGHT");
+
                 break;
             case "LEFT":
                 tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
@@ -85,12 +88,13 @@ public class Snake {
 
                 SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() - 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
 
-                /*
-                 Net code can be implemented here to change the location of the head based on the direction.
-                 */
 
                 update(tmpX, tmpY, grow);
                 System.out.println("LEFT");
+
+//                update(SnakeVec.firstElement().getX() - 35, SnakeVec.firstElement().getY(), grow);
+//                System.out.println("LEFT");
+
                 break;
         }
     }
@@ -128,6 +132,36 @@ public class Snake {
             BodRect.setY(tmpY);
             SnakeVec.addElement(BodRect);
         }
+
+
+//        double nextX = X;
+//        double nextY = Y;
+//        double tmpX = X;
+//        double tmpY = Y;
+//        if(!grow) {
+//            for(int i = 0; i < SnakeVec.size(); i++) {
+//                tmpX = SnakeVec.elementAt(i).getX();
+//                tmpY = SnakeVec.elementAt(i).getY();
+//
+//                SnakeVec.elementAt(i).setX(nextX);
+//                SnakeVec.elementAt(i).setX(nextY);
+//
+//                nextX = tmpX;
+//                nextY = tmpY;
+//
+//            }
+//        }else {
+//            Rectangle newBod = new Rectangle(35,35);
+//            tmpX = SnakeVec.firstElement().getX();
+//            tmpY = SnakeVec.firstElement().getY();
+//
+//            SnakeVec.firstElement().setX(nextX);
+//            SnakeVec.firstElement().setY(nextY);
+//
+//            newBod.setX(tmpX);
+//            newBod.setY(tmpY);
+//            SnakeVec.insertElementAt(newBod,1);
+//        }
     }
 
     //Restart Snake, removes all nodes in the snake except for head node.
@@ -161,11 +195,20 @@ public class Snake {
     }
 
     public Boolean borderCollision(double X, double Y) {
-        if(SnakeVec.firstElement().getX() < 0 || SnakeVec.firstElement().getX() > X) {
+        if(SnakeVec.firstElement().getX() < 0 || SnakeVec.firstElement().getX() >= X) {
+//            System.out.println(SnakeVec.firstElement().getX());
+//            System.out.println(X);
+//            System.out.println(1);
+            System.out.println(SnakeVec.firstElement().getX());
+            System.out.println("X collision");
             return true;
-        } else if(SnakeVec.firstElement().getY() < 0 || SnakeVec.firstElement().getY() > Y) {
+        } else if(SnakeVec.firstElement().getY() < 0 || SnakeVec.firstElement().getY() >= Y) {
+//            System.out.println(2);
+            System.out.println("Y collision");
             return true;
         } else {
+//            System.out.println(3);
+//            System.out.println(SnakeVec.firstElement().getX());
             return false;
         }
     }

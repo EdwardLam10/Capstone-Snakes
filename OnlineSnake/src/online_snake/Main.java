@@ -93,8 +93,6 @@ public class Main {
 						game.delete(applePoint);
 						applePoint.setLocation(generateRandomPoint());
 						game.put(applePoint, BoardObject.APPLE);
-					} else { // max points reached
-						// maybe print something to board
 					}
 				} else {
 					game.move(player1, direction1);

@@ -20,22 +20,6 @@ public class main extends Application {
             primaryStage.close();
         });
 
-        //
-
-//        TimerTask loop = new TimerTask() {
-//            @Override
-//            public void run() {
-//                yourSnake.getSnakeDirection(); <-returns direction of the snake
-//                yourSnake.setHeadLoc(X, Y); <- sets head location to X and Y *X and Y are doubles*
-//                yourSnake.serverMove(newX, newY, grows?); <- moves the snake head to newX and newY, grows if true
-        //          if snake does grow {
-        //              mainScenes.getGameLayout.getChildren.addAll(yourSnake.getlastelement(); <-adds new element in snake to board.
-        //          }
-//                mainScenes.setPoint(X, Y); <- sets the location of the point to X and Y *X and Y are doubles*
-//                mainScenes.endGame(winner, primaryStage); <-ends game with string winner's name, primaryStage is just primaryStage
-//            }
-//        };
-
 
         Image snake = new Image(getClass().getResourceAsStream("Resources/SnakeIcon.png"));
 

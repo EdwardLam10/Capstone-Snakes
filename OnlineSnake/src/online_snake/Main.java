@@ -138,6 +138,7 @@ public class Main {
 					Point playerHead2 = game.getPlayerSnake(player2).getHead();
 					// socket returns playerHead and hasEaten to GUI
 					if(winner!=null){
+						System.out.println("");
 						if(winner == player1) {
 							p1Package = new TransferPackage(true);
 							p2Package = new TransferPackage(false);

@@ -127,9 +127,9 @@ public class Scenes {
 
         //Adding the initial Head of the snake (or whatever is in the SnakeVector atm)
         //to the layout
-        gameLayout.getChildren().addAll(yourSnake.getSnake());
-        gameLayout.getChildren().addAll(theirSnake.getSnake());
-        gameLayout.getChildren().addAll(point);
+//        gameLayout.getChildren().addAll(yourSnake.getSnake());
+//        gameLayout.getChildren().addAll(theirSnake.getSnake());
+//        gameLayout.getChildren().addAll(point);
 
         gameLayout.setId("colorful");
 
@@ -411,14 +411,14 @@ public class Scenes {
     }
     private void startGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
         //sets/resets each snake to only the head node and location
-//        yourSnake.restartSnake(1050,700, "LEFT");
-//        theirSnake.restartSnake(0,0, "RIGHT");
+        yourSnake.restartSnake(1050,700, "LEFT");
+        theirSnake.restartSnake(0,0, "RIGHT");
 
-//        gameLayout = new BorderPane();
-//        gameLayout.getChildren().addAll(yourSnake.getSnake());
-//        gameLayout.getChildren().addAll(theirSnake.getSnake());
+        gameLayout = new BorderPane();
+        gameLayout.getChildren().addAll(yourSnake.getSnake());
+        gameLayout.getChildren().addAll(theirSnake.getSnake());
 
-//        game.setRoot(gameLayout);
+        game.setRoot(gameLayout);
 
         gameTimer = new Timer();
         //Creating the task to pass through the Timer to be executed every X ms
@@ -458,12 +458,12 @@ public class Scenes {
                 });
             }
         };
-//        gameTimer.scheduleAtFixedRate(task, 0,  200);
+        gameTimer.scheduleAtFixedRate(task, 0,  200);
 
     }
     public void endGame(String winPlayer, Stage primaryStage) {
         //Ends and stops snakes from moving.
-        canceltimer();
+//        canceltimer();
         gameOverWindow = new Stage();
         gameOverWindow.setTitle("Game Over!");
 
@@ -520,7 +520,6 @@ public class Scenes {
     }
     public void set2Game(Stage primaryStage, Snake yourSnake, Snake enemySnake) {
         primaryStage.setScene(game);
-        startGame(yourSnake, enemySnake, primaryStage);
     }
 
     public void setPoint(double x, double y) {

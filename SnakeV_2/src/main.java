@@ -37,7 +37,6 @@ public class main extends Application {
             primaryStage.close();
         });
 
-        System.out.println("0");
 
         try {
             System.out.println("0.1");
@@ -56,15 +55,12 @@ public class main extends Application {
             System.exit(1);
         }
 
-        System.out.println("1");
         String firstDir = "UP";
         out.writeObject(firstDir);
 
 
         try {
-            System.out.println("1.1");
             transferObj = (TransferPackage)in.readObject();
-            System.out.println("1.2");
         }
         catch (Exception ex)
         {
@@ -78,7 +74,6 @@ public class main extends Application {
             System.exit(1);
         }
 
-        System.out.println("2");
 
         TimerTask toRun = new TimerTask() {
             @Override
@@ -86,14 +81,17 @@ public class main extends Application {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        System.out.println("torun");
+
                         boolean end = transferObj.isGameOver();
                         if (end) { //if server sends the end signal, checks for winner and ends game
-                            String winner = "";
+                            String winner;
+                            System.out.println("end");
                             if (transferObj.whoWon() == true) {
                                 winner = "player 1";
+                                System.out.println("player1 won");
                             } else {
                                 winner = "player 2";
+                                System.out.println("player2 won");
                             }
                             mainScenes.endGame(winner, primaryStage); //<-ends game with string winner's name, primaryStage is just primaryStage
                             try {
@@ -114,6 +112,8 @@ public class main extends Application {
                             return;
                         }
 
+
+                        System.out.println("after end check");
                         int X = transferObj.getP1X();
                         int Y = transferObj.getP1Y();
                         int newX = X;
@@ -130,7 +130,7 @@ public class main extends Application {
                             e.printStackTrace();
                         }
 
-                        yourSnake.setHeadLoc(X, Y); //<- sets head location to X and Y *X and Y are doubles*
+                        yourSnake.setHeadLoc(X*35, Y*35); //<- sets head location to X and Y *X and Y are doubles*
                         yourSnake.serverMove(newX, newY, grows); //<- moves the snake head to newX and newY, grows if true
                         if (grows) {
                             mainScenes.getGameLayout().getChildren().addAll(yourSnake.getSnake().lastElement()); //<-adds new element in snake to board.

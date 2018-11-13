@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="test" />
+      <artifact name="SnakeV_2" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7635bcc6-dc04-4847-836e-0e2e4db8c3ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SnakeV_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/test.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test/test.jar" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -176,8 +177,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="470" lean-forward="true" selection-start-line="470" selection-end-line="470" />
+            <state relative-caret-position="307">
+              <caret line="479" column="68" selection-start-line="479" selection-start-column="68" selection-end-line="479" selection-end-column="68" />
               <folding>
                 <element signature="method#cancelTimer#0;class#Scenes#0" />
                 <element signature="method#makeMainMenu#0;class#Scenes#0" />
@@ -187,6 +188,7 @@
                 <element signature="method#makeTimerTask#0;class#Scenes#0" />
                 <element signature="e#16524#19208#0" expanded="true" />
                 <element signature="e#19207#19208#0" expanded="true" />
+                <element signature="method#setSpeed#0;class#Scenes#0" />
                 <element signature="method#endGame#0;class#Scenes#0" />
                 <element signature="e#21970#21971#0" expanded="true" />
                 <element signature="e#22004#22005#0" expanded="true" />
@@ -354,12 +356,12 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542143624386" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542145052819" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
@@ -439,16 +441,15 @@
       <workItem from="1541643264928" duration="769000" />
       <workItem from="1541644765832" duration="317000" />
       <workItem from="1541710760293" duration="5556000" />
-      <workItem from="1542123192852" duration="10201000" />
+      <workItem from="1542123192852" duration="11402000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78944000" />
+    <option name="totallyTimeSpent" value="80145000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15157612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -459,7 +460,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23512748" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23512748" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -631,8 +632,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="470" lean-forward="true" selection-start-line="470" selection-end-line="470" />
+        <state relative-caret-position="307">
+          <caret line="479" column="68" selection-start-line="479" selection-start-column="68" selection-end-line="479" selection-end-column="68" />
           <folding>
             <element signature="method#cancelTimer#0;class#Scenes#0" />
             <element signature="method#makeMainMenu#0;class#Scenes#0" />
@@ -642,6 +643,7 @@
             <element signature="method#makeTimerTask#0;class#Scenes#0" />
             <element signature="e#16524#19208#0" expanded="true" />
             <element signature="e#19207#19208#0" expanded="true" />
+            <element signature="method#setSpeed#0;class#Scenes#0" />
             <element signature="method#endGame#0;class#Scenes#0" />
             <element signature="e#21970#21971#0" expanded="true" />
             <element signature="e#22004#22005#0" expanded="true" />
@@ -659,7 +661,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>test</last-edited>
+          <last-edited>SnakeV_2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

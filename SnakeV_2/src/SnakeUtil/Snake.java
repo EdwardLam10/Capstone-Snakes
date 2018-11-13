@@ -160,6 +160,16 @@ public class Snake {
         return false;
     }
 
+    public Boolean borderCollision(double X, double Y) {
+        if(SnakeVec.firstElement().getX() < 0 || SnakeVec.firstElement().getX() > X) {
+            return true;
+        } else if(SnakeVec.firstElement().getY() < 0 || SnakeVec.firstElement().getY() > Y) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public Boolean collisioncheck(Rectangle other) {
         if((SnakeVec.firstElement().getX() == other.getX()) && (SnakeVec.firstElement().getY() == other.getY())) {
             return true;

@@ -63,7 +63,7 @@ public class Scenes {
         //Having the start button send you to game Scene.
         startButton.setOnAction(e -> {
             primaryStage.setScene(game);
-            startGame(yourSnake,enemySnake, primaryStage);
+            startGame(yourSnake, enemySnake, primaryStage);
         });
 
         /*Label start = new Label("\n Start: \n");
@@ -127,14 +127,14 @@ public class Scenes {
 
         //Adding the initial Head of the snake (or whatever is in the SnakeVector atm)
         //to the layout
-        gameLayout.getChildren().addAll(yourSnake.getSnake());
-        gameLayout.getChildren().addAll(theirSnake.getSnake());
-        gameLayout.getChildren().addAll(point);
+//        gameLayout.getChildren().addAll(yourSnake.getSnake());
+//        gameLayout.getChildren().addAll(theirSnake.getSnake());
+//        gameLayout.getChildren().addAll(point);
 
         gameLayout.setId("colorful");
 
         //Setting the Scene with the gameLayout that now contains a snake/snakes
-        game = new Scene(gameLayout,1085,735);
+        game = new Scene(gameLayout,layoutX,layoutY);
         game.setUserAgentStylesheet("Resources/Background.css");
 
         gameLayout.setId("Blimp");
@@ -416,9 +416,17 @@ public class Scenes {
     }
 
     private void startGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
+        gameLayout.getChildren().removeAll(yourSnake.getSnake());
+        gameLayout.getChildren().removeAll(theirSnake.getSnake());
+        gameLayout.getChildren().removeAll(point);
+
         //sets/resets each snake to only the head node and location
         yourSnake.restartSnake(1050,700, "LEFT");
         theirSnake.restartSnake(0,0, "RIGHT");
+
+        gameLayout.getChildren().addAll(yourSnake.getSnake());
+        gameLayout.getChildren().addAll(theirSnake.getSnake());
+        gameLayout.getChildren().addAll(point);
 
         game.setRoot(gameLayout);
 
@@ -433,16 +441,12 @@ public class Scenes {
                         yourSnake.move(false);
                         theirSnake.move(false);
                         if(yourSnake.collisionDetection(theirSnake.getSnake())) {
-                            cancelTimer();
                             endGame("Josh", primaryStage);
                         } else if(theirSnake.collisionDetection(yourSnake.getSnake())) {
-                            cancelTimer();
                             endGame("Ruby", primaryStage);
                         } else if(yourSnake.selfCollision()) {
-                            cancelTimer();
                             endGame("Ruby", primaryStage);
                         } else if(theirSnake.selfCollision()) {
-                            cancelTimer();
                             endGame("Josh", primaryStage);
                         } else if (yourSnake.collisioncheck(point)) {
                             yourSnake.move(true);
@@ -454,13 +458,17 @@ public class Scenes {
                             gameLayout.getChildren().add(theirSnake.getSnake().lastElement());
                             yourSnake.move(true);
                             resetPoint();
+                        } else if(yourSnake.borderCollision(layoutX, layoutY)) {
+                            endGame("Ruby", primaryStage);
+                        } else if(theirSnake.borderCollision(layoutX, layoutY)) {
+                            endGame("Josh", primaryStage);
                         }
 
                     }
                 });
             }
         };
-        gameTimer.scheduleAtFixedRate(task, 0,  200);
+        gameTimer.scheduleAtFixedRate(task, 0,  150);
 
     }
     //Stops the game and creates the alert screen that shows who won.
@@ -532,6 +540,9 @@ public class Scenes {
         primaryStage.setScene(mainMenu);
     }
 
+
+    private double layoutX = 1085;
+    private double layoutY = 735;
     //Creating the Main Menu Scene
     private Scene mainMenu;
     //Creating Game Scene

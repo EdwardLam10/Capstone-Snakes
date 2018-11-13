@@ -20,7 +20,7 @@ public class Game {
 	 * @return true if moving a player was successful
 	 */
 	public void move(Player p, Direction d) {
-		// assuming the move is legal
+		// assuming the move is legal v
 		Snake player = _gameBoard.getSnake(p);
 		player.moveToDirection(d);
 	}

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_snakev_2" default="compile.module.snakev_2">
+  <dirname property="module.snakev_2.basedir" file="${ant.file.module_snakev_2}"/>
+  
+  <property name="module.jdk.home.snakev_2" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.snakev_2" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.snakev_2" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.snakev_2" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="snakev_2.output.dir" value="${module.snakev_2.basedir}/out/production/SnakeV_2"/>
+  <property name="snakev_2.testoutput.dir" value="${module.snakev_2.basedir}/out/test/SnakeV_2"/>
+  
+  <path id="snakev_2.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="snakev_2.module.production.classpath">
+    <path refid="${module.jdk.classpath.snakev_2}"/>
+  </path>
+  
+  <path id="snakev_2.runtime.production.module.classpath">
+    <pathelement location="${snakev_2.output.dir}"/>
+  </path>
+  
+  <path id="snakev_2.module.classpath">
+    <path refid="${module.jdk.classpath.snakev_2}"/>
+    <pathelement location="${snakev_2.output.dir}"/>
+  </path>
+  
+  <path id="snakev_2.runtime.module.classpath">
+    <pathelement location="${snakev_2.testoutput.dir}"/>
+    <pathelement location="${snakev_2.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.snakev_2">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.snakev_2">
+    <patternset refid="excluded.from.module.snakev_2"/>
+  </patternset>
+  
+  <path id="snakev_2.module.sourcepath">
+    <dirset dir="${module.snakev_2.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.snakev_2" depends="compile.module.snakev_2.production,compile.module.snakev_2.tests" description="Compile module SnakeV_2"/>
+  
+  <target name="compile.module.snakev_2.production" depends="register.custom.compilers" description="Compile module SnakeV_2; production classes">
+    <mkdir dir="${snakev_2.output.dir}"/>
+    <javac2 destdir="${snakev_2.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.snakev_2}/javac">
+      <compilerarg line="${compiler.args.snakev_2}"/>
+      <bootclasspath refid="snakev_2.module.bootclasspath"/>
+      <classpath refid="snakev_2.module.production.classpath"/>
+      <src refid="snakev_2.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.snakev_2"/>
+    </javac2>
+    
+    <copy todir="${snakev_2.output.dir}">
+      <fileset dir="${module.snakev_2.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.snakev_2.tests" depends="register.custom.compilers,compile.module.snakev_2.production" description="compile module SnakeV_2; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.snakev_2" description="cleanup module">
+    <delete dir="${snakev_2.output.dir}"/>
+    <delete dir="${snakev_2.testoutput.dir}"/>
+  </target>
+</project>

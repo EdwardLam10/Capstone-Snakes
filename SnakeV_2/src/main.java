@@ -1,6 +1,7 @@
 import SnakeUtil.Scenes;
 import SnakeUtil.Snake;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.stage.Stage;
 import onlinetestcode.TransferPackage;
 import java.io.IOException;
@@ -8,6 +9,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Timer;
 import java.util.TimerTask;
 
 public class main extends Application {
@@ -25,17 +27,26 @@ public class main extends Application {
         Scenes mainScenes = new Scenes(primaryStage, yourSnake, theirSnake);
 
 
+        primaryStage.setTitle("Main Menu");
+        //mainScenes.set2MM(primaryStage);
+        mainScenes.set2Game(primaryStage, yourSnake, theirSnake);
+        primaryStage.show();
+
+
         primaryStage.setOnCloseRequest(event -> {
             primaryStage.close();
         });
 
+        System.out.println("0");
+
         try {
-
-            transferSocket = new Socket(/*SERVER_IP_ADDRESS*/, 10007);
-
+            System.out.println("0.1");
+            transferSocket = new Socket( "146.95.22.41", 10007);
+            System.out.println("0.2");
             out = new ObjectOutputStream(transferSocket.getOutputStream());
+            System.out.println("0.3");
             in = new ObjectInputStream(transferSocket.getInputStream());
-
+            System.out.println("0.5");
         } catch (UnknownHostException e) {
             System.err.println("?");
             System.exit(1);
@@ -45,9 +56,15 @@ public class main extends Application {
             System.exit(1);
         }
 
+        System.out.println("1");
+        String firstDir = "UP";
+        out.writeObject(firstDir);
+
 
         try {
+            System.out.println("1.1");
             transferObj = (TransferPackage)in.readObject();
+            System.out.println("1.2");
         }
         catch (Exception ex)
         {
@@ -61,55 +78,75 @@ public class main extends Application {
             System.exit(1);
         }
 
+        System.out.println("2");
 
-        TimerTask loop = new TimerTask() {
+        TimerTask toRun = new TimerTask() {
             @Override
             public void run() {
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        System.out.println("torun");
+                        boolean end = transferObj.isGameOver();
+                        if (end) { //if server sends the end signal, checks for winner and ends game
+                            String winner = "";
+                            if (transferObj.whoWon() == true) {
+                                winner = "player 1";
+                            } else {
+                                winner = "player 2";
+                            }
+                            mainScenes.endGame(winner, primaryStage); //<-ends game with string winner's name, primaryStage is just primaryStage
+                            try {
+                                out.close();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            try {
+                                in.close();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            try {
+                                transferSocket.close();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            return;
+                        }
 
+                        int X = transferObj.getP1X();
+                        int Y = transferObj.getP1Y();
+                        int newX = X;
+                        int newY = Y;
 
+                        String direction;
+                        boolean grows = transferObj.isNewApple();
 
-                int X = transferObj.getP1X();
-                int Y = transferObj.getP1Y();
-                int newX = X;
-                int newY = Y;
+                        direction = yourSnake.getSnakeDirection(); //<-returns direction of the snake
 
-                String direction;
-                boolean grows = transferObj.isNewApple();
-                boolean end = transferObj.isGameOver();
-                direction = yourSnake.getSnakeDirection(); //<-returns direction of the snake
+                        try {
+                            out.writeObject(direction);// sends snake direction to server
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
-                try {
-                    out.writeObject(direction);// sends snake direction to server
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                        yourSnake.setHeadLoc(X, Y); //<- sets head location to X and Y *X and Y are doubles*
+                        yourSnake.serverMove(newX, newY, grows); //<- moves the snake head to newX and newY, grows if true
+                        if (grows) {
+                            mainScenes.getGameLayout().getChildren().addAll(yourSnake.getSnake().lastElement()); //<-adds new element in snake to board.
+                        }
+                        mainScenes.setPoint(X, Y); //<- sets the location of the point to X and Y *X and Y are doubles*
 
-                yourSnake.setHeadLoc(X, Y); //<- sets head location to X and Y *X and Y are doubles*
-                yourSnake.serverMove(newX, newY, grows); //<- moves the snake head to newX and newY, grows if true
-                  if (grows) {
-                      mainScenes.getGameLayout().getChildren().addAll(yourSnake.getSnake().lastElement()); //<-adds new element in snake to board.
-                  }
-                mainScenes.setPoint(X, Y); //<- sets the location of the point to X and Y *X and Y are doubles*
-                if(end){ //if server sends the end signal, checks for winner and ends game
-                    String winner = "";
-                    if(transferObj.whoWon()==true){
-                        winner = "player 1";
                     }
-                    else{
-                        winner = "player 2";
-                    }
-                    mainScenes.endGame(winner, primaryStage); //<-ends game with string winner's name, primaryStage is just primaryStage
                 }
-            }
+                );}
         };
 
-        out.close();
-        in.close();
-        transferSocket.close();
+        Timer loop = new Timer();
 
-        primaryStage.setTitle("Main Menu");
-        mainScenes.set2MM(primaryStage);
-        primaryStage.show();
+        System.out.println("torun2");
+        loop.scheduleAtFixedRate(toRun,10, 1000);
+
 
 
     }

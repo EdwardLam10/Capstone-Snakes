@@ -14,15 +14,15 @@ public class Main {
 		p.setLocation(randomNum.nextInt(29)+1, randomNum.nextInt(19)+1);
 		return p;
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, ClassNotFoundException{
 		Board b = new Board(31, 21, 
-				new Point[] {new Point(29,1)},
+				new Point[] {new Point(19,1)},
 				new Point[] {new Point(1,19)});
 		Game game = new Game(b);
 		Point applePoint = new Point(15,10);
 		game.put(applePoint, BoardObject.APPLE);
 		//Serversocket
-		ServerSocket serversocket = null;
+		ServerSocket serverSocket = null;
 		Socket player1soc = null;
 		Socket player2soc = null;
 		try { 
@@ -57,13 +57,13 @@ public class Main {
 	        }
 		//initialize i/o streams for sockets
 		   ObjectOutputStream p1out = new ObjectOutputStream(
-                   clientSocket.getOutputStream()); 
+                   player1soc.getOutputStream());
 		   ObjectInputStream p1in = new ObjectInputStream( 
-                   clientSocket.getInputStream()); 
+                   player1soc.getInputStream());
 		   ObjectOutputStream p2out = new ObjectOutputStream(
-                   clientSocket.getOutputStream()); 
+                   player2soc.getOutputStream());
 		   ObjectInputStream p2in = new ObjectInputStream( 
-                   clientSocket.getInputStream()); 
+                   player2soc.getInputStream());
 		//initialize package for data transfer to client
 		   TransferPackage p1Package = null;
 		   TransferPackage p2Package = null;
@@ -83,11 +83,11 @@ public class Main {
 			strDir1 = (String)p1in.readObject();
 			direction1 = Direction.enumFromValue(strDir1);
 			// for player 1
-			if (game.isLegalMove(player1, direction)) {
+			if (game.isLegalMove(player1, direction1)) {
 				
-				if (game.isEatMove(player1, direction)) {
+				if (game.isEatMove(player1, direction1)) {
 					hasEaten = true;
-					game.eat(player1, direction);
+					game.eat(player1, direction1);
 					winner = game.getWinner();
 					if (winner == null) { // continue the game
 						game.delete(applePoint);
@@ -97,7 +97,7 @@ public class Main {
 						// maybe print something to board
 					}
 				} else {
-					game.move(player1, direction);					
+					game.move(player1, direction1);
 				}
 			} else {
 				winner = Player.getRival(player1);
@@ -108,17 +108,18 @@ public class Main {
 			
 			
 			// socket receives input
-			strDir2 = (String)p2in.readObject();
+
+				strDir2 = (String)p2in.readObject();
 			direction2 = Direction.enumFromValue(strDir2);
 			
 			
 			
 			//for player 2
-			if (game.isLegalMove(player2, direction)) {
+			if (game.isLegalMove(player2, direction2)) {
 				
-					if (game.isEatMove(player2, direction)) {
+					if (game.isEatMove(player2, direction2)) {
 						hasEaten = true;
-						game.eat(player, direction);
+						game.eat(player2, direction2);
 						winner = game.getWinner();
 						if (winner == null) { // continue the game
 								game.delete(applePoint);
@@ -128,7 +129,7 @@ public class Main {
 							// maybe print something to board
 							}
 						} else {
-							game.move(player2, direction);					
+							game.move(player2, direction2);
 						}
 					} else {
 						winner = Player.getRival(player2);
@@ -147,8 +148,8 @@ public class Main {
 						}
 					}
 					else {
-						p1Package = new TransferPackage(playerHead1,playerHead2);
-						p2Package = new TransferPackage(playerHead2,playerHead1);
+						p1Package = new TransferPackage((int)playerHead1.getX(),(int)playerHead1.getY(),(int)playerHead2.getX(),(int)playerHead2.getY());
+						p2Package = new TransferPackage((int)playerHead2.getX(),(int)playerHead2.getY(),(int)playerHead1.getX(),(int) playerHead1.getY());
 					}
 					
 					p1out.writeObject(p1Package);

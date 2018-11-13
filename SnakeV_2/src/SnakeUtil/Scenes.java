@@ -411,14 +411,14 @@ public class Scenes {
     }
     private void startGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
         //sets/resets each snake to only the head node and location
-        yourSnake.restartSnake(1050,700, "LEFT");
-        theirSnake.restartSnake(0,0, "RIGHT");
+//        yourSnake.restartSnake(1050,700, "LEFT");
+//        theirSnake.restartSnake(0,0, "RIGHT");
 
 //        gameLayout = new BorderPane();
 //        gameLayout.getChildren().addAll(yourSnake.getSnake());
 //        gameLayout.getChildren().addAll(theirSnake.getSnake());
 
-        game.setRoot(gameLayout);
+//        game.setRoot(gameLayout);
 
         gameTimer = new Timer();
         //Creating the task to pass through the Timer to be executed every X ms
@@ -458,7 +458,7 @@ public class Scenes {
                 });
             }
         };
-        gameTimer.scheduleAtFixedRate(task, 0,  200);
+//        gameTimer.scheduleAtFixedRate(task, 0,  200);
 
     }
     public void endGame(String winPlayer, Stage primaryStage) {
@@ -515,8 +515,12 @@ public class Scenes {
     }
 
     //Sets Scene of the primaryStage to main menu Scene
-    public void set2MM(Stage primaryStage) {
+    public void set2MM(Stage primaryStage, Snake yourSnake, Snake enemySnake) {
         primaryStage.setScene(mainMenu);
+    }
+    public void set2Game(Stage primaryStage, Snake yourSnake, Snake enemySnake) {
+        primaryStage.setScene(game);
+        startGame(yourSnake, enemySnake, primaryStage);
     }
 
     public void setPoint(double x, double y) {

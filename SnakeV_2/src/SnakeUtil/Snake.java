@@ -51,7 +51,6 @@ public class Snake {
 
                 //updating rest of the snake to follow the head
                 update(tmpX, tmpY, grow);
-                System.out.println("UP");
                 break;
             case "DOWN":
                 tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
@@ -64,7 +63,6 @@ public class Snake {
                  */
 
                 update(tmpX, tmpY, grow);
-                System.out.println("DOWN");
                 break;
             case "RIGHT":
                 tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
@@ -76,8 +74,10 @@ public class Snake {
                  Net code can be implemented here to change the location of the head based on the direction.
                  */
 
+
+
+
                 update(tmpX, tmpY, grow);
-                System.out.println("RIGHT");
                 break;
             case "LEFT":
                 tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
@@ -90,7 +90,6 @@ public class Snake {
                  */
 
                 update(tmpX, tmpY, grow);
-                System.out.println("LEFT");
                 break;
         }
     }

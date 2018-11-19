@@ -41,22 +41,38 @@ public class Snake {
         //the snakes based on location of the head
         switch(CurrentDir) {
             case "UP":
-                update(SnakeVec.firstElement().getX(), SnakeVec.firstElement().getY() - 35, grow);
+                if((SnakeVec.firstElement().getY() - 35) >= 0) {
+                    update(SnakeVec.firstElement().getX(), SnakeVec.firstElement().getY() - 35, grow);
+                } else {
+                    update(SnakeVec.firstElement().getX(), borderY - 35, grow);
+                }
 //                System.out.println("UP");
 
                 break;
             case "DOWN":
-                update(SnakeVec.firstElement().getX(), SnakeVec.firstElement().getY() + 35, grow);
+                if((SnakeVec.firstElement().getY() + 35 <= borderY)) {
+                    update(SnakeVec.firstElement().getX(), SnakeVec.firstElement().getY() + 35, grow);
+                } else {
+                    update(SnakeVec.firstElement().getX(), 0, grow);
+                }
 //                System.out.println("DOWN");
 
                 break;
             case "RIGHT":
-                update(SnakeVec.firstElement().getX() + 35, SnakeVec.firstElement().getY(), grow);
+                if((SnakeVec.firstElement().getX() + 35) <= borderX) {
+                    update(SnakeVec.firstElement().getX() + 35, SnakeVec.firstElement().getY(), grow);
+                } else {
+                    update(0, SnakeVec.firstElement().getY(), grow);
+                }
 //                System.out.println("RIGHT");
 
                 break;
             case "LEFT":
-                update(SnakeVec.firstElement().getX() - 35, SnakeVec.firstElement().getY(), grow);
+                if((SnakeVec.firstElement().getX() - 35) >= 0) {
+                    update(SnakeVec.firstElement().getX() - 35, SnakeVec.firstElement().getY(), grow);
+                } else {
+                    update(borderX, SnakeVec.firstElement().getY(), grow);
+                }
 //                System.out.println("LEFT");
 
                 break;
@@ -83,7 +99,6 @@ public class Snake {
             nextX = tmpX;
             nextY = tmpY;
         }
-
         if(grow) {
             Rectangle newBod = new Rectangle(35, 35);
             newBod.setX(nextX);
@@ -124,25 +139,6 @@ public class Snake {
         return false;
     }
 
-    public Boolean borderCollision(double X, double Y) {
-        if(SnakeVec.firstElement().getX() < 0 || SnakeVec.firstElement().getX() >= X) {
-//            System.out.println(SnakeVec.firstElement().getX());
-//            System.out.println(X);
-//            System.out.println(1);
-            System.out.println(SnakeVec.firstElement().getX());
-            System.out.println("X collision");
-            return true;
-        } else if(SnakeVec.firstElement().getY() < 0 || SnakeVec.firstElement().getY() >= Y) {
-//            System.out.println(2);
-            System.out.println("Y collision");
-            return true;
-        } else {
-//            System.out.println(3);
-//            System.out.println(SnakeVec.firstElement().getX());
-            return false;
-        }
-    }
-
     public Boolean collisioncheck(Rectangle other) {
         if((SnakeVec.firstElement().getX() == other.getX()) && (SnakeVec.firstElement().getY() == other.getY())) {
             return true;
@@ -150,7 +146,6 @@ public class Snake {
             return false;
         }
     }
-
 
     //Regular sets and gets as needed
     public void setCurrentDir(String tmp) { CurrentDir = tmp; }
@@ -180,7 +175,17 @@ public class Snake {
 
     public String getName() { return Name; }
 
+    public void setBorderX(double borderX) {
+        this.borderX = borderX - 35;
+    }
+
+    public void setBorderY(double borderY) {
+        this.borderY = borderY - 35;
+    }
+
     //Vector of Rectangles to represent the snake itself
+    private double borderX;
+    private double borderY;
     private Vector<Rectangle> SnakeVec = new Vector();
     private String CurrentDir = "UP";
     private Paint snakeOutline = BLACK;

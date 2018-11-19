@@ -38,6 +38,10 @@ public class Scenes {
         makePoint();
         makeGame(yourSnake, enemySnake, PrimaryStage);
         makeSettings(PrimaryStage, yourSnake);
+        yourSnake.setBorderX(layoutX);
+        yourSnake.setBorderY(layoutY);
+        enemySnake.setBorderX(layoutX);
+        enemySnake.setBorderY(layoutY);
     }
 
     //Cancels the timer and removes any functions still queued on the gameTimer
@@ -423,34 +427,36 @@ public class Scenes {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
+                        //COLLISION WITH OTHER SNAKE
                         if(yourSnake.collisionDetection(theirSnake.getSnake())) {
                             endGame(theirSnake.getName(), primaryStage);
                             System.out.println("collision end");
+                        //COLLISION WITH OTHER SNAKE
                         } else if(theirSnake.collisionDetection(yourSnake.getSnake())) {
                             endGame(yourSnake.getName(), primaryStage);
                             System.out.println("collision end");
+                        //COLLISION WITH YOURSELF
                         } else if(yourSnake.selfCollision()) {
                             endGame(theirSnake.getName(), primaryStage);
                             System.out.println("self-collision end");
+                        //COLLISION WITH YOURSELF
                         } else if(theirSnake.selfCollision()) {
                             endGame(yourSnake.getName(), primaryStage);
                             System.out.println("self-collision end");
+                        //COLLISION WITH A POINT
                         } else if (yourSnake.collisioncheck(point)) {
                             yourSnake.move(true);
                             gameLayout.getChildren().add(yourSnake.getSnake().lastElement());
                             theirSnake.move(false);
                             setSpeed(yourSnake, theirSnake, primaryStage);
                             resetPoint();
+                        //COLLISION WITH A POINT
                         } else if (theirSnake.collisioncheck(point)) {
                             theirSnake.move(true);
                             gameLayout.getChildren().add(theirSnake.getSnake().lastElement());
                             yourSnake.move(false);
                             setSpeed(yourSnake, theirSnake, primaryStage);
                             resetPoint();
-                        } else if(yourSnake.borderCollision(layoutX, layoutY)) {
-                            endGame(theirSnake.getName(), primaryStage);
-                        } else if(theirSnake.borderCollision(layoutX, layoutY)) {
-                            endGame(yourSnake.getName(), primaryStage);
                         } else {
                             yourSnake.move(false);
                             theirSnake.move(false);

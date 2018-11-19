@@ -423,8 +423,6 @@ public class Scenes {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-//                        yourSnake.move(false);
-//                        theirSnake.move(false);
                         if(yourSnake.collisionDetection(theirSnake.getSnake())) {
                             endGame(theirSnake.getName(), primaryStage);
                             System.out.println("collision end");
@@ -439,19 +437,15 @@ public class Scenes {
                             System.out.println("self-collision end");
                         } else if (yourSnake.collisioncheck(point)) {
                             yourSnake.move(true);
-//                            gameLayout.getChildren().add(yourSnake.getSnake().lastElement());
-                            gameLayout.getChildren().add(yourSnake.getSnake().elementAt(1));
+                            gameLayout.getChildren().add(yourSnake.getSnake().lastElement());
                             theirSnake.move(false);
                             setSpeed(yourSnake, theirSnake, primaryStage);
-
                             resetPoint();
                         } else if (theirSnake.collisioncheck(point)) {
                             theirSnake.move(true);
-//                            gameLayout.getChildren().add(theirSnake.getSnake().lastElement());
-                            gameLayout.getChildren().add(theirSnake.getSnake().elementAt(1));
+                            gameLayout.getChildren().add(theirSnake.getSnake().lastElement());
                             yourSnake.move(false);
                             setSpeed(yourSnake, theirSnake, primaryStage);
-
                             resetPoint();
                         } else if(yourSnake.borderCollision(layoutX, layoutY)) {
                             endGame(theirSnake.getName(), primaryStage);
@@ -473,7 +467,7 @@ public class Scenes {
         cancelTimer();
         gameTimer = new Timer();
         makeTimerTask(yourSnake, theirSnake, primaryStage);
-        gameTimer.scheduleAtFixedRate(task, 0, speed);
+        gameTimer.scheduleAtFixedRate(task, speed, speed);
     }
 
     private void startGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {

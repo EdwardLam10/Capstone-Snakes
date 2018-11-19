@@ -29,7 +29,6 @@ import static javafx.scene.paint.Color.*;
 ADD A HOW TO PLAY SCENE THAT CAN BE ACCESSED THROUGH MAIN MENU!!
  */
 
-
 public class Scenes {
 
     //Class Constructor
@@ -41,7 +40,7 @@ public class Scenes {
     }
 
     //Cancels the timer and removes any functions still queued on the gameTimer
-    private void cancelTimer() {
+    private void endGame() {
         gameTimer.cancel();
         gameTimer.purge();
     }
@@ -64,7 +63,7 @@ public class Scenes {
         //Having the start button send you to game Scene.
         startButton.setOnAction(e -> {
             primaryStage.setScene(game);
-            startGame(yourSnake, enemySnake, primaryStage);
+            startGame(yourSnake,enemySnake, primaryStage);
         });
 
         /*Label start = new Label("\n Start: \n");
@@ -128,14 +127,14 @@ public class Scenes {
 
         //Adding the initial Head of the snake (or whatever is in the SnakeVector atm)
         //to the layout
-//        gameLayout.getChildren().addAll(yourSnake.getSnake());
-//        gameLayout.getChildren().addAll(theirSnake.getSnake());
-//        gameLayout.getChildren().addAll(point);
+        gameLayout.getChildren().addAll(yourSnake.getSnake());
+        gameLayout.getChildren().addAll(theirSnake.getSnake());
+        gameLayout.getChildren().addAll(point);
 
         gameLayout.setId("colorful");
 
         //Setting the Scene with the gameLayout that now contains a snake/snakes
-        game = new Scene(gameLayout,layoutX,layoutY);
+        game = new Scene(gameLayout,1085,735);
         game.setUserAgentStylesheet("Resources/Background.css");
 
         gameLayout.setId("Blimp");
@@ -194,7 +193,7 @@ public class Scenes {
                         FOR TESTING ONLY
                      */
                     case I:
-                        endGame("Edward", primaryStage);
+                        makeAlertStage("Edward", primaryStage);
                 }
             }
         };
@@ -279,9 +278,9 @@ public class Scenes {
         Button bg_color4 = new Button("               \n\n");
         bg_color4.setId("Train");
         Button bg_color5 = new Button("               \n\n");
-        bg_color5.setId("Cloud");
+        bg_color5.setStyle("-fx-background-color: Yellow; -fx-font-size: 2em; ");
         Button bg_color6 = new Button("               \n\n");
-        bg_color6.setId("NightSky");
+        bg_color6.setStyle("-fx-background-color: Gray; -fx-font-size: 2em; ");
         color_background1.getChildren().addAll(bg_color1, bg_color2, bg_color3, bg_color4, bg_color5, bg_color6);
 
         background_cur.getChildren().addAll(current_background, cur_color_bg);
@@ -391,118 +390,22 @@ public class Scenes {
         bg_color5.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                cur_color_bg.setId("Cloud");
-                gameLayout.setId("Cloud");
-                setting.setId("Cloud");
-                mainMenuLayout.setId("Cloud");
+                cur_color_bg.setStyle("-fx-background-color: Yellow; -fx-font-size: 2em; ");
             }
         });
         bg_color6.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                cur_color_bg.setId("NightSky");
-                gameLayout.setId("NightSky");
-                setting.setId("NightSky");
-                mainMenuLayout.setId("NightSky");
+                cur_color_bg.setStyle("-fx-background-color: Gray; -fx-font-size: 2em; ");
             }
         });
 
 
     };
-    private void makePoint() {
-        point = new Rectangle(35,35);
-        Image apple = new Image("Resources/apple.jpg");
-        point.setFill(new ImagePattern(apple));
-        resetPoint();
-    }
-    private void makeTimerTask(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
-        //Creating the task to pass through the Timer to be executed every X ms
-        //task to be executed every X ms is yourSnake.move(false);
-        task = new TimerTask() {
-            public void run() {
-                Platform.runLater(new Runnable() {
-                    @Override
-                    public void run() {
-//                        yourSnake.move(false);
-//                        theirSnake.move(false);
-                        if(yourSnake.collisionDetection(theirSnake.getSnake())) {
-                            endGame(theirSnake.getName(), primaryStage);
-                            System.out.println("collision end");
-                        } else if(theirSnake.collisionDetection(yourSnake.getSnake())) {
-                            endGame(yourSnake.getName(), primaryStage);
-                            System.out.println("collision end");
-                        } else if(yourSnake.selfCollision()) {
-                            endGame(theirSnake.getName(), primaryStage);
-                            System.out.println("self-collision end");
-                        } else if(theirSnake.selfCollision()) {
-                            endGame(yourSnake.getName(), primaryStage);
-                            System.out.println("self-collision end");
-                        } else if (yourSnake.collisioncheck(point)) {
-                            yourSnake.move(true);
-//                            gameLayout.getChildren().add(yourSnake.getSnake().lastElement());
-                            gameLayout.getChildren().add(yourSnake.getSnake().elementAt(1));
-                            theirSnake.move(false);
-                            setSpeed(yourSnake, theirSnake, primaryStage);
-
-                            resetPoint();
-                        } else if (theirSnake.collisioncheck(point)) {
-                            theirSnake.move(true);
-//                            gameLayout.getChildren().add(theirSnake.getSnake().lastElement());
-                            gameLayout.getChildren().add(theirSnake.getSnake().elementAt(1));
-                            yourSnake.move(false);
-                            setSpeed(yourSnake, theirSnake, primaryStage);
-
-                            resetPoint();
-                        } else if(yourSnake.borderCollision(layoutX, layoutY)) {
-                            endGame(theirSnake.getName(), primaryStage);
-                        } else if(theirSnake.borderCollision(layoutX, layoutY)) {
-                            endGame(yourSnake.getName(), primaryStage);
-                        } else {
-                            yourSnake.move(false);
-                            theirSnake.move(false);
-                        }
-
-                    }
-                });
-            }
-        };
-    }
-
-    private void setSpeed(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
-        speed -= 10;
-        cancelTimer();
-        gameTimer = new Timer();
-        makeTimerTask(yourSnake, theirSnake, primaryStage);
-        gameTimer.scheduleAtFixedRate(task, 0, speed);
-    }
-
-    private void startGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
-        gameLayout.getChildren().removeAll(yourSnake.getSnake());
-        gameLayout.getChildren().removeAll(theirSnake.getSnake());
-        gameLayout.getChildren().removeAll(point);
-
-        //sets/resets each snake to only the head node and location
-        yourSnake.restartSnake(1050,700, "LEFT");
-        theirSnake.restartSnake(0,0, "RIGHT");
-
-        gameLayout.getChildren().addAll(yourSnake.getSnake());
-        gameLayout.getChildren().addAll(theirSnake.getSnake());
-        gameLayout.getChildren().addAll(point);
-
-        game.setRoot(gameLayout);
-
-        speed = 200;
-
-        makeTimerTask(yourSnake, theirSnake, primaryStage);
-
-        gameTimer = new Timer();
-        gameTimer.scheduleAtFixedRate(task, 1500,  speed);
-
-    }
     //Stops the game and creates the alert screen that shows who won.
-    public void endGame(String winPlayer, Stage primaryStage) {
+    private void makeAlertStage(String winPlayer, Stage primaryStage) {
         //Ends and stops snakes from moving.
-        cancelTimer();
+        endGame();
         gameOverWindow = new Stage();
         gameOverWindow.setTitle("Game Over!");
 
@@ -547,20 +450,68 @@ public class Scenes {
             gameOverWindow.close();
         });
     }
-
-    public void moveSnake(Snake snake1, Boolean grows) {
-        snake1.move(grows);
+    private void makePoint() {
+        point = new Rectangle(35,35);
+        Image apple = new Image("Resources/apple.jpg");
+        point.setFill(new ImagePattern(apple));
+        point.setX(15 * 35);
+        point.setY(10 * 35);
     }
 
+    private void startGame(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
+        //sets/resets each snake to only the head node and location
+        yourSnake.restartSnake(1050,700, "LEFT");
+        theirSnake.restartSnake(0,0, "RIGHT");
+
+//        gameLayout = new BorderPane();
+//        gameLayout.getChildren().addAll(yourSnake.getSnake());
+//        gameLayout.getChildren().addAll(theirSnake.getSnake());
+
+        game.setRoot(gameLayout);
+
+        gameTimer = new Timer();
+        //Creating the task to pass through the Timer to be executed every X ms
+        //task to be executed every X ms is yourSnake.move(false);
+        TimerTask task = new TimerTask() {
+            public void run() {
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        yourSnake.move(false);
+                        theirSnake.move(false);
+                        if(yourSnake.collisionDetection(theirSnake.getSnake())) {
+                            endGame();
+                            makeAlertStage("Josh", primaryStage);
+                        } else if(theirSnake.collisionDetection(yourSnake.getSnake())) {
+                            endGame();
+                            makeAlertStage("Ruby", primaryStage);
+                        } else if(yourSnake.selfCollision()) {
+                            endGame();
+                            makeAlertStage("Ruby", primaryStage);
+                        } else if(theirSnake.selfCollision()) {
+                            endGame();
+                            makeAlertStage("Josh", primaryStage);
+                        } else if (yourSnake.collisioncheck(point)) {
+                            yourSnake.move(true);
+                            theirSnake.move(false);
+                            resetPoint();
+                        } else if (theirSnake.collisioncheck(point)) {
+                            theirSnake.move(true);
+                            yourSnake.move(true);
+                            resetPoint();
+                        }
+
+                    }
+                });
+            }
+        };
+        gameTimer.scheduleAtFixedRate(task, 0,  750);
+
+    }
     private void resetPoint() {
         Random rand = new Random();
         point.setX(rand.nextInt(31) * 35);
         point.setY(rand.nextInt(21) * 35);
-    }
-
-    public void setPoint(int X, int Y) {
-        point.setX(X);
-        point.setY(Y);
     }
 
     //Sets Scene of the primaryStage to main menu Scene
@@ -568,12 +519,6 @@ public class Scenes {
         primaryStage.setScene(mainMenu);
     }
 
-    //Speed at which snake moves, the lower the faster
-    public int speed;
-    //Width in pixels of game
-    private double layoutX = 1085;
-    //Height in pixels of the game
-    private double layoutY = 735;
     //Creating the Main Menu Scene
     private Scene mainMenu;
     //Creating Game Scene
@@ -588,8 +533,6 @@ public class Scenes {
     private Stage gameOverWindow;
     //Timer for the game (helps dictate how fast the snake moves)
     private Timer gameTimer;
-    //TimerTask the functions that are called periodically in Timer;
-    private TimerTask task;
     //Point
     private Rectangle point;
 }

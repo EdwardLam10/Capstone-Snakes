@@ -12,8 +12,8 @@ public class main extends Application {
     public void start(Stage primaryStage) {
         String headPic = "Resources/SnakeHead.jpg";
 
-        Snake yourSnake = new Snake("Resources/Josh.jpg");
-        Snake theirSnake = new Snake("Resources/Ruby.jpg");
+        Snake yourSnake = new Snake("Resources/Josh.jpg", "Josh");
+        Snake theirSnake = new Snake("Resources/Ruby.jpg", "Ruby");
         Scenes mainScenes = new Scenes(primaryStage, yourSnake, theirSnake);
 
         primaryStage.setOnCloseRequest(event -> {

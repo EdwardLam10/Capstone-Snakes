@@ -423,44 +423,43 @@ public class Scenes {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        yourSnake.move(false);
-                        theirSnake.move(false);
+//                        yourSnake.move(false);
+//                        theirSnake.move(false);
                         if(yourSnake.collisionDetection(theirSnake.getSnake())) {
-                            endGame("Ruby", primaryStage);
+                            endGame(theirSnake.getName(), primaryStage);
                             System.out.println("collision end");
                         } else if(theirSnake.collisionDetection(yourSnake.getSnake())) {
-                            endGame("Josh", primaryStage);
+                            endGame(yourSnake.getName(), primaryStage);
                             System.out.println("collision end");
                         } else if(yourSnake.selfCollision()) {
-                            endGame("Ruby", primaryStage);
+                            endGame(theirSnake.getName(), primaryStage);
                             System.out.println("self-collision end");
                         } else if(theirSnake.selfCollision()) {
-                            endGame("Josh", primaryStage);
+                            endGame(yourSnake.getName(), primaryStage);
                             System.out.println("self-collision end");
                         } else if (yourSnake.collisioncheck(point)) {
                             yourSnake.move(true);
-                            gameLayout.getChildren().add(yourSnake.getSnake().lastElement());
-//                            gameLayout.getChildren().add(yourSnake.getSnake().elementAt(1));
-
+//                            gameLayout.getChildren().add(yourSnake.getSnake().lastElement());
+                            gameLayout.getChildren().add(yourSnake.getSnake().elementAt(1));
                             theirSnake.move(false);
-
                             setSpeed(yourSnake, theirSnake, primaryStage);
 
                             resetPoint();
                         } else if (theirSnake.collisioncheck(point)) {
                             theirSnake.move(true);
-                            gameLayout.getChildren().add(theirSnake.getSnake().lastElement());
-//                            gameLayout.getChildren().add(theirSnake.getSnake().elementAt(1));
-
+//                            gameLayout.getChildren().add(theirSnake.getSnake().lastElement());
+                            gameLayout.getChildren().add(theirSnake.getSnake().elementAt(1));
                             yourSnake.move(false);
-
                             setSpeed(yourSnake, theirSnake, primaryStage);
 
                             resetPoint();
                         } else if(yourSnake.borderCollision(layoutX, layoutY)) {
-                            endGame("Ruby", primaryStage);
+                            endGame(theirSnake.getName(), primaryStage);
                         } else if(theirSnake.borderCollision(layoutX, layoutY)) {
-                            endGame("Josh", primaryStage);
+                            endGame(yourSnake.getName(), primaryStage);
+                        } else {
+                            yourSnake.move(false);
+                            theirSnake.move(false);
                         }
 
                     }
@@ -470,7 +469,7 @@ public class Scenes {
     }
 
     private void setSpeed(Snake yourSnake, Snake theirSnake, Stage primaryStage) {
-        speed -= 20;
+        speed -= 10;
         cancelTimer();
         gameTimer = new Timer();
         makeTimerTask(yourSnake, theirSnake, primaryStage);
@@ -492,7 +491,8 @@ public class Scenes {
 
         game.setRoot(gameLayout);
 
-        speed = 200;
+        speed = 2
+    00;
 
         makeTimerTask(yourSnake, theirSnake, primaryStage);
 

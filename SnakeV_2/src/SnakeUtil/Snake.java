@@ -16,7 +16,7 @@ import static javafx.scene.paint.Color.RED;
 public class Snake {
     //Class constructor
     //Creates the first node of the snake with the picture passed through the address HeadPic
-    public Snake(String HeadPic) {
+    public Snake(String HeadPic, String tmpName) {
 
         //Creating Head Cirlce to be added to Vector
         Rectangle headRectangle = new Rectangle(35,35);
@@ -26,6 +26,8 @@ public class Snake {
 
         //Adding Head Rectangle to Vector
         SnakeVec.add(headRectangle);
+
+        Name = tmpName;
     }
 
     //Moves the head of the snake with a Boolean to tell whether or not the snake grows on this move,
@@ -39,60 +41,76 @@ public class Snake {
         //the snakes based on location of the head
         switch(CurrentDir) {
             case "UP":
-                //tmp keeping old head location
-                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-
-                //Changing the location of the head.
-                SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() - 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-
-                //updating rest of the snake to follow the head
-                update(tmpX, tmpY, grow);
-                System.out.println("UP");
-
-//                update(SnakeVec.firstElement().getX(), SnakeVec.firstElement().getY() - 35, grow);
+//                //tmp keeping old head location
+//                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+//                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+//
+//                //Changing the location of the head.
+//                SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() - 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+//
+//                //updating rest of the snake to follow the head
+//                update(tmpX, tmpY, grow);
+//                System.out.println("UP");
+                System.out.println(Name + ": " + SnakeVec.firstElement().getX() + " " + SnakeVec.firstElement().getY());
+                update(SnakeVec.firstElement().getX(), SnakeVec.firstElement().getY() - 35, grow);
+                if(grow) {
+                    System.out.println("ate");
+                }
+                System.out.println(Name + ": " + SnakeVec.firstElement().getX() + " " + SnakeVec.firstElement().getY());
 //                System.out.println("UP");
 
                 break;
             case "DOWN":
-                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-
-                SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() + 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-
-
-                update(tmpX, tmpY, grow);
-                System.out.println("DOWN");
-
-//                update(SnakeVec.firstElement().getX(), SnakeVec.firstElement().getY() + 35, grow);
+//                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+//                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+//
+//                SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() + 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+//
+//
+//                update(tmpX, tmpY, grow);
+//                System.out.println("DOWN");
+                System.out.println(Name + ": " + SnakeVec.firstElement().getX() + " " + SnakeVec.firstElement().getY());
+                update(SnakeVec.firstElement().getX(), SnakeVec.firstElement().getY() + 35, grow);
+                if(grow) {
+                    System.out.println("ate");
+                }
+                System.out.println(Name + ": " + SnakeVec.firstElement().getX() + " " + SnakeVec.firstElement().getY());
 //                System.out.println("DOWN");
 
                 break;
             case "RIGHT":
-                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-
-                SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() + 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-
-
-                update(tmpX, tmpY, grow);
-                System.out.println("RIGHT");
-
-//                update(SnakeVec.firstElement().getX() + 35, SnakeVec.firstElement().getY(), grow);
+//                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+//                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+//
+//                SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() + 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+//
+//
+//                update(tmpX, tmpY, grow);
+//                System.out.println("RIGHT");
+                System.out.println(Name + ": " + SnakeVec.firstElement().getX() + " " + SnakeVec.firstElement().getY());
+                update(SnakeVec.firstElement().getX() + 35, SnakeVec.firstElement().getY(), grow);
+                if(grow) {
+                    System.out.println("ate");
+                }
+                System.out.println(Name + ": " + SnakeVec.firstElement().getX() + " " + SnakeVec.firstElement().getY());
 //                System.out.println("RIGHT");
 
                 break;
             case "LEFT":
-                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-
-                SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() - 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-
-
-                update(tmpX, tmpY, grow);
-                System.out.println("LEFT");
-
-//                update(SnakeVec.firstElement().getX() - 35, SnakeVec.firstElement().getY(), grow);
+//                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+//                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+//
+//                SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() - 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+//
+//
+//                update(tmpX, tmpY, grow);
+//                System.out.println("LEFT");
+                System.out.println(Name + ": " + SnakeVec.firstElement().getX() + " " + SnakeVec.firstElement().getY());
+                update(SnakeVec.firstElement().getX() - 35, SnakeVec.firstElement().getY(), grow);
+                if(grow) {
+                    System.out.println("ate");
+                }
+                System.out.println(Name + ": " + SnakeVec.firstElement().getX() + " " + SnakeVec.firstElement().getY());
 //                System.out.println("LEFT");
 
                 break;
@@ -111,57 +129,56 @@ public class Snake {
     //Bool false = does not grow
     //X/Y is the old location of the head
     public void update(double X, double Y, boolean grow) {
-        //REALLY CONFUSING????? TOOK LIKE A WHOLE DAYS WTF
-        double prevX = X;
-        double prevY = Y;
-        double tmpX = X;
-        double tmpY = Y;
-        for (int i = 1; i < SnakeVec.size(); i++) {
-            prevX = SnakeVec.elementAt(i).getX();
-            prevY = SnakeVec.elementAt(i).getY();
-            SnakeVec.elementAt(i).setX(tmpX);
-            SnakeVec.elementAt(i).setY(tmpY);
-            tmpX = prevX;
-            tmpY = prevY;
-        }
-        if(grow) {
-            Rectangle BodRect = new Rectangle(35,35);
-            BodRect.setStroke(snakeOutline);
-            BodRect.setFill(snakeFill);
-            BodRect.setX(tmpX);
-            BodRect.setY(tmpY);
-            SnakeVec.addElement(BodRect);
-        }
-
-
-//        double nextX = X;
-//        double nextY = Y;
+//        //REALLY CONFUSING????? TOOK LIKE A WHOLE DAYS WTF
+//        double prevX = X;
+//        double prevY = Y;
 //        double tmpX = X;
 //        double tmpY = Y;
-//        if(!grow) {
-//            for(int i = 0; i < SnakeVec.size(); i++) {
-//                tmpX = SnakeVec.elementAt(i).getX();
-//                tmpY = SnakeVec.elementAt(i).getY();
-//
-//                SnakeVec.elementAt(i).setX(nextX);
-//                SnakeVec.elementAt(i).setX(nextY);
-//
-//                nextX = tmpX;
-//                nextY = tmpY;
-//
-//            }
-//        }else {
-//            Rectangle newBod = new Rectangle(35,35);
-//            tmpX = SnakeVec.firstElement().getX();
-//            tmpY = SnakeVec.firstElement().getY();
-//
-//            SnakeVec.firstElement().setX(nextX);
-//            SnakeVec.firstElement().setY(nextY);
-//
-//            newBod.setX(tmpX);
-//            newBod.setY(tmpY);
-//            SnakeVec.insertElementAt(newBod,1);
+//        for (int i = 1; i < SnakeVec.size(); i++) {
+//            prevX = SnakeVec.elementAt(i).getX();
+//            prevY = SnakeVec.elementAt(i).getY();
+//            SnakeVec.elementAt(i).setX(tmpX);
+//            SnakeVec.elementAt(i).setY(tmpY);
+//            tmpX = prevX;
+//            tmpY = prevY;
 //        }
+//        if(grow) {
+//            Rectangle BodRect = new Rectangle(35,35);
+//            BodRect.setStroke(snakeOutline);
+//            BodRect.setFill(snakeFill);
+//            BodRect.setX(tmpX);
+//            BodRect.setY(tmpY);
+//            SnakeVec.addElement(BodRect);
+//        }
+
+        double nextX = X;
+        double nextY = Y;
+        double tmpX = X;
+        double tmpY = Y;
+        if(!grow) {
+            for(int i = 0; i < SnakeVec.size(); i++) {
+                tmpX = SnakeVec.elementAt(i).getX();
+                tmpY = SnakeVec.elementAt(i).getY();
+
+                SnakeVec.elementAt(i).setX(nextX);
+                SnakeVec.elementAt(i).setY(nextY);
+
+                nextX = tmpX;
+                nextY = tmpY;
+
+            }
+        }else {
+            Rectangle newBod = new Rectangle(35,35);
+            tmpX = SnakeVec.firstElement().getX();
+            tmpY = SnakeVec.firstElement().getY();
+
+            SnakeVec.firstElement().setX(nextX);
+            SnakeVec.firstElement().setY(nextY);
+
+            newBod.setX(tmpX);
+            newBod.setY(tmpY);
+            SnakeVec.insertElementAt(newBod,1);
+        }
     }
 
     //Restart Snake, removes all nodes in the snake except for head node.
@@ -248,10 +265,12 @@ public class Snake {
         this.snakeOutline = snakeoutline;
     }
 
+    public String getName() { return Name; }
+
     //Vector of Rectangles to represent the snake itself
     private Vector<Rectangle> SnakeVec = new Vector();
     private String CurrentDir = "UP";
     private Paint snakeOutline = BLACK;
     private Paint snakeFill = RED;
-
+    private String Name;
 }

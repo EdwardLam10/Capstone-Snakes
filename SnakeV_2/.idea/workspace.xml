@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7635bcc6-dc04-4847-836e-0e2e4db8c3ac" name="Default Changelist" comment="" />
+    <list default="true" id="7635bcc6-dc04-4847-836e-0e2e4db8c3ac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +78,7 @@
     <session id="-1407137047">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="18" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="5" />
@@ -87,8 +89,8 @@
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.8" value="7" />
-          <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.open.time.9" value="4" />
+          <entry key="project.opened" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -164,22 +166,24 @@
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="14" column="64" lean-forward="true" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
+              <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+            <state relative-caret-position="292">
+              <caret line="477" selection-start-line="477" selection-end-line="477" />
               <folding>
+                <element signature="method#Scenes#0;class#Scenes#0" />
                 <element signature="method#cancelTimer#0;class#Scenes#0" />
                 <element signature="method#makeMainMenu#0;class#Scenes#0" />
                 <element signature="method#makeGame#0;class#Scenes#0" />
                 <element signature="method#makeSettings#0;class#Scenes#0" />
                 <element signature="method#makePoint#0;class#Scenes#0" />
+                <element signature="method#makeTimerTask#0;class#Scenes#0" />
                 <element signature="method#setSpeed#0;class#Scenes#0" />
                 <element signature="method#startGame#0;class#Scenes#0" />
                 <element signature="method#endGame#0;class#Scenes#0" />
@@ -190,11 +194,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="72" column="24" lean-forward="true" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+            <state relative-caret-position="952">
+              <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Snake#0;class#Snake#0" />
@@ -203,20 +207,6 @@
                 <element signature="method#selfCollision#0;class#Snake#0" />
                 <element signature="method#collisioncheck#0;class#Snake#0" />
                 <element signature="method#setHeadLoc#0;class#Snake#0" />
-                <element signature="e#5329#5330#0" expanded="true" />
-                <element signature="e#5362#5363#0" expanded="true" />
-                <element signature="e#5418#5419#0" expanded="true" />
-                <element signature="e#5450#5451#0" expanded="true" />
-                <element signature="e#5498#5499#0" expanded="true" />
-                <element signature="e#5540#5541#0" expanded="true" />
-                <element signature="e#5578#5579#0" expanded="true" />
-                <element signature="e#5613#5614#0" expanded="true" />
-                <element signature="e#5667#5668#0" expanded="true" />
-                <element signature="e#5715#5716#0" expanded="true" />
-                <element signature="e#5807#5808#0" expanded="true" />
-                <element signature="e#5850#5851#0" expanded="true" />
-                <element signature="e#5896#5897#0" expanded="true" />
-                <element signature="e#5939#5940#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -317,7 +307,6 @@
       <foldersAlwaysOnTop value="false" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -347,6 +336,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -439,18 +429,19 @@
       <workItem from="1541710760293" duration="5556000" />
       <workItem from="1542123192852" duration="12695000" />
       <workItem from="1542150772381" duration="3608000" />
-      <workItem from="1542594512783" duration="3913000" />
+      <workItem from="1542594512783" duration="4298000" />
+      <workItem from="1542598847517" duration="291000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88959000" />
+    <option name="totallyTimeSpent" value="89635000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15560026" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15761234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -459,7 +450,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23512748" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23512748" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -601,33 +592,14 @@
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="14" column="64" lean-forward="true" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
-          <folding>
-            <element signature="method#cancelTimer#0;class#Scenes#0" />
-            <element signature="method#makeMainMenu#0;class#Scenes#0" />
-            <element signature="method#makeGame#0;class#Scenes#0" />
-            <element signature="method#makeSettings#0;class#Scenes#0" />
-            <element signature="method#makePoint#0;class#Scenes#0" />
-            <element signature="method#setSpeed#0;class#Scenes#0" />
-            <element signature="method#startGame#0;class#Scenes#0" />
-            <element signature="method#endGame#0;class#Scenes#0" />
-            <element signature="method#resetPoint#0;class#Scenes#0" />
-            <element signature="method#setPoint#0;class#Scenes#0" />
-          </folding>
+          <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="72" column="24" lean-forward="true" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+        <state relative-caret-position="952">
+          <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Snake#0;class#Snake#0" />
@@ -636,20 +608,27 @@
             <element signature="method#selfCollision#0;class#Snake#0" />
             <element signature="method#collisioncheck#0;class#Snake#0" />
             <element signature="method#setHeadLoc#0;class#Snake#0" />
-            <element signature="e#5329#5330#0" expanded="true" />
-            <element signature="e#5362#5363#0" expanded="true" />
-            <element signature="e#5418#5419#0" expanded="true" />
-            <element signature="e#5450#5451#0" expanded="true" />
-            <element signature="e#5498#5499#0" expanded="true" />
-            <element signature="e#5540#5541#0" expanded="true" />
-            <element signature="e#5578#5579#0" expanded="true" />
-            <element signature="e#5613#5614#0" expanded="true" />
-            <element signature="e#5667#5668#0" expanded="true" />
-            <element signature="e#5715#5716#0" expanded="true" />
-            <element signature="e#5807#5808#0" expanded="true" />
-            <element signature="e#5850#5851#0" expanded="true" />
-            <element signature="e#5896#5897#0" expanded="true" />
-            <element signature="e#5939#5940#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="477" selection-start-line="477" selection-end-line="477" />
+          <folding>
+            <element signature="method#Scenes#0;class#Scenes#0" />
+            <element signature="method#cancelTimer#0;class#Scenes#0" />
+            <element signature="method#makeMainMenu#0;class#Scenes#0" />
+            <element signature="method#makeGame#0;class#Scenes#0" />
+            <element signature="method#makeSettings#0;class#Scenes#0" />
+            <element signature="method#makePoint#0;class#Scenes#0" />
+            <element signature="method#makeTimerTask#0;class#Scenes#0" />
+            <element signature="method#setSpeed#0;class#Scenes#0" />
+            <element signature="method#startGame#0;class#Scenes#0" />
+            <element signature="method#endGame#0;class#Scenes#0" />
+            <element signature="method#resetPoint#0;class#Scenes#0" />
+            <element signature="method#setPoint#0;class#Scenes#0" />
           </folding>
         </state>
       </provider>

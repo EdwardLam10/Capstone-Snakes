@@ -16,8 +16,8 @@ public class Main {
 	}
 	public static void main(String[] args) throws IOException, ClassNotFoundException{
 		Board b = new Board(31, 21, 
-				new Point[] {new Point(19,1)},
-				new Point[] {new Point(1,19)});
+				new Point[] {new Point(5,8)},
+				new Point[] {new Point(8,5)});
 		Game game = new Game(b);
 		Point applePoint = new Point(15,10);
 		game.put(applePoint, BoardObject.APPLE);

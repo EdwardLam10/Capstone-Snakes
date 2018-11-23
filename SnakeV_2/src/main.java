@@ -40,11 +40,11 @@ public class main extends Application {
 
         try {
             System.out.println("0.1");
-            transferSocket = new Socket( "146.95.22.41", 10007);
+            transferSocket = new Socket( "146.95.21.215", 10007); //connecting to server
             System.out.println("0.2");
-            out = new ObjectOutputStream(transferSocket.getOutputStream());
+            out = new ObjectOutputStream(transferSocket.getOutputStream()); //set up output stream from socket
             System.out.println("0.3");
-            in = new ObjectInputStream(transferSocket.getInputStream());
+            in = new ObjectInputStream(transferSocket.getInputStream()); //set up input stream from socket
             System.out.println("0.5");
         } catch (UnknownHostException e) {
             System.err.println("?");
@@ -56,10 +56,12 @@ public class main extends Application {
         }
 
         String firstDir = "UP";
-        out.writeObject(firstDir);
+        out.writeObject(firstDir); //sending out first packet
 
-
+        //getting your trasnfer object from input stream
         try {
+            //This should be inside the loop
+            //Recieveing package
             transferObj = (TransferPackage)in.readObject();
         }
         catch (Exception ex)
@@ -68,6 +70,7 @@ public class main extends Application {
         }
         if(transferObj!=null){
             System.out.println("Got from Server");
+            System.out.println( transferObj.isGameOver());
         }
         else{
             System.err.println("Object not received");

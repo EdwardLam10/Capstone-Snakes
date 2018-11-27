@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="SnakeV_2.jnlp">
+  <information>
+    <title>SnakeV_2</title>
+    <vendor>Unknown</vendor>
+    <description>SnakeV_2</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="SnakeV_2.jar" size="6187789" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="main"  name="SnakeV_2" />
+  <update check="background"/>
+</jnlp>

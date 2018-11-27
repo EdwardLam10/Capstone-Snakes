@@ -2,6 +2,7 @@ package SnakeUtil;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import javafx.geometry.Bounds;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.paint.Paint;
@@ -15,7 +16,7 @@ import static javafx.scene.paint.Color.RED;
 public class Snake {
     //Class constructor
     //Creates the first node of the snake with the picture passed through the address HeadPic
-    public Snake(String HeadPic) {
+    public Snake(String HeadPic, String tmpName) {
 
         //Creating Head Cirlce to be added to Vector
         Rectangle headRectangle = new Rectangle(35,35);
@@ -25,6 +26,8 @@ public class Snake {
 
         //Adding Head Rectangle to Vector
         SnakeVec.add(headRectangle);
+
+        Name = tmpName;
     }
 
     //Moves the head of the snake with a Boolean to tell whether or not the snake grows on this move,
@@ -38,59 +41,40 @@ public class Snake {
         //the snakes based on location of the head
         switch(CurrentDir) {
             case "UP":
-                //tmp keeping old head location
-                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+                if((SnakeVec.firstElement().getY() - 35) >= 0) {
+                    update(SnakeVec.firstElement().getX(), SnakeVec.firstElement().getY() - 35, grow);
+                } else {
+                    update(SnakeVec.firstElement().getX(), borderY - 35, grow);
+                }
+//                System.out.println("UP");
 
-                //Changing the location of the head.
-                SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() - 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-
-                /*
-                 Net code can be implemented here to change the location of the head based on the direction.
-                 */
-
-                //updating rest of the snake to follow the head
-                update(tmpX, tmpY, grow);
-                System.out.println("UP");
                 break;
             case "DOWN":
-                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+                if((SnakeVec.firstElement().getY() + 35 <= borderY)) {
+                    update(SnakeVec.firstElement().getX(), SnakeVec.firstElement().getY() + 35, grow);
+                } else {
+                    update(SnakeVec.firstElement().getX(), 0, grow);
+                }
+//                System.out.println("DOWN");
 
-                SnakeVec.firstElement().setY(SnakeVec.firstElement().getY() + 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-
-                /*
-                 Net code can be implemented here to change the location of the head based on the direction.
-                 */
-
-                update(tmpX, tmpY, grow);
-                System.out.println("DOWN");
                 break;
             case "RIGHT":
-                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+                if((SnakeVec.firstElement().getX() + 35) <= borderX) {
+                    update(SnakeVec.firstElement().getX() + 35, SnakeVec.firstElement().getY(), grow);
+                } else {
+                    update(0, SnakeVec.firstElement().getY(), grow);
+                }
+//                System.out.println("RIGHT");
 
-                SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() + 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-
-                /*
-                 Net code can be implemented here to change the location of the head based on the direction.
-                 */
-
-                update(tmpX, tmpY, grow);
-                System.out.println("RIGHT");
                 break;
             case "LEFT":
-                tmpX = SnakeVec.firstElement().getX(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-                tmpY = SnakeVec.firstElement().getY(); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
+                if((SnakeVec.firstElement().getX() - 35) >= 0) {
+                    update(SnakeVec.firstElement().getX() - 35, SnakeVec.firstElement().getY(), grow);
+                } else {
+                    update(borderX, SnakeVec.firstElement().getY(), grow);
+                }
+//                System.out.println("LEFT");
 
-                SnakeVec.firstElement().setX(SnakeVec.firstElement().getX() - 35); //LINE NOT NEEDED ONCE NET CODE IS IMPLEMENTED
-
-                /*
-                 Net code can be implemented here to change the location of the head based on the direction.
-                 */
-
-                update(tmpX, tmpY, grow);
-                System.out.println("LEFT");
                 break;
         }
     }
@@ -100,27 +84,28 @@ public class Snake {
     //Bool true = does grow
     //Bool false = does not grow
     //X/Y is the old location of the head
-    private void update(double X, double Y, boolean grow) {
-        //REALLY CONFUSING????? TOOK LIKE A WHOLE DAYS WTF
-        double prevX = X;
-        double prevY = Y;
+    public void update(double X, double Y, boolean grow) {
+        double nextX = X;
+        double nextY = Y;
         double tmpX = X;
         double tmpY = Y;
-        for (int i = 1; i < SnakeVec.size(); i++) {
-            prevX = SnakeVec.elementAt(i).getX();
-            prevY = SnakeVec.elementAt(i).getY();
-            SnakeVec.elementAt(i).setX(tmpX);
-            SnakeVec.elementAt(i).setY(tmpY);
-            tmpX = prevX;
-            tmpY = prevY;
+        for(int i = 0; i < SnakeVec.size(); i++) {
+            tmpX = SnakeVec.elementAt(i).getX();
+            tmpY = SnakeVec.elementAt(i).getY();
+
+            SnakeVec.elementAt(i).setX(nextX);
+            SnakeVec.elementAt(i).setY(nextY);
+
+            nextX = tmpX;
+            nextY = tmpY;
         }
         if(grow) {
-            Rectangle BodRect = new Rectangle(35,35);
-            BodRect.setStroke(snakeOutline);
-            BodRect.setFill(snakeFill);
-            BodRect.setX(tmpX);
-            BodRect.setY(tmpY);
-            SnakeVec.addElement(BodRect);
+            Rectangle newBod = new Rectangle(35, 35);
+            newBod.setX(nextX);
+            newBod.setY(nextY);
+            newBod.setFill(snakeFill);
+            newBod.setStroke(snakeOutline);
+            SnakeVec.addElement(newBod);
         }
     }
 
@@ -162,7 +147,6 @@ public class Snake {
         }
     }
 
-
     //Regular sets and gets as needed
     public void setCurrentDir(String tmp) { CurrentDir = tmp; }
     public void setHeadLoc(double X, double Y) {
@@ -170,6 +154,10 @@ public class Snake {
         SnakeVec.firstElement().setY(Y);
     }
     public Vector<Rectangle> getSnake() { return SnakeVec; }
+
+    public String getSnakeDirection() {
+        return CurrentDir;
+    }
 
     public Paint getSnakeFill(java.awt.Color yellow) {
         return snakeFill;
@@ -185,10 +173,22 @@ public class Snake {
         this.snakeOutline = snakeoutline;
     }
 
+    public String getName() { return Name; }
+
+    public void setBorderX(double borderX) {
+        this.borderX = borderX - 35;
+    }
+
+    public void setBorderY(double borderY) {
+        this.borderY = borderY - 35;
+    }
+
     //Vector of Rectangles to represent the snake itself
+    private double borderX;
+    private double borderY;
     private Vector<Rectangle> SnakeVec = new Vector();
     private String CurrentDir = "UP";
     private Paint snakeOutline = BLACK;
     private Paint snakeFill = RED;
-
+    private String Name;
 }

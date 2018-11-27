@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7635bcc6-dc04-4847-836e-0e2e4db8c3ac" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/artifacts/SnakeV_2.xml" afterDir="false" />
@@ -103,6 +104,13 @@
       <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Snake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/OnlineSnake.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OnlineSnake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -173,9 +181,9 @@
     <session id="-1407137047">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="18" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="5" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="2" />
@@ -185,7 +193,7 @@
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.8" value="7" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.opened" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -262,11 +270,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="357">
               <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="68">
+              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+>>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
             </state>
           </provider>
         </entry>
@@ -305,8 +318,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="170">
               <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+=======
+            <state relative-caret-position="139">
+              <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#Snake#0;class#Snake#0" />
+                <element signature="method#restartSnake#0;class#Snake#0" />
+                <element signature="method#collisionDetection#0;class#Snake#0" />
+                <element signature="method#selfCollision#0;class#Snake#0" />
+                <element signature="method#collisioncheck#0;class#Snake#0" />
+                <element signature="method#setHeadLoc#0;class#Snake#0" />
+              </folding>
+>>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
             </state>
           </provider>
         </entry>
@@ -404,7 +431,11 @@
       <foldersAlwaysOnTop value="false" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
+=======
+      <pane id="Scope" />
+>>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -433,7 +464,11 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+      <pane id="PackagesPane" />
+>>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -442,7 +477,11 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543361311960" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="full.screen.before.presentation.mode" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$USER_HOME$/SnakeV_3" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -527,11 +566,16 @@
       <workItem from="1542123192852" duration="12695000" />
       <workItem from="1542150772381" duration="3608000" />
       <workItem from="1542594512783" duration="3913000" />
+<<<<<<< HEAD
       <workItem from="1543359070111" duration="2723000" />
+=======
+      <workItem from="1542932649418" duration="146000" />
+>>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="96028000" />
   </component>
   <component name="ToolWindowManager">
@@ -539,6 +583,14 @@
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.136848" />
+=======
+    <option name="totallyTimeSpent" value="89105000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.06371563" />
+>>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -547,7 +599,11 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23492724" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23512748" />
+>>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -698,8 +754,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="170">
           <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+=======
+        <state relative-caret-position="68">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+>>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
         </state>
       </provider>
     </entry>
@@ -723,6 +784,25 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Snake#0;class#Snake#0" />
+            <element signature="method#restartSnake#0;class#Snake#0" />
+            <element signature="method#collisionDetection#0;class#Snake#0" />
+            <element signature="method#selfCollision#0;class#Snake#0" />
+            <element signature="method#collisioncheck#0;class#Snake#0" />
+            <element signature="method#setHeadLoc#0;class#Snake#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
   </component>
   <component name="masterDetails">
     <states>

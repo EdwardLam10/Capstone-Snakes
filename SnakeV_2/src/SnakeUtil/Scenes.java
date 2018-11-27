@@ -548,19 +548,10 @@ public class Scenes {
         });
     }
 
-    public void moveSnake(Snake snake1, Boolean grows) {
-        snake1.move(grows);
-    }
-
     private void resetPoint() {
         Random rand = new Random();
         point.setX(rand.nextInt(31) * 35);
         point.setY(rand.nextInt(21) * 35);
-    }
-
-    public void setPoint(int X, int Y) {
-        point.setX(X);
-        point.setY(Y);
     }
 
     //Sets Scene of the primaryStage to main menu Scene

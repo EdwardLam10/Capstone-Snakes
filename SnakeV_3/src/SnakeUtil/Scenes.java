@@ -52,6 +52,11 @@ public class Scenes {
         //Having the start button send you to game Scene.
         startONLINEButton.setOnAction(e -> {
             primaryStage.setScene(gameONLINE);
+            try {
+                startONLINEGame();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
         });
 
         //START BUTTON
@@ -59,11 +64,7 @@ public class Scenes {
         //Having the start button send you to game Scene.
         startButton.setOnAction(e -> {
             primaryStage.setScene(game);
-            try {
-                startGame();
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
+            startGame();
         });
 
         //SETTINGS BUTTON
@@ -401,7 +402,7 @@ public class Scenes {
     }
 
 
-    private void startGame() throws IOException, UnknownHostException{
+    private void startONLINEGame() throws IOException, UnknownHostException{
         Online online = new Online("ip");
         transferObj = online.getTP();
         if(transferObj.isGameOver() == true) {
@@ -423,6 +424,36 @@ public class Scenes {
         //sets/resets each snake to only the head node and location
         yourSnake.restartSnake(transferObj.getP1X(),transferObj.getP1Y(), "LEFT");
         theirSnake.restartSnake(transferObj.getP2X(),transferObj.getP2Y(), "RIGHT");
+
+        gameLayout.getChildren().addAll(yourSnake.getSnake());
+        gameLayout.getChildren().addAll(theirSnake.getSnake());
+        gameLayout.getChildren().addAll(point);
+
+        game.setRoot(gameLayout);
+
+        speed = 200;
+
+        makeTimerTask();
+
+        gameTimer = new Timer();
+        gameTimer.scheduleAtFixedRate(task, 1500,  speed);
+    }
+    private void startGame() {
+
+        makePoint();
+
+        yourSnake.setBorderX(layoutX);
+        yourSnake.setBorderY(layoutY);
+        theirSnake.setBorderX(layoutX);
+        theirSnake.setBorderY(layoutY);
+
+        gameLayout.getChildren().removeAll(yourSnake.getSnake());
+        gameLayout.getChildren().removeAll(theirSnake.getSnake());
+        gameLayout.getChildren().removeAll(point);
+
+        //sets/resets each snake to only the head node and location
+        yourSnake.restartSnake(1080,700, "LEFT");
+        theirSnake.restartSnake(0,0, "RIGHT");
 
         gameLayout.getChildren().addAll(yourSnake.getSnake());
         gameLayout.getChildren().addAll(theirSnake.getSnake());

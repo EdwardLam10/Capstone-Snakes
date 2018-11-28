@@ -10,11 +10,10 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -38,6 +37,7 @@ public class Scenes {
         makePoint();
         makeGame(yourSnake, enemySnake, PrimaryStage);
         makeSettings(PrimaryStage, yourSnake);
+        makeCredits(PrimaryStage, yourSnake);
         yourSnake.setBorderX(layoutX);
         yourSnake.setBorderY(layoutY);
         enemySnake.setBorderX(layoutX);
@@ -92,6 +92,9 @@ public class Scenes {
             startGame(yourSnake,enemySnake, primaryStage);
         });*/
 
+       Button credit = new Button("Credits");
+       credit.setOnAction(e-> primaryStage.setScene(credits));
+
         Button exit = new Button("Exit");
         exit.setOnAction(e -> primaryStage.close());
 
@@ -118,7 +121,7 @@ public class Scenes {
 
         VBox cvbox = new VBox(10);
 
-        cvbox.getChildren().addAll(top, center, /*bottom,*/ startButton, settingsButton, exit);
+        cvbox.getChildren().addAll(top, center, /*bottom,*/ startButton, settingsButton, credit, exit);
         cvbox.setAlignment(Pos.CENTER);
 
         //Setting the top, bottom, center, right and left nodes to the pane
@@ -413,6 +416,84 @@ public class Scenes {
 
 
     };
+    private void makeCredits(Stage primaryStage, Snake yourSnake) {
+        BorderPane credit = new BorderPane();
+
+        credits = new Scene(credit, 1085, 735);
+        credits.setUserAgentStylesheet("Resources/Background.css");
+        credit.setId("colorful");
+        credit.setId("Blimp");
+
+        Button back = new Button("Back");
+        back.setOnAction(event -> primaryStage.setScene(mainMenu));
+        credit.setTop(back);
+
+        VBox center = new VBox(20);
+        center.setAlignment(Pos.CENTER);
+
+        Label credit_title = new Label("Credits page");
+        credit_title.setFont(Font.font(50));
+
+
+        HBox images_credits = new HBox();
+        images_credits.setAlignment(Pos.CENTER);
+        Label images_title = new Label("Image credits:");
+        images_title.setFont(Font.font(35));
+        images_credits.getChildren().add(images_title);
+
+        HBox line1 = new HBox(10);
+        HBox line2 = new HBox(10);
+        HBox line3 = new HBox(10);
+        HBox line4 = new HBox(10);
+        HBox line5 = new HBox(10);
+        HBox line6 = new HBox(10);
+
+        line1.setAlignment(Pos.CENTER);
+        line2.setAlignment(Pos.CENTER);
+        line3.setAlignment(Pos.CENTER);
+        line4.setAlignment(Pos.CENTER);
+        line5.setAlignment(Pos.CENTER);
+        line6.setAlignment(Pos.CENTER);
+
+        Button line1_btn = new Button("               \n\n");
+        Button line2_btn = new Button("               \n\n");
+        Button line3_btn = new Button("               \n\n");
+        Button line4_btn = new Button("               \n\n");
+        Button line5_btn = new Button("               \n\n");
+        Button line6_btn = new Button("               \n\n");
+
+        line1_btn.setId("Blimp");
+        line2_btn.setId("Sky");
+        line3_btn.setId("SkyIsland");
+        line4_btn.setId("Train");
+        line5_btn.setId("Cloud");
+        line6_btn.setId("NightSky");
+
+        Label line1_link = new Label("https://anime-pictures.net/pictures/view_post/430983?lang=en");
+        Label line2_link = new Label("https://wallpapercave.com/w/wp2394212");
+        Label line3_link = new Label("https://www.artstation.com/artwork/La9XR");
+        Label line4_link = new Label("https://www.wallpaperup.com/877343/caring201_clouds_original_scenic_tagme_train.html");
+        Label line5_link = new Label("http://www.allfinweb.com/single/23256048-anime-wallpaper-feathers.html");
+        Label line6_link = new Label("https://images5.alphacoders.com/495/495521.jpg");
+
+        line1_link.setFont(Font.font(25));
+        line2_link.setFont(Font.font(25));
+        line3_link.setFont(Font.font(25));
+        line4_link.setFont(Font.font(25));
+        line5_link.setFont(Font.font(25));
+        line6_link.setFont(Font.font(25));
+
+        line1.getChildren().addAll(line1_btn, line1_link);
+        line2.getChildren().addAll(line2_btn, line2_link);
+        line3.getChildren().addAll(line3_btn, line3_link);
+        line4.getChildren().addAll(line4_btn, line4_link);
+        line5.getChildren().addAll(line5_btn, line5_link);
+        line6.getChildren().addAll(line6_btn, line6_link);
+
+
+        center.getChildren().addAll(credit_title, images_credits, line1, line2, line3, line4, line5, line6);
+        credit.setCenter(center);
+    };
     private void makePoint() {
         point = new Rectangle(35,35);
         Image apple = new Image("Resources/apple.jpg");
@@ -575,6 +656,8 @@ public class Scenes {
     private BorderPane mainMenuLayout;
     //Creating Settings Scene
     private Scene settings;
+    //Creating Credit Scene
+    private Scene credits;
     //Game Over Alert
     private Stage gameOverWindow;
     //Timer for the game (helps dictate how fast the snake moves)

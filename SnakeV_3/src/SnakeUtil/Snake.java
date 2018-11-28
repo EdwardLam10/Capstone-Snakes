@@ -1,8 +1,5 @@
 package SnakeUtil;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import javafx.geometry.Bounds;
-import javafx.scene.SnapshotParameters;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.paint.Paint;
@@ -47,7 +44,6 @@ public class Snake {
                     update(SnakeVec.firstElement().getX(), borderY - 35, grow);
                 }
 //                System.out.println("UP");
-
                 break;
             case "DOWN":
                 if((SnakeVec.firstElement().getY() + 35 <= borderY)) {
@@ -56,7 +52,6 @@ public class Snake {
                     update(SnakeVec.firstElement().getX(), 0, grow);
                 }
 //                System.out.println("DOWN");
-
                 break;
             case "RIGHT":
                 if((SnakeVec.firstElement().getX() + 35) <= borderX) {
@@ -65,7 +60,6 @@ public class Snake {
                     update(0, SnakeVec.firstElement().getY(), grow);
                 }
 //                System.out.println("RIGHT");
-
                 break;
             case "LEFT":
                 if((SnakeVec.firstElement().getX() - 35) >= 0) {
@@ -74,7 +68,6 @@ public class Snake {
                     update(borderX, SnakeVec.firstElement().getY(), grow);
                 }
 //                System.out.println("LEFT");
-
                 break;
         }
     }
@@ -83,7 +76,6 @@ public class Snake {
     //on this move,
     //Bool true = does grow
     //Bool false = does not grow
-    //X/Y is the old location of the head
     public void update(double X, double Y, boolean grow) {
         double nextX = X;
         double nextY = Y;
@@ -186,7 +178,7 @@ public class Snake {
     //Vector of Rectangles to represent the snake itself
     private double borderX;
     private double borderY;
-    private Vector<Rectangle> SnakeVec = new Vector();
+    private Vector<Rectangle> SnakeVec = new Vector<>();
     private String CurrentDir = "UP";
     private Paint snakeOutline = BLACK;
     private Paint snakeFill = RED;

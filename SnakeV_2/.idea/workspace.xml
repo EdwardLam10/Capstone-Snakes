@@ -7,110 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7635bcc6-dc04-4847-836e-0e2e4db8c3ac" name="Default Changelist" comment="">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SnakeV_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/SnakeV_2/SnakeV_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/SnakeV_2/SnakeV_2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/SnakeV_2/SnakeV_2.jnlp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/.idea/artifacts/SnakeV_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/SnakeV_2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/artifacts/SnakeV_2/SnakeV_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/artifacts/SnakeV_2/SnakeV_2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/artifacts/SnakeV_2/SnakeV_2.jnlp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/Resources/Background.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/Resources/Blimp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/Resources/Cloud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/Resources/ColorHex.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/Resources/Josh.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/Resources/NightSky.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/Resources/Ruby.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/Resources/Shani.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/Resources/Sky.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/Resources/SkyIsland.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/Resources/SnakeIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/Resources/Train.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/Resources/apple.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$10.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$11.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$12.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$13.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$14$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$14.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$15.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$6.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$7.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$8.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes$9.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Scenes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Setting layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/SnakeUtil/Snake.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/out/production/SnakeV_2/test.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/Resources/Background.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/Resources/Blimp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/Resources/Cloud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/Resources/ColorHex.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/Resources/Josh.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/Resources/NightSky.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/Resources/Ruby.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/Resources/Shani.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/Resources/Sky.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/Resources/SkyIsland.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/Resources/SnakeIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/Resources/Train.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/Resources/apple.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/SnakeUtil/Scenes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/SnakeUtil/Setting layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/SnakeUtil/Snake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SnakeV_3/src/test.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/test.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/test/test.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$14$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$14$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$15.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Snake.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Snake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
-=======
       <change afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/OnlineSnake.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
->>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -253,6 +153,7 @@
       <usages-collector id="statistics.spring.boot.run.usages" />
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.24" value="1" />
@@ -270,16 +171,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
             <state relative-caret-position="357">
               <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-=======
-            <state relative-caret-position="68">
-              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
->>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
             </state>
           </provider>
         </entry>
@@ -287,8 +183,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="471" column="98" selection-start-line="471" selection-start-column="98" selection-end-line="471" selection-end-column="98" />
+            <state relative-caret-position="518">
+              <caret line="491" lean-forward="true" selection-start-line="491" selection-end-line="491" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#cancelTimer#0;class#Scenes#0" />
@@ -318,22 +214,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
             <state relative-caret-position="170">
               <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-=======
-            <state relative-caret-position="139">
-              <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#Snake#0;class#Snake#0" />
-                <element signature="method#restartSnake#0;class#Snake#0" />
-                <element signature="method#collisionDetection#0;class#Snake#0" />
-                <element signature="method#selfCollision#0;class#Snake#0" />
-                <element signature="method#collisioncheck#0;class#Snake#0" />
-                <element signature="method#setHeadLoc#0;class#Snake#0" />
-              </folding>
->>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
             </state>
           </provider>
         </entry>
@@ -403,10 +285,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1615" />
-    <option name="height" value="880" />
+    <option name="x" value="110" />
+    <option name="y" value="-6" />
+    <option name="width" value="776" />
+    <option name="height" value="420" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -431,11 +313,7 @@
       <foldersAlwaysOnTop value="false" />
     </navigator>
     <panes>
-<<<<<<< HEAD
       <pane id="PackagesPane" />
-=======
-      <pane id="Scope" />
->>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -464,11 +342,7 @@
           <select />
         </subPane>
       </pane>
-<<<<<<< HEAD
       <pane id="Scope" />
-=======
-      <pane id="PackagesPane" />
->>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -477,11 +351,7 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543361311960" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="full.screen.before.presentation.mode" value="false" />
-<<<<<<< HEAD
-    <property name="last_opened_file_path" value="$USER_HOME$/SnakeV_3" />
-=======
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
->>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -566,31 +436,17 @@
       <workItem from="1542123192852" duration="12695000" />
       <workItem from="1542150772381" duration="3608000" />
       <workItem from="1542594512783" duration="3913000" />
-<<<<<<< HEAD
-      <workItem from="1543359070111" duration="2723000" />
-=======
       <workItem from="1542932649418" duration="146000" />
->>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="96028000" />
+    <option name="totallyTimeSpent" value="89717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1843" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.136848" />
-=======
-    <option name="totallyTimeSpent" value="89105000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.06371563" />
->>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -599,11 +455,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-<<<<<<< HEAD
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23492724" />
-=======
       <window_info anchor="bottom" id="Run" order="2" weight="0.23512748" />
->>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -713,8 +565,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-803">
-          <caret line="653" column="65" selection-start-line="653" selection-start-column="65" selection-end-line="653" selection-end-column="65" />
+        <state relative-caret-position="-735">
+          <caret line="654" column="12" selection-start-line="654" selection-start-column="12" selection-end-line="654" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -754,20 +606,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
         <state relative-caret-position="170">
           <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-=======
-        <state relative-caret-position="68">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
->>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="471" column="98" selection-start-line="471" selection-start-column="98" selection-end-line="471" selection-end-column="98" />
+        <state relative-caret-position="518">
+          <caret line="491" lean-forward="true" selection-start-line="491" selection-end-line="491" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#cancelTimer#0;class#Scenes#0" />
@@ -784,25 +631,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-=======
-    <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Snake#0;class#Snake#0" />
-            <element signature="method#restartSnake#0;class#Snake#0" />
-            <element signature="method#collisionDetection#0;class#Snake#0" />
-            <element signature="method#selfCollision#0;class#Snake#0" />
-            <element signature="method#collisioncheck#0;class#Snake#0" />
-            <element signature="method#setHeadLoc#0;class#Snake#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
->>>>>>> ea942e4fc9004b9b1f3b61aa021cce14e5b36361
   </component>
   <component name="masterDetails">
     <states>

@@ -84,7 +84,6 @@ public class Scenes {
         Label top = new Label("Welcome to Snake Online");
         Label left = new Label("Player 1");
         Label right = new Label("Player 2");
-        //Label bottom = new Label("Waiting for second player to enter \n" + "Waiting for both players to click ready \n" + "Once both players have clicked ready \n" + "please click start \n");
         Label center = new Label("Waiting for Players to to enter");
 
         TextField name1 = new TextField();
@@ -116,7 +115,6 @@ public class Scenes {
         top.setFont(Font.font(30));
         left.setFont(Font.font(30));
         right.setFont(Font.font(30));
-        //bottom.setFont(Font.font("arial", FontWeight.BOLD,30));
         center.setFont(Font.font(30));
 
         VBox lvbox = new VBox();

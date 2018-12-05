@@ -2,11 +2,13 @@ package SnakeUtil;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
@@ -89,22 +91,45 @@ public class Scenes {
         Label top = new Label("Welcome to Snake Online");
         Label left = new Label("Player 1");
         Label right = new Label("Player 2");
-        //Label bottom = new Label("Waiting for second player to enter \n" + "Waiting for both players to click ready \n" + "Once both players have clicked ready \n" + "please click start \n");
         Label center = new Label("Waiting for Players to to enter");
+
+        TextField name1 = new TextField();
+        name1.setPromptText("Enter name");
+        name1.setFont(Font.font(20));
+        name1.setAlignment(Pos.CENTER);
+        EventHandler<ActionEvent> event_name1 = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                left.setText(name1.getText());
+            }
+        };
+        name1.setOnAction(event_name1);
+
+        TextField name2 = new TextField();
+        name2.setPromptText("Enter name");
+        name2.setFont(Font.font(20));
+        name2.setAlignment(Pos.CENTER);
+        EventHandler<ActionEvent> event_name2 = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                right.setText(name2.getText());
+            }
+        };
+        name2.setOnAction(event_name2);
+
 
         //changing the font and size of the text
         top.setFont(Font.font(30));
         left.setFont(Font.font(30));
         right.setFont(Font.font(30));
-        //bottom.setFont(Font.font("arial", FontWeight.BOLD,30));
         center.setFont(Font.font(30));
 
         VBox lvbox = new VBox();
-        lvbox.getChildren().add(left);
+        lvbox.getChildren().addAll(left, name1);
         lvbox.setAlignment(Pos.CENTER);
 
         VBox rvbox = new VBox();
-        rvbox.getChildren().add(right);
+        rvbox.getChildren().addAll(right, name2);
         rvbox.setAlignment(Pos.CENTER);
 
         VBox cvbox = new VBox(10);

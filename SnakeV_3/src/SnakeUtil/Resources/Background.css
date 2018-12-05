@@ -17,6 +17,12 @@
     -fx-border-radius: 6;
 }
 
+.text-field{
+    -fx-border-color: darkorchid;
+    -fx-text-fill: #ccffff;
+    -fx-background-color: darkorchid;
+}
+
 #RedBG {
     -fx-background-color: RED;
 }

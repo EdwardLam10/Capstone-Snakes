@@ -156,6 +156,8 @@ public class Main {
 
             p1out.writeObject(p1Package);
             p2out.writeObject(p2Package);
+            p1out.reset();
+            p2out.reset();
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {

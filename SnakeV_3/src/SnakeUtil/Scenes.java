@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.net.UnknownHostException;
 import onlinetestcode.TransferPackage;
 
+import javax.swing.plaf.synth.SynthEditorPaneUI;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -35,13 +36,13 @@ public class Scenes {
         makeGameOnline();
         makeGame();
         makeSettings();
+        makeCredits();
         Image snake = new Image(getClass().getResourceAsStream("/SnakeUtil/Resources/SnakeIcon.png"));
         primaryStage.setTitle("Python: Snake Online");
         primaryStage.getIcons().add(snake);
         primaryStage.setScene(mainMenu);
         primaryStage.show();
     }
-
 
     private void makeMainMenu() {
         mainMenuLayout = new BorderPane();
@@ -76,63 +77,30 @@ public class Scenes {
             primaryStage.setScene(settings);
         });
 
+        //CREDITS BUTTON
+        Button creditsButton = new Button("Credits");
+        creditsButton.setOnAction(e-> primaryStage.setScene(credits));
+
+
+        //EXIT BUTTON
         Button exit = new Button("Exit");
         exit.setOnAction(e -> {
             primaryStage.close();
         });
 
         Label top = new Label("Welcome to Snake Online");
-        Label left = new Label("Player 1");
-        Label right = new Label("Player 2");
         Label center = new Label("Waiting for Players to to enter");
-
-        TextField name1 = new TextField();
-        name1.setPromptText("Enter name");
-        name1.setFont(Font.font(20));
-        name1.setAlignment(Pos.CENTER);
-        EventHandler<ActionEvent> event_name1 = new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                left.setText(name1.getText());
-            }
-        };
-        name1.setOnAction(event_name1);
-
-        TextField name2 = new TextField();
-        name2.setPromptText("Enter name");
-        name2.setFont(Font.font(20));
-        name2.setAlignment(Pos.CENTER);
-        EventHandler<ActionEvent> event_name2 = new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                right.setText(name2.getText());
-            }
-        };
-        name2.setOnAction(event_name2);
-
 
         //changing the font and size of the text
         top.setFont(Font.font(30));
-        left.setFont(Font.font(30));
-        right.setFont(Font.font(30));
         center.setFont(Font.font(30));
-
-        VBox lvbox = new VBox();
-        lvbox.getChildren().addAll(left, name1);
-        lvbox.setAlignment(Pos.CENTER);
-
-        VBox rvbox = new VBox();
-        rvbox.getChildren().addAll(right, name2);
-        rvbox.setAlignment(Pos.CENTER);
 
         VBox cvbox = new VBox(10);
 
-        cvbox.getChildren().addAll(top, center, /*bottom,*/ startButton, startONLINEButton, settingsButton, exit);
+        cvbox.getChildren().addAll(top, center, /*bottom,*/ startButton, startONLINEButton, settingsButton, creditsButton, exit);
         cvbox.setAlignment(Pos.CENTER);
 
         //Setting the top, bottom, center, right and left nodes to the pane
-        mainMenuLayout.setLeft(lvbox);
-        mainMenuLayout.setRight(rvbox);
         mainMenuLayout.setCenter(cvbox);
     }
     private void makeSettings() {
@@ -160,6 +128,20 @@ public class Scenes {
         set_background.setFont(Font.font(30));
         current_background.setFont(Font.font(30));
 
+        Label name_label = new Label("Name");
+        name_label.setFont(Font.font(30));
+        TextField name1 = new TextField();
+        name1.setPromptText("Enter name");
+        name1.setFont(Font.font(25));
+        name1.setAlignment(Pos.CENTER);
+        EventHandler<ActionEvent> event_name1 = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                name_label.setText(name1.getText());
+            }
+        };
+        name1.setOnAction(event_name1);
+
         VBox back = new VBox();
         Button back_btn = new Button("Back");
         back.getChildren().add(back_btn);
@@ -167,6 +149,10 @@ public class Scenes {
         VBox title = new VBox();
         title.getChildren().add(setting_title);
         title.setAlignment(Pos.CENTER);
+
+        HBox name = new HBox(10);
+        name.getChildren().addAll(name_label, name1);
+        name.setAlignment(Pos.CENTER);
 
         HBox skin_title = new HBox(10);
         VBox skin_set = new VBox(10);
@@ -222,8 +208,8 @@ public class Scenes {
         background_set.setAlignment(Pos.CENTER);
         background_title.setAlignment(Pos.CENTER);
 
-        VBox all = new VBox(50);
-        all.getChildren().addAll(back, title, skin_title, background_title);
+        VBox all = new VBox(40);
+        all.getChildren().addAll(back, title, name, skin_title, background_title);
 
         cur_color_skin.setStyle("-fx-background-color: Red; -fx-font-size: 2em; ");
         yourSnake.setSnakeFill(RED);
@@ -425,11 +411,94 @@ public class Scenes {
         //      For example you can have it execute when the key is released instead of pressed.
         game.addEventFilter(KeyEvent.KEY_PRESSED, eventHandler);
     }
+    private void makeCredits() {
+        BorderPane credit = new BorderPane();
+
+        credits = new Scene(credit, 1085, 735);
+        credits.setUserAgentStylesheet("SnakeUtil/Resources/Background.css");
+        credit.setId("colorful");
+        credit.setId("Blimp");
+
+        Button back = new Button("Back");
+        back.setOnAction(event -> primaryStage.setScene(mainMenu));
+        credit.setTop(back);
+
+        VBox center = new VBox(20);
+        center.setAlignment(Pos.CENTER);
+
+        Label credit_title = new Label("Credits page");
+        credit_title.setFont(Font.font(50));
+
+
+        HBox images_credits = new HBox();
+        images_credits.setAlignment(Pos.CENTER);
+        Label images_title = new Label("Image credits:");
+        images_title.setFont(Font.font(35));
+        images_credits.getChildren().add(images_title);
+
+        HBox line1 = new HBox(10);
+        HBox line2 = new HBox(10);
+        HBox line3 = new HBox(10);
+        HBox line4 = new HBox(10);
+        HBox line5 = new HBox(10);
+        HBox line6 = new HBox(10);
+
+        line1.setAlignment(Pos.CENTER);
+        line2.setAlignment(Pos.CENTER);
+        line3.setAlignment(Pos.CENTER);
+        line4.setAlignment(Pos.CENTER);
+        line5.setAlignment(Pos.CENTER);
+        line6.setAlignment(Pos.CENTER);
+
+        Button line1_btn = new Button("               \n\n");
+        Button line2_btn = new Button("               \n\n");
+        Button line3_btn = new Button("               \n\n");
+        Button line4_btn = new Button("               \n\n");
+        Button line5_btn = new Button("               \n\n");
+        Button line6_btn = new Button("               \n\n");
+
+        line1_btn.setId("Blimp");
+        line2_btn.setId("Sky");
+        line3_btn.setId("SkyIsland");
+        line4_btn.setId("Train");
+        line5_btn.setId("Cloud");
+        line6_btn.setId("NightSky");
+
+        Label line1_link = new Label("https://anime-pictures.net/pictures/view_post/430983?lang=en");
+        Label line2_link = new Label("https://wallpapercave.com/w/wp2394212");
+        Label line3_link = new Label("https://www.artstation.com/artwork/La9XR");
+        Label line4_link = new Label("https://www.wallpaperup.com/877343/caring201_clouds_original_scenic_tagme_train.html");
+        Label line5_link = new Label("http://www.allfinweb.com/single/23256048-anime-wallpaper-feathers.html");
+        Label line6_link = new Label("https://images5.alphacoders.com/495/495521.jpg");
+
+        line1_link.setFont(Font.font(25));
+        line2_link.setFont(Font.font(25));
+        line3_link.setFont(Font.font(25));
+        line4_link.setFont(Font.font(25));
+        line5_link.setFont(Font.font(25));
+        line6_link.setFont(Font.font(25));
+
+        line1.getChildren().addAll(line1_btn, line1_link);
+        line2.getChildren().addAll(line2_btn, line2_link);
+        line3.getChildren().addAll(line3_btn, line3_link);
+        line4.getChildren().addAll(line4_btn, line4_link);
+        line5.getChildren().addAll(line5_btn, line5_link);
+        line6.getChildren().addAll(line6_btn, line6_link);
+
+
+        center.getChildren().addAll(credit_title, images_credits, line1, line2, line3, line4, line5, line6);
+        credit.setCenter(center);
+    };
 
 
     private void startONLINEGame() throws IOException, UnknownHostException{
-        Online online = new Online("ip");
+
+        online = new Online("146.95.22.135");
+        online.sendDirection("UP");
+
         transferObj = online.getTP();
+
+
         if(transferObj.isGameOver() == true) {
             endGame("error");
         }
@@ -437,31 +506,25 @@ public class Scenes {
 
         makePoint();
 
-        yourSnake.setBorderX(layoutX);
-        yourSnake.setBorderY(layoutY);
-        theirSnake.setBorderX(layoutX);
-        theirSnake.setBorderY(layoutY);
-
-        gameLayout.getChildren().removeAll(yourSnake.getSnake());
-        gameLayout.getChildren().removeAll(theirSnake.getSnake());
-        gameLayout.getChildren().removeAll(point);
+        ONLINELayout.getChildren().removeAll(yourSnake.getSnake());
+        ONLINELayout.getChildren().removeAll(theirSnake.getSnake());
+        ONLINELayout.getChildren().removeAll(point);
 
         //sets/resets each snake to only the head node and location
-        yourSnake.restartSnake(transferObj.getP1X(),transferObj.getP1Y(), "LEFT");
-        theirSnake.restartSnake(transferObj.getP2X(),transferObj.getP2Y(), "RIGHT");
+        yourSnake.restartSnake(transferObj.getP1X() * 35,transferObj.getP1Y() * 35, "RIGHT");
+        theirSnake.restartSnake(transferObj.getP2X() * 35,transferObj.getP2Y() * 35, "LEFT");
 
-        gameLayout.getChildren().addAll(yourSnake.getSnake());
-        gameLayout.getChildren().addAll(theirSnake.getSnake());
-        gameLayout.getChildren().addAll(point);
+        ONLINELayout.getChildren().addAll(yourSnake.getSnake());
+        ONLINELayout.getChildren().addAll(theirSnake.getSnake());
+        ONLINELayout.getChildren().addAll(point);
 
-        game.setRoot(gameLayout);
+        gameONLINE.setRoot(ONLINELayout);
 
-        speed = 200;
+        makeONLINETimerTask();
 
-        makeTimerTask();
+        ONLINETimer = new Timer();
+        ONLINETimer.scheduleAtFixedRate(ONLINEtask, 1500, 500);
 
-        gameTimer = new Timer();
-        gameTimer.scheduleAtFixedRate(task, 1500,  speed);
     }
     private void startGame() {
 
@@ -477,7 +540,7 @@ public class Scenes {
         gameLayout.getChildren().removeAll(point);
 
         //sets/resets each snake to only the head node and location
-        yourSnake.restartSnake(1080,700, "LEFT");
+        yourSnake.restartSnake(1050,700, "LEFT");
         theirSnake.restartSnake(0,0, "RIGHT");
 
         gameLayout.getChildren().addAll(yourSnake.getSnake());
@@ -496,6 +559,55 @@ public class Scenes {
     private void endGame(String winPlayer) {
         //Ends and stops snakes from moving.
         cancelTimer();
+
+        gameOverWindow = new Stage();
+        gameOverWindow.setTitle("Game Over!");
+
+        //This keeps the user from clicking on anything other than the alert box.
+        gameOverWindow.initModality(Modality.APPLICATION_MODAL);
+        VBox gameOverLayout = new VBox();
+
+        //Text to show who has won.
+        Label gameOverLabel = new Label(winPlayer+" has won!");
+        gameOverLabel.setStyle("-fx-font: 24 arial;");
+        gameOverLabel.setTextAlignment(TextAlignment.CENTER);
+
+
+        //Option 1 @ Game Over: Sends player back to main menu to play again.
+        Button gameOverButton = new Button("Main Menu");
+        gameOverButton.setStyle("-fx-font: 24 arial;");
+        gameOverButton.setOnAction(e -> {
+            primaryStage.setScene(mainMenu);
+            gameOverWindow.close();
+        });
+
+
+        //Option 2 @ Game Over: Rage Quit and exit program.
+        Button gameOverButton2 = new Button("Exit");
+        gameOverButton2.setStyle("-fx-font: 24 arial;");
+        gameOverButton2.setOnAction(e -> {
+            primaryStage.close();
+            gameOverWindow.close();
+        });
+
+        gameOverLayout.getChildren().addAll(gameOverLabel, gameOverButton, gameOverButton2);
+        gameOverLayout.setAlignment(Pos.CENTER);
+
+        Scene gameOverScene = new Scene(gameOverLayout,200,150);
+        gameOverWindow.setScene(gameOverScene);
+        //Setting the Opacity of the alert window
+        gameOverWindow.setOpacity(0.95);
+        gameOverWindow.show();
+        //If you X out of the Game Over alert, you will be sent back to the main menu.
+        gameOverWindow.setOnCloseRequest(e -> {
+            primaryStage.setScene(mainMenu);
+            gameOverWindow.close();
+        });
+    }
+    private void endONLINEGame(String winPlayer) {
+        //Ends and stops snakes from moving.
+        cancelONLINETimer();
+
         gameOverWindow = new Stage();
         gameOverWindow.setTitle("Game Over!");
 
@@ -583,28 +695,39 @@ public class Scenes {
                             yourSnake.move(false);
                             theirSnake.move(false);
                         }
-
                     }
                 });
             }
         };
     }
     private void makeONLINETimerTask() {
-        task = new TimerTask() {
+        //Creating the task to pass through the Timer to be executed every X ms
+        //task to be executed every X ms is yourSnake.move(false);
+        ONLINEtask = new TimerTask() {
             public void run() {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        if(transferObj.isGameOver()) {
-                            endGame("you");
-                        } else {
-                            yourSnake.update(transferObj.getP1X(), transferObj.getP1Y(),transferObj.does1Grow());
-                            theirSnake.update(transferObj.getP2X(), transferObj.getP2Y(),transferObj.does2Grow());
+                        try {
+                            online.sendDirection(yourSnake.getSnakeDirection());
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
-
+                        transferObj = online.getTP();
+                        if(transferObj.isGameOver()) {
+                            try {
+                                online.closeOnline();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            endONLINEGame("you");
+                        } else {
+                            yourSnake.update(transferObj.getP1X() * 35, transferObj.getP1Y() * 35,transferObj.does1Grow());
+                            theirSnake.update(transferObj.getP2X() * 35, transferObj.getP2Y() * 35,transferObj.does2Grow());
+                        }
                     }
                 });
-            };
+            }
         };
     }
     private void makePoint() {
@@ -614,9 +737,8 @@ public class Scenes {
         setPoint();
     }
     private void setPoint() {
-        Random rand = new Random();
-        point.setX(rand.nextInt(31) * 35);
-        point.setY(rand.nextInt(21) * 35);
+        point.setX(transferObj.getAppleX() * 35);
+        point.setY(transferObj.getAppleY() * 35);
     }
     private void setSpeed() {
         speed -= 10;
@@ -629,11 +751,17 @@ public class Scenes {
         gameTimer.cancel();
         gameTimer.purge();
     }
+    private void cancelONLINETimer() {
+        ONLINETimer.purge();
+        ONLINETimer.cancel();
+    }
 
     public Stage getPrimaryStage() {
         return primaryStage;
     }
 
+    private Scene credits;
+    private Online online;
     private TransferPackage transferObj;
     private int speed;
     private Stage primaryStage = new Stage();
@@ -645,8 +773,10 @@ public class Scenes {
     private Pane ONLINELayout;
     private Scene game;
     private Pane gameLayout;
+    private Timer ONLINETimer;
     private Timer gameTimer;
     private TimerTask task;
+    private TimerTask ONLINEtask;
     //Width in pixels of game
     private double layoutX = 1085;
     //Height in pixels of the game

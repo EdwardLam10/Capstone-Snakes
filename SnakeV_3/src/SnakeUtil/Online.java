@@ -33,7 +33,9 @@ public class Online {
         try {
             //This should be inside the loop
             //Recieveing package
+            System.out.println("before in.read");
             transferObj = (TransferPackage)in.readObject();
+            System.out.println("after in.read");
         }
         catch (Exception ex)
         {
@@ -41,7 +43,7 @@ public class Online {
         }
         if(transferObj!=null){
             System.out.println("Got from Server");
-            System.out.println( transferObj.isGameOver());
+            System.out.println( "game over?" + transferObj.isGameOver());
             return true;
         }
         else{
@@ -49,6 +51,18 @@ public class Online {
             System.exit(1);
             return false;
         }
+    }
+
+    public void sendDirection(String dir) throws IOException {
+        out.writeObject(dir);
+        out.reset();
+    }
+
+    public void closeOnline() throws IOException{
+        in.close();
+        out.close();
+        transferSocket.close();
+        System.out.println("everything is closed");
     }
 
     private TransferPackage transferObj;

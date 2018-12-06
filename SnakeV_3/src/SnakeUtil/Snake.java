@@ -43,7 +43,7 @@ public class Snake {
                 } else {
                     update(SnakeVec.firstElement().getX(), borderY - 35, grow);
                 }
-//                System.out.println("UP");
+                System.out.println("UP " + Name);
                 break;
             case "DOWN":
                 if((SnakeVec.firstElement().getY() + 35 <= borderY)) {
@@ -51,7 +51,7 @@ public class Snake {
                 } else {
                     update(SnakeVec.firstElement().getX(), 0, grow);
                 }
-//                System.out.println("DOWN");
+                System.out.println("DOWN " + Name);
                 break;
             case "RIGHT":
                 if((SnakeVec.firstElement().getX() + 35) <= borderX) {
@@ -59,7 +59,7 @@ public class Snake {
                 } else {
                     update(0, SnakeVec.firstElement().getY(), grow);
                 }
-//                System.out.println("RIGHT");
+                System.out.println("RIGHT " + Name);
                 break;
             case "LEFT":
                 if((SnakeVec.firstElement().getX() - 35) >= 0) {
@@ -67,7 +67,7 @@ public class Snake {
                 } else {
                     update(borderX, SnakeVec.firstElement().getY(), grow);
                 }
-//                System.out.println("LEFT");
+                System.out.println("LEFT " + Name);
                 break;
         }
     }

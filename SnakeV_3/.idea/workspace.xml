@@ -7,25 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7635bcc6-dc04-4847-836e-0e2e4db8c3ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/bin/online_snake/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/bin/online_snake/BoardObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/bin/online_snake/Direction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/bin/online_snake/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/bin/online_snake/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/bin/online_snake/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/bin/online_snake/Snake.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/bin/online_snake/Tests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/src/online_snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OnlineSnake/src/online_snake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/src/online_snake/Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/src/online_snake/BoardObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/src/online_snake/Direction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/src/online_snake/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/src/online_snake/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/src/online_snake/Snake.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OnlineSnake/src/online_snake/Tests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -213,8 +195,10 @@
     <session id="1904113524">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -260,26 +244,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+            <state relative-caret-position="374">
+              <caret line="120" column="48" selection-start-line="120" selection-start-column="48" selection-end-line="120" selection-end-column="48" />
               <folding>
-                <element signature="e#3178#3179#0" expanded="true" />
-                <element signature="e#3239#3240#0" expanded="true" />
-                <element signature="e#3533#3534#0" expanded="true" />
-                <element signature="e#3595#3596#0" expanded="true" />
-                <element signature="class#9249:9513" />
-                <element signature="class#9552:9820" />
-                <element signature="method#handle#0;class#9552:9820" />
-                <element signature="class#9859:10127" />
-                <element signature="class#10166:10436" />
-                <element signature="class#10475:10741" />
-                <element signature="class#10780:11046" />
-                <element signature="class#11113:11415" />
-                <element signature="class#11452:11746" />
-                <element signature="class#11783:12101" />
-                <element signature="class#12138:12440" />
-                <element signature="class#12477:12779" />
-                <element signature="class#12816:13130" />
                 <element signature="method#makeGameOnline#0;class#Scenes#0" />
                 <element signature="method#makeGame#0;class#Scenes#0" />
                 <element signature="method#startONLINEGame#0;class#Scenes#0" />
@@ -291,36 +258,6 @@
                 <element signature="method#setPoint#0;class#Scenes#0" />
                 <element signature="method#setSpeed#0;class#Scenes#0" />
                 <element signature="method#cancelTimer#0;class#Scenes#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
-              <folding>
-                <element signature="method#Snake#0;class#Snake#0" />
-                <element signature="method#move#0;class#Snake#0" />
-                <element signature="method#restartSnake#0;class#Snake#0" />
-                <element signature="method#collisionDetection#0;class#Snake#0" />
-                <element signature="method#selfCollision#0;class#Snake#0" />
-                <element signature="method#collisioncheck#0;class#Snake#0" />
-                <element signature="method#setHeadLoc#0;class#Snake#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/onlinetestcode/TransferPackage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2312">
-              <caret line="140" column="22" selection-start-line="140" selection-start-column="22" selection-end-line="140" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -441,6 +378,36 @@
       <foldersAlwaysOnTop value="false" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SnakeUtil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SnakeUtil" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Changed Files'; set:Changed Files; ALL; class com.intellij.packageDependencies.ChangeListScope">
           <expand>
@@ -490,102 +457,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SnakeUtil" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SnakeUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SnakeUtil" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SnakeUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SnakeV_3" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="SnakeV_2" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="SnakeUtil" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SnakeUtil" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SnakeV_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SnakeV_3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="SnakeUtil" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -684,17 +555,18 @@
       <workItem from="1543351787859" duration="8397000" />
       <workItem from="1543363768389" duration="282000" />
       <workItem from="1543534862800" duration="7000" />
+      <workItem from="1544135895313" duration="114000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103640000" />
+    <option name="totallyTimeSpent" value="105547000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1843" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1609658" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16208637" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -703,7 +575,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49971956" visible="true" weight="0.23492724" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49971956" weight="0.23492724" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -829,6 +701,34 @@
     <entry file="file://$PROJECT_DIR$/src/Snake.java" />
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Resources/Sockets.java" />
     <entry file="file://$PROJECT_DIR$/../OnlineSnake/src/online_snake/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/onlinetestcode/TransferPackage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2312">
+          <caret line="140" column="22" selection-start-line="140" selection-start-column="22" selection-end-line="140" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Resources/Background.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -839,33 +739,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
-          <folding>
-            <element signature="method#Snake#0;class#Snake#0" />
-            <element signature="method#move#0;class#Snake#0" />
-            <element signature="method#restartSnake#0;class#Snake#0" />
-            <element signature="method#collisionDetection#0;class#Snake#0" />
-            <element signature="method#selfCollision#0;class#Snake#0" />
-            <element signature="method#collisioncheck#0;class#Snake#0" />
-            <element signature="method#setHeadLoc#0;class#Snake#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/onlinetestcode/TransferPackage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2312">
-          <caret line="140" column="22" selection-start-line="140" selection-start-column="22" selection-end-line="140" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Online.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
@@ -875,42 +749,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Resources/Background.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Resources/Background.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+        <state relative-caret-position="374">
+          <caret line="120" column="48" selection-start-line="120" selection-start-column="48" selection-end-line="120" selection-end-column="48" />
           <folding>
-            <element signature="e#3178#3179#0" expanded="true" />
-            <element signature="e#3239#3240#0" expanded="true" />
-            <element signature="e#3533#3534#0" expanded="true" />
-            <element signature="e#3595#3596#0" expanded="true" />
-            <element signature="class#9249:9513" />
-            <element signature="class#9552:9820" />
-            <element signature="method#handle#0;class#9552:9820" />
-            <element signature="class#9859:10127" />
-            <element signature="class#10166:10436" />
-            <element signature="class#10475:10741" />
-            <element signature="class#10780:11046" />
-            <element signature="class#11113:11415" />
-            <element signature="class#11452:11746" />
-            <element signature="class#11783:12101" />
-            <element signature="class#12138:12440" />
-            <element signature="class#12477:12779" />
-            <element signature="class#12816:13130" />
             <element signature="method#makeGameOnline#0;class#Scenes#0" />
             <element signature="method#makeGame#0;class#Scenes#0" />
             <element signature="method#startONLINEGame#0;class#Scenes#0" />

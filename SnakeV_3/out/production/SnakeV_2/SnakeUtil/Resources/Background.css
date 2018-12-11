@@ -75,3 +75,9 @@
     -fx-background-repeat: no-repeat;
     -fx-background-size: cover;
 }
+
+#ChristmasTree {
+    -fx-background-image: url("ChristmasTree.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}

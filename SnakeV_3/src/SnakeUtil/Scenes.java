@@ -225,7 +225,6 @@ public class Scenes {
             primaryStage.setScene(mainMenu);
         });
 
-        //START WRITING CONDITIONS TO CHANGE THE DIFFERENT COLORS TO CURRENT COLOR
         //FOR THE SKIN
         skin_color1.setOnAction(new EventHandler<ActionEvent>() {
             @Override

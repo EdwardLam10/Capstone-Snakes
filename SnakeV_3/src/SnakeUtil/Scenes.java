@@ -526,6 +526,7 @@ public class Scenes {
 
 
         makePoint();
+        setONLINEPoint();
 
         ONLINELayout.getChildren().removeAll(yourSnake.getSnake());
         ONLINELayout.getChildren().removeAll(theirSnake.getSnake());
@@ -549,8 +550,6 @@ public class Scenes {
     }
     private void startGame() {
 
-        makePoint();
-
         yourSnake.setBorderX(layoutX);
         yourSnake.setBorderY(layoutY);
         theirSnake.setBorderX(layoutX);
@@ -559,6 +558,9 @@ public class Scenes {
         gameLayout.getChildren().removeAll(yourSnake.getSnake());
         gameLayout.getChildren().removeAll(theirSnake.getSnake());
         gameLayout.getChildren().removeAll(point);
+
+        makePoint();
+        setPoint();
 
         //sets/resets each snake to only the head node and location
         yourSnake.restartSnake(1050,700, "LEFT");
@@ -745,6 +747,9 @@ public class Scenes {
                         } else {
                             yourSnake.update(transferObj.getP1X() * 35, transferObj.getP1Y() * 35,transferObj.does1Grow());
                             theirSnake.update(transferObj.getP2X() * 35, transferObj.getP2Y() * 35,transferObj.does2Grow());
+                            if(transferObj.does1Grow() || transferObj.does2Grow()) {
+                                setONLINEPoint();
+                            }
                         }
                     }
                 });
@@ -755,14 +760,20 @@ public class Scenes {
         point = new Rectangle(35,35);
         Image apple = new Image("SnakeUtil/Resources/apple.jpg");
         point.setFill(new ImagePattern(apple));
-        setPoint();
     }
+
     private void setPoint() {
+        Random rand = new Random();
+        point.setX(rand.nextInt(31) * 35);
+        point.setY(rand.nextInt(21) * 35);
+    }
+
+    private void setONLINEPoint() {
         point.setX(transferObj.getAppleX() * 35);
         point.setY(transferObj.getAppleY() * 35);
     }
     private void setSpeed() {
-        speed -= 10;
+        speed -= 15;
         cancelTimer();
         gameTimer = new Timer();
         makeTimerTask();

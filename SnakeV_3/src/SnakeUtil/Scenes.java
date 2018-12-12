@@ -488,7 +488,7 @@ public class Scenes {
         Label line4_link = new Label("https://www.wallpaperup.com/877343/caring201_clouds_original_scenic_tagme_train.html");
         Label line5_link = new Label("http://www.allfinweb.com/single/23256048-anime-wallpaper-feathers.html");
         Label line6_link = new Label("https://images5.alphacoders.com/495/495521.jpg");
-        Label line7_link = new Label("http://all4desktop.com/data_images/original/4214149-snowy-christmas-tree.jpg");
+        Label line7_link = new Label("https://wallpapersite.com/images/pages/pic_w/3963.jpg");
 
         line1_link.setFont(Font.font(25));
         line2_link.setFont(Font.font(25));

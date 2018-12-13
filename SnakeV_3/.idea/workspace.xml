@@ -6,13 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7635bcc6-dc04-4847-836e-0e2e4db8c3ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Resources/ChristmasTree.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Resources/ChristmasTree.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Resources/ChristmasTree.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Resources/ChristmasTree.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" afterDir="false" />
-    </list>
+    <list default="true" id="7635bcc6-dc04-4847-836e-0e2e4db8c3ac" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -245,7 +239,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="255">
               <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -258,7 +252,7 @@
         <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="552">
-              <caret line="808" column="73" selection-start-line="808" selection-start-column="73" selection-end-line="808" selection-end-column="73" />
+              <caret line="808" column="68" lean-forward="true" selection-start-line="808" selection-start-column="68" selection-end-line="808" selection-end-column="68" />
               <folding>
                 <element signature="method#makeMainMenu#0;class#Scenes#0" />
                 <element signature="method#makeSettings#0;class#Scenes#0" />
@@ -611,12 +605,12 @@
       <workItem from="1544137020078" duration="34000" />
       <workItem from="1544137678431" duration="3444000" />
       <workItem from="1544549336099" duration="3120000" />
-      <workItem from="1544568218149" duration="2669000" />
+      <workItem from="1544568218149" duration="4563000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136740000" />
+    <option name="totallyTimeSpent" value="138634000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -791,16 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Online.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
@@ -835,10 +819,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
-          <caret line="808" column="73" selection-start-line="808" selection-start-column="73" selection-end-line="808" selection-end-column="73" />
+          <caret line="808" column="68" lean-forward="true" selection-start-line="808" selection-start-column="68" selection-end-line="808" selection-end-column="68" />
           <folding>
             <element signature="method#makeMainMenu#0;class#Scenes#0" />
             <element signature="method#makeSettings#0;class#Scenes#0" />

@@ -806,6 +806,6 @@ public class Scenes {
     private double layoutY = 735;
 
     private Rectangle point;
-    private Snake yourSnake = new Snake("SnakeUtil/Resources/Josh.jpg", "Josh");
+    private Snake yourSnake = new Snake("SnakeUtil/Resources/cuteface.jpg", "Josh");
     private Snake theirSnake = new Snake("SnakeUtil/Resources/Ruby.jpg", "Ruby");
 }

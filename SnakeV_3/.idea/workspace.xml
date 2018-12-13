@@ -6,11 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7635bcc6-dc04-4847-836e-0e2e4db8c3ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Resources/cuteface.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Resources/cuteface.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Resources/smileface.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" afterDir="false" />
-    </list>
+    <list default="true" id="7635bcc6-dc04-4847-836e-0e2e4db8c3ac" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -609,12 +605,12 @@
       <workItem from="1544137678431" duration="3444000" />
       <workItem from="1544549336099" duration="3120000" />
       <workItem from="1544568218149" duration="4563000" />
-      <workItem from="1544740898408" duration="1115000" />
+      <workItem from="1544740898408" duration="1901000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139749000" />
+    <option name="totallyTimeSpent" value="140535000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

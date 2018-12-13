@@ -17,6 +17,12 @@
     -fx-border-radius: 6;
 }
 
+.text-field{
+    -fx-border-color: darkorchid;
+    -fx-text-fill: #ccffff;
+    -fx-background-color: darkorchid;
+}
+
 #RedBG {
     -fx-background-color: RED;
 }
@@ -66,6 +72,12 @@
 
 #NightSky {
     -fx-background-image: url("NightSky.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+#ChristmasTree {
+    -fx-background-image: url("ChristmasTree.jpg");
     -fx-background-repeat: no-repeat;
     -fx-background-size: cover;
 }

@@ -2,11 +2,13 @@ package SnakeUtil;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
@@ -87,45 +89,37 @@ public class Scenes {
         });
 
         Label top = new Label("Welcome to Snake Online");
-        Label left = new Label("Player 1");
-        Label right = new Label("Player 2");
-        //Label bottom = new Label("Waiting for second player to enter \n" + "Waiting for both players to click ready \n" + "Once both players have clicked ready \n" + "please click start \n");
         Label center = new Label("Waiting for Players to to enter");
 
         //changing the font and size of the text
         top.setFont(Font.font(30));
-        left.setFont(Font.font(30));
-        right.setFont(Font.font(30));
-        //bottom.setFont(Font.font("arial", FontWeight.BOLD,30));
         center.setFont(Font.font(30));
-
-        VBox lvbox = new VBox();
-        lvbox.getChildren().add(left);
-        lvbox.setAlignment(Pos.CENTER);
-
-        VBox rvbox = new VBox();
-        rvbox.getChildren().add(right);
-        rvbox.setAlignment(Pos.CENTER);
 
         VBox cvbox = new VBox(10);
 
         cvbox.getChildren().addAll(top, center, /*bottom,*/ startButton, startONLINEButton, settingsButton, creditsButton, exit);
         cvbox.setAlignment(Pos.CENTER);
 
+        //Christmas Button
+        Button christmas = new Button("Christmas");
+        christmas.setOnAction(e-> {
+            gameLayout.setId("ChristmasTree");
+            settingLayout.setId("ChristmasTree");
+            mainMenuLayout.setId("ChristmasTree");
+            creditsLayout.setId("ChristmasTree");
+        });
+
         //Setting the top, bottom, center, right and left nodes to the pane
-        mainMenuLayout.setLeft(lvbox);
-        mainMenuLayout.setRight(rvbox);
         mainMenuLayout.setCenter(cvbox);
+        mainMenuLayout.setTop(christmas);
     }
     private void makeSettings() {
-
-        BorderPane setting = new BorderPane();
-
-        settings = new Scene(setting, 1085, 735);
+        settingLayout = new BorderPane();
+        settings = new Scene(settingLayout, 1085, 735);
         settings.setUserAgentStylesheet("SnakeUtil/Resources/Background.css");
 
-        setting.setId("colorful");
-        setting.setId("Blimp");
+        settingLayout.setId("colorful");
+        settingLayout.setId("Blimp");
 
 
         Label setting_title = new Label("Setting");
@@ -142,6 +136,20 @@ public class Scenes {
         set_background.setFont(Font.font(30));
         current_background.setFont(Font.font(30));
 
+        Label name_label = new Label("Name");
+        name_label.setFont(Font.font(30));
+        TextField name1 = new TextField();
+        name1.setPromptText("Enter name");
+        name1.setFont(Font.font(25));
+        name1.setAlignment(Pos.CENTER);
+        EventHandler<ActionEvent> event_name1 = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                name_label.setText(name1.getText());
+            }
+        };
+        name1.setOnAction(event_name1);
+
         VBox back = new VBox();
         Button back_btn = new Button("Back");
         back.getChildren().add(back_btn);
@@ -149,6 +157,10 @@ public class Scenes {
         VBox title = new VBox();
         title.getChildren().add(setting_title);
         title.setAlignment(Pos.CENTER);
+
+        HBox name = new HBox(10);
+        name.getChildren().addAll(name_label, name1);
+        name.setAlignment(Pos.CENTER);
 
         HBox skin_title = new HBox(10);
         VBox skin_set = new VBox(10);
@@ -204,24 +216,24 @@ public class Scenes {
         background_set.setAlignment(Pos.CENTER);
         background_title.setAlignment(Pos.CENTER);
 
-        VBox all = new VBox(50);
-        all.getChildren().addAll(back, title, skin_title, background_title);
+        VBox all = new VBox(40);
+        all.getChildren().addAll(back, title, name, skin_title, background_title);
 
         cur_color_skin.setStyle("-fx-background-color: Red; -fx-font-size: 2em; ");
         yourSnake.setSnakeFill(RED);
 
         cur_color_bg.setId("Blimp");
         gameLayout.setId("Blimp");
-        setting.setId("Blimp");
+        settingLayout.setId("Blimp");
         mainMenuLayout.setId("Blimp");
 
-        setting.setCenter(all);
+
+        settingLayout.setCenter(all);
 
         back_btn.setOnAction(e -> {
             primaryStage.setScene(mainMenu);
         });
 
-        //START WRITING CONDITIONS TO CHANGE THE DIFFERENT COLORS TO CURRENT COLOR
         //FOR THE SKIN
         skin_color1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -272,8 +284,9 @@ public class Scenes {
             public void handle(ActionEvent event) {
                 cur_color_bg.setId("Blimp");
                 gameLayout.setId("Blimp");
-                setting.setId("Blimp");
+                settingLayout.setId("Blimp");
                 mainMenuLayout.setId("Blimp");
+                creditsLayout.setId("Blimp");
             }
         });
         bg_color2.setOnAction(new EventHandler<ActionEvent>() {
@@ -281,8 +294,9 @@ public class Scenes {
             public void handle(ActionEvent event) {
                 cur_color_bg.setId("Sky");
                 gameLayout.setId("Sky");
-                setting.setId("Sky");
+                settingLayout.setId("Sky");
                 mainMenuLayout.setId("Sky");
+                creditsLayout.setId("Sky");
             }
         });
         bg_color3.setOnAction(new EventHandler<ActionEvent>() {
@@ -290,8 +304,9 @@ public class Scenes {
             public void handle(ActionEvent event) {
                 cur_color_bg.setId("SkyIsland");
                 gameLayout.setId("SkyIsland");
-                setting.setId("SkyIsland");
+                settingLayout.setId("SkyIsland");
                 mainMenuLayout.setId("SkyIsland");
+                creditsLayout.setId("SkyIsland");
             }
         });
         bg_color4.setOnAction(new EventHandler<ActionEvent>() {
@@ -299,8 +314,9 @@ public class Scenes {
             public void handle(ActionEvent event) {
                 cur_color_bg.setId("Train");
                 gameLayout.setId("Train");
-                setting.setId("Train");
+                settingLayout.setId("Train");
                 mainMenuLayout.setId("Train");
+                creditsLayout.setId("Train");
             }
         });
         bg_color5.setOnAction(new EventHandler<ActionEvent>() {
@@ -308,8 +324,9 @@ public class Scenes {
             public void handle(ActionEvent event) {
                 cur_color_bg.setId("Cloud");
                 gameLayout.setId("Cloud");
-                setting.setId("Cloud");
+                settingLayout.setId("Cloud");
                 mainMenuLayout.setId("Cloud");
+                creditsLayout.setId("Cloud");
             }
         });
         bg_color6.setOnAction(new EventHandler<ActionEvent>() {
@@ -317,8 +334,9 @@ public class Scenes {
             public void handle(ActionEvent event) {
                 cur_color_bg.setId("NightSky");
                 gameLayout.setId("NightSky");
-                setting.setId("NightSky");
+                settingLayout.setId("NightSky");
                 mainMenuLayout.setId("NightSky");
+                creditsLayout.setId("NightSky");
             }
         });
 
@@ -408,16 +426,16 @@ public class Scenes {
         game.addEventFilter(KeyEvent.KEY_PRESSED, eventHandler);
     }
     private void makeCredits() {
-        BorderPane credit = new BorderPane();
+        creditsLayout = new BorderPane();
 
-        credits = new Scene(credit, 1085, 735);
+        credits = new Scene(creditsLayout, 1085, 735);
         credits.setUserAgentStylesheet("SnakeUtil/Resources/Background.css");
-        credit.setId("colorful");
-        credit.setId("Blimp");
+        creditsLayout.setId("colorful");
+        creditsLayout.setId("Blimp");
 
         Button back = new Button("Back");
         back.setOnAction(event -> primaryStage.setScene(mainMenu));
-        credit.setTop(back);
+        creditsLayout.setTop(back);
 
         VBox center = new VBox(20);
         center.setAlignment(Pos.CENTER);
@@ -438,6 +456,7 @@ public class Scenes {
         HBox line4 = new HBox(10);
         HBox line5 = new HBox(10);
         HBox line6 = new HBox(10);
+        HBox line7 = new HBox(10);
 
         line1.setAlignment(Pos.CENTER);
         line2.setAlignment(Pos.CENTER);
@@ -445,6 +464,7 @@ public class Scenes {
         line4.setAlignment(Pos.CENTER);
         line5.setAlignment(Pos.CENTER);
         line6.setAlignment(Pos.CENTER);
+        line7.setAlignment(Pos.CENTER);
 
         Button line1_btn = new Button("               \n\n");
         Button line2_btn = new Button("               \n\n");
@@ -452,6 +472,7 @@ public class Scenes {
         Button line4_btn = new Button("               \n\n");
         Button line5_btn = new Button("               \n\n");
         Button line6_btn = new Button("               \n\n");
+        Button line7_btn = new Button("               \n\n");
 
         line1_btn.setId("Blimp");
         line2_btn.setId("Sky");
@@ -459,6 +480,7 @@ public class Scenes {
         line4_btn.setId("Train");
         line5_btn.setId("Cloud");
         line6_btn.setId("NightSky");
+        line7_btn.setId("ChristmasTree");
 
         Label line1_link = new Label("https://anime-pictures.net/pictures/view_post/430983?lang=en");
         Label line2_link = new Label("https://wallpapercave.com/w/wp2394212");
@@ -466,6 +488,7 @@ public class Scenes {
         Label line4_link = new Label("https://www.wallpaperup.com/877343/caring201_clouds_original_scenic_tagme_train.html");
         Label line5_link = new Label("http://www.allfinweb.com/single/23256048-anime-wallpaper-feathers.html");
         Label line6_link = new Label("https://images5.alphacoders.com/495/495521.jpg");
+        Label line7_link = new Label("https://wallpapersite.com/images/pages/pic_w/3963.jpg");
 
         line1_link.setFont(Font.font(25));
         line2_link.setFont(Font.font(25));
@@ -473,6 +496,7 @@ public class Scenes {
         line4_link.setFont(Font.font(25));
         line5_link.setFont(Font.font(25));
         line6_link.setFont(Font.font(25));
+        line7_link.setFont(Font.font(25));
 
         line1.getChildren().addAll(line1_btn, line1_link);
         line2.getChildren().addAll(line2_btn, line2_link);
@@ -480,10 +504,11 @@ public class Scenes {
         line4.getChildren().addAll(line4_btn, line4_link);
         line5.getChildren().addAll(line5_btn, line5_link);
         line6.getChildren().addAll(line6_btn, line6_link);
+        line7.getChildren().addAll(line7_btn, line7_link);
 
 
-        center.getChildren().addAll(credit_title, images_credits, line1, line2, line3, line4, line5, line6);
-        credit.setCenter(center);
+        center.getChildren().addAll(credit_title, images_credits, line1, line2, line3, line4, line5, line6, line7);
+        creditsLayout.setCenter(center);
     };
 
 
@@ -788,6 +813,7 @@ public class Scenes {
     }
 
     private Scene credits;
+    private BorderPane creditsLayout;
     private Online online;
     private TransferPackage transferObj;
     private int speed;
@@ -796,6 +822,7 @@ public class Scenes {
     private Scene mainMenu;
     private BorderPane mainMenuLayout;
     private Scene settings;
+    private BorderPane settingLayout;
     private Scene gameONLINE;
     private Pane ONLINELayout;
     private Scene game;
@@ -810,6 +837,6 @@ public class Scenes {
     private double layoutY = 735;
 
     private Rectangle point;
-    private Snake yourSnake = new Snake("SnakeUtil/Resources/Josh.jpg", "Josh");
+    private Snake yourSnake = new Snake("SnakeUtil/Resources/cuteface.jpg", "Josh");
     private Snake theirSnake = new Snake("SnakeUtil/Resources/Ruby.jpg", "Ruby");
 }

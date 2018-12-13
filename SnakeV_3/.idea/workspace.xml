@@ -9,7 +9,14 @@
     <list default="true" id="7635bcc6-dc04-4847-836e-0e2e4db8c3ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../OnlineSnake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OnlineSnake/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$17$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$17$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$17.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$18$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$18$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes$18.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/SnakeUtil/Scenes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SnakeV_2/onlinetestcode/TransferPackage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SnakeV_2/onlinetestcode/TransferPackage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onlinetestcode/TransferPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/onlinetestcode/TransferPackage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -231,18 +238,29 @@
     <session id="-1227370418">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="72" />
+          <entry key="java" value="285" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="72" />
+          <entry key="JAVA" value="285" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -258,31 +276,39 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="562" column="19" selection-start-line="562" selection-start-column="19" selection-end-line="562" selection-end-column="19" />
+            <state relative-caret-position="60">
+              <caret line="768" column="5" lean-forward="true" selection-start-line="768" selection-start-column="5" selection-end-line="768" selection-end-column="5" />
               <folding>
-                <element signature="method#makeMainMenu#0;class#Scenes#0" />
                 <element signature="method#makeSettings#0;class#Scenes#0" />
                 <element signature="method#makeGameOnline#0;class#Scenes#0" />
                 <element signature="method#makeGame#0;class#Scenes#0" />
                 <element signature="method#makeCredits#0;class#Scenes#0" />
-                <element signature="method#startONLINEGame#0;class#Scenes#0" />
+                <element signature="method#startGame#0;class#Scenes#0" />
                 <element signature="method#endGame#0;class#Scenes#0" />
                 <element signature="method#endONLINEGame#0;class#Scenes#0" />
                 <element signature="method#makeTimerTask#0;class#Scenes#0" />
-                <element signature="method#makeONLINETimerTask#0;class#Scenes#0" />
                 <element signature="e#28557#29778#0" expanded="true" />
                 <element signature="e#29777#29778#0" expanded="true" />
                 <element signature="method#makePoint#0;class#Scenes#0" />
                 <element signature="method#setPoint#0;class#Scenes#0" />
-                <element signature="method#setPoint#0;class#Scenes#0" />
                 <element signature="method#setSpeed#0;class#Scenes#0" />
                 <element signature="method#cancelTimer#0;class#Scenes#0" />
                 <element signature="method#cancelONLINETimer#0;class#Scenes#0" />
+                <element signature="e#30950#30951#0" expanded="true" />
+                <element signature="e#30985#30986#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/onlinetestcode/TransferPackage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1913">
+              <caret line="133" selection-start-line="133" selection-end-line="135" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -351,8 +377,8 @@
         <option value="$PROJECT_DIR$/src/SnakeUtil/onlinetestcode/TransferPackage.java" />
         <option value="$PROJECT_DIR$/src/main.java" />
         <option value="$PROJECT_DIR$/../OnlineSnake/src/online_snake/Main.java" />
-        <option value="$PROJECT_DIR$/src/onlinetestcode/TransferPackage.java" />
         <option value="$PROJECT_DIR$/src/SnakeUtil/Resources/Background.css" />
+        <option value="$PROJECT_DIR$/src/onlinetestcode/TransferPackage.java" />
         <option value="$PROJECT_DIR$/src/SnakeUtil/Scenes.java" />
       </list>
     </option>
@@ -377,8 +403,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1905" />
+    <option name="y" value="2" />
     <option name="width" value="1948" />
-    <option name="height" value="2075" />
+    <option name="height" value="2073" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -408,7 +435,7 @@
     <property name="SearchEverywhereHistoryKey" value="breakpoin&#9;ACTION&#9;ToggleBreakpointAction" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544569686842" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544570502133" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../src" />
@@ -505,12 +532,12 @@
       <workItem from="1543782098455" duration="2527000" />
       <workItem from="1543861137393" duration="4377000" />
       <workItem from="1543953721717" duration="10304000" />
-      <workItem from="1544568878349" duration="804000" />
+      <workItem from="1544568878349" duration="1627000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128278000" />
+    <option name="totallyTimeSpent" value="129101000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -522,7 +549,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <frame x="762" y="1" width="779" height="829" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.29277107" />
@@ -534,7 +561,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49971956" visible="true" weight="0.23229462" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49971956" weight="0.23495702" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -661,13 +688,6 @@
     <entry file="file://$PROJECT_DIR$/src/Snake.java" />
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Resources/Sockets.java" />
     <entry file="file://$PROJECT_DIR$/../OnlineSnake/src/online_snake/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/onlinetestcode/TransferPackage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Resources/Background.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -689,13 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Snake.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -703,30 +716,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SnakeUtil/Scenes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="562" column="19" selection-start-line="562" selection-start-column="19" selection-end-line="562" selection-end-column="19" />
+        <state relative-caret-position="60">
+          <caret line="768" column="5" lean-forward="true" selection-start-line="768" selection-start-column="5" selection-end-line="768" selection-end-column="5" />
           <folding>
-            <element signature="method#makeMainMenu#0;class#Scenes#0" />
             <element signature="method#makeSettings#0;class#Scenes#0" />
             <element signature="method#makeGameOnline#0;class#Scenes#0" />
             <element signature="method#makeGame#0;class#Scenes#0" />
             <element signature="method#makeCredits#0;class#Scenes#0" />
-            <element signature="method#startONLINEGame#0;class#Scenes#0" />
+            <element signature="method#startGame#0;class#Scenes#0" />
             <element signature="method#endGame#0;class#Scenes#0" />
             <element signature="method#endONLINEGame#0;class#Scenes#0" />
             <element signature="method#makeTimerTask#0;class#Scenes#0" />
-            <element signature="method#makeONLINETimerTask#0;class#Scenes#0" />
             <element signature="e#28557#29778#0" expanded="true" />
             <element signature="e#29777#29778#0" expanded="true" />
             <element signature="method#makePoint#0;class#Scenes#0" />
             <element signature="method#setPoint#0;class#Scenes#0" />
-            <element signature="method#setPoint#0;class#Scenes#0" />
             <element signature="method#setSpeed#0;class#Scenes#0" />
             <element signature="method#cancelTimer#0;class#Scenes#0" />
             <element signature="method#cancelONLINETimer#0;class#Scenes#0" />
+            <element signature="e#30950#30951#0" expanded="true" />
+            <element signature="e#30985#30986#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/onlinetestcode/TransferPackage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1913">
+          <caret line="133" selection-start-line="133" selection-end-line="135" selection-end-column="9" />
         </state>
       </provider>
     </entry>

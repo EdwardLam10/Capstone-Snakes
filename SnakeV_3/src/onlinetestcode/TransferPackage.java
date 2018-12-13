@@ -123,13 +123,17 @@ public class TransferPackage implements Serializable {
     }
 
     public int getAppleX(){
-
+        if(Applepos == null) {
+            System.out.println("applepos is null" );
+        }
         return (int)Applepos.getX();
 
     }
 
     public int getAppleY(){
-
+        if(Applepos == null) {
+            System.out.println("applepos is null" );
+        }
         return (int)Applepos.getY();
 
     }

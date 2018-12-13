@@ -514,7 +514,7 @@ public class Scenes {
 
     private void startONLINEGame() throws IOException, UnknownHostException{
 
-        online = new Online("146.95.22.135");
+        online = new Online("146.95.22.237");
         online.sendDirection("UP");
 
         transferObj = online.getTP();
@@ -526,7 +526,6 @@ public class Scenes {
 
 
         makePoint();
-        setONLINEPoint();
 
         ONLINELayout.getChildren().removeAll(yourSnake.getSnake());
         ONLINELayout.getChildren().removeAll(theirSnake.getSnake());
@@ -737,6 +736,7 @@ public class Scenes {
                             e.printStackTrace();
                         }
                         transferObj = online.getTP();
+                        setONLINEPoint();
                         if(transferObj.isGameOver()) {
                             try {
                                 online.closeOnline();
@@ -769,6 +769,11 @@ public class Scenes {
     }
 
     private void setONLINEPoint() {
+        if(transferObj == null) {
+            System.out.println("nullpckg");
+        } else {
+            System.out.println("not null pckg");
+        }
         point.setX(transferObj.getAppleX() * 35);
         point.setY(transferObj.getAppleY() * 35);
     }

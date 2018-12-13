@@ -92,6 +92,7 @@ public class Snake {
             nextY = tmpY;
         }
         if(grow) {
+            System.out.println("grows");
             Rectangle newBod = new Rectangle(35, 35);
             newBod.setX(nextX);
             newBod.setY(nextY);

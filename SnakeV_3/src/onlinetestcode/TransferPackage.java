@@ -26,19 +26,21 @@ public class TransferPackage implements Serializable {
 
 
 
-    public TransferPackage(int p1x, int p1y,boolean grow1, int p2x, int p2y, boolean grow2){
+    public TransferPackage(int p1x, int p1y,boolean grow1, int p2x, int p2y, boolean grow2, int Ax, int Ay){
 
         P1nextpos = new Point(p1x,p1y);
 
         P2nextpos = new Point(p2x,p2y);
 
-        aNewApple = false;
-
-        Applepos = null;
+        Applepos = new Point(Ax, Ay);
 
         gameEnd = false;
 
         Thewinner = false;
+
+        grows1 = grow1;
+
+        grows2 = grow2;
 
     }
 

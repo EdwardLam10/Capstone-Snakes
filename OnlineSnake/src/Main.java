@@ -14,11 +14,11 @@ public class Main {
     public static Point generateRandomPoint() {
         Point p = new Point();
         Random randomNum = new Random();
-        p.setLocation(randomNum.nextInt(29)+1, randomNum.nextInt(19)+1);
+        p.setLocation(randomNum.nextInt(29) + 1, randomNum.nextInt(19) + 1);
         return p;
     }
     public static void main(String[] args) throws IOException, ClassNotFoundException{
-        Board b = new Board(31, 21,
+        Board b = new Board(100, 100,
                 new Point[] {new Point(5,8)},
                 new Point[] {new Point(8,5)});
         Game game = new Game(b);
@@ -80,6 +80,8 @@ public class Main {
         Player player2 = Player.enumFromValue(2);
         Player winner = null;
 
+        int gameSpeed = 200;
+
         while(winner == null) {
             boolean hasEaten1 = false;
 
@@ -89,6 +91,7 @@ public class Main {
             if (game.isLegalMove(player1, direction1)) {
 
                 if (game.isEatMove(player1, direction1)) {
+                    gameSpeed -= 10;
                     hasEaten1 = true;
                     game.eat(player1, direction1);
                     winner = game.getWinner();
@@ -119,6 +122,7 @@ public class Main {
             if (game.isLegalMove(player2, direction2)) {
 
                 if (game.isEatMove(player2, direction2)) {
+                    gameSpeed -= 10;
                     hasEaten2 = true;
                     game.eat(player2, direction2);
                     winner = game.getWinner();
@@ -150,8 +154,8 @@ public class Main {
                 }
             }
             else {
-                p1Package = new TransferPackage((int)playerHead1.getX(),(int)playerHead1.getY(),hasEaten1,(int)playerHead2.getX(),(int)playerHead2.getY(),hasEaten2);
-                p2Package = new TransferPackage((int)playerHead2.getX(),(int)playerHead2.getY(),hasEaten2,(int)playerHead1.getX(),(int) playerHead1.getY(),hasEaten1);
+                p1Package = new TransferPackage((int)playerHead1.getX(),(int)playerHead1.getY(),hasEaten1,(int)playerHead2.getX(),(int)playerHead2.getY(),hasEaten2, (int)applePoint.getX(), (int) applePoint.getY());
+                p2Package = new TransferPackage((int)playerHead2.getX(),(int)playerHead2.getY(),hasEaten2,(int)playerHead1.getX(),(int) playerHead1.getY(),hasEaten1, (int)applePoint.getX(), (int)applePoint.getY());
             }
 
             p1out.writeObject(p1Package);
@@ -159,7 +163,7 @@ public class Main {
             p1out.reset();
             p2out.reset();
             try {
-                Thread.sleep(500);
+                Thread.sleep(gameSpeed);
             } catch (InterruptedException e) {
             }
         }

@@ -11,14 +11,14 @@ public class Board {
 	public Board(int rows, int cols, Point[] snake1, Point[] snake2) {
 		_board = new BoardObject[rows][cols];
 		
-		for (int i = 0; i < cols; i++) {
-			_board[0][i] = BoardObject.BLOCK;
-			_board[rows-1][i]=BoardObject.BLOCK;
-		}
-		for (int i = 0; i < rows; i++) {
-			_board[i][0] = BoardObject.BLOCK;
-			_board[i][cols-1] = BoardObject.BLOCK;
-		}
+//		for (int i = 0; i < cols; i++) {
+//			_board[0][i] = BoardObject.BLOCK;
+//			_board[rows-1][i]=BoardObject.BLOCK;
+//		}
+//		for (int i = 0; i < rows; i++) {
+//			_board[i][0] = BoardObject.BLOCK;
+//			_board[i][cols-1] = BoardObject.BLOCK;
+//		}
 		_player1 = new Snake(snake1);
 		_player2 = new Snake(snake2);
 	}
@@ -53,6 +53,7 @@ public class Board {
 		if (_player2.isSnake(p)) {
 			return BoardObject.SNAKE;
 		}
+		System.out.println(p.x  + " " + p.y);
 		return this._board[p.x][p.y];
 	}
 	

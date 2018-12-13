@@ -24,13 +24,29 @@ public enum Direction {
 		// current Direction is "this"
 		Point dest = new Point(source);
 		if (this == UP) {
-			dest.x = dest.x - 1;
+			if(dest.y == 0) {
+				dest.y = 20;
+			} else {
+			    dest.y = dest.y - 1;
+            }
 		} else if(this == DOWN) {
-			dest.x = dest.x + 1;
+            if(dest.y == 20) {
+                dest.y = 0;
+            } else {
+                dest.y = dest.y + 1;
+            }
 		} else if (this== LEFT) {
-			dest.y = dest.y - 1;
+            if(dest.x == 0) {
+                dest.x = 30;
+            } else {
+                dest.x = dest.x - 1;
+            }
 		} else if ( this== RIGHT) {
-			dest.y = dest.y + 1;
+            if(dest.x == 30) {
+                dest.x = 0;
+            } else {
+                dest.x = dest.x + 1;
+            }
 		}
 		return dest;
 	}

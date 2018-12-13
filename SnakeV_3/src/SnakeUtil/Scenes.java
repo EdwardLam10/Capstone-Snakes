@@ -489,7 +489,7 @@ public class Scenes {
 
     private void startONLINEGame() throws IOException, UnknownHostException{
 
-        online = new Online("146.95.22.135");
+        online = new Online("146.95.22.237");
         online.sendDirection("UP");
 
         transferObj = online.getTP();
@@ -499,12 +499,12 @@ public class Scenes {
             endGame("error");
         }
 
-
-        makePoint();
-
         ONLINELayout.getChildren().removeAll(yourSnake.getSnake());
         ONLINELayout.getChildren().removeAll(theirSnake.getSnake());
         ONLINELayout.getChildren().removeAll(point);
+
+        makePoint();
+        setPoint((double) transferObj.getAppleX()*35, (double)transferObj.getAppleY()*35);
 
         //sets/resets each snake to only the head node and location
         yourSnake.restartSnake(transferObj.getP1X() * 35,transferObj.getP1Y() * 35, "RIGHT");
@@ -518,13 +518,13 @@ public class Scenes {
 
         makeONLINETimerTask();
 
+        speed = 200;
+
         ONLINETimer = new Timer();
-        ONLINETimer.scheduleAtFixedRate(ONLINEtask, 1500, 500);
+        ONLINETimer.scheduleAtFixedRate(ONLINEtask, 1500, speed);
 
     }
     private void startGame() {
-
-        makePoint();
 
         yourSnake.setBorderX(layoutX);
         yourSnake.setBorderY(layoutY);
@@ -534,6 +534,9 @@ public class Scenes {
         gameLayout.getChildren().removeAll(yourSnake.getSnake());
         gameLayout.getChildren().removeAll(theirSnake.getSnake());
         gameLayout.getChildren().removeAll(point);
+
+        makePoint();
+        setRandPoint();
 
         //sets/resets each snake to only the head node and location
         yourSnake.restartSnake(1050,700, "LEFT");
@@ -679,14 +682,14 @@ public class Scenes {
                             gameLayout.getChildren().add(yourSnake.getSnake().lastElement());
                             theirSnake.move(false);
                             setSpeed();
-                            setPoint();
+                            setRandPoint();
                             //COLLISION WITH A POINT
                         } else if (theirSnake.collisioncheck(point)) {
                             theirSnake.move(true);
                             gameLayout.getChildren().add(theirSnake.getSnake().lastElement());
                             yourSnake.move(false);
                             setSpeed();
-                            setPoint();
+                            setRandPoint();
                         } else {
                             yourSnake.move(false);
                             theirSnake.move(false);
@@ -716,32 +719,60 @@ public class Scenes {
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-                            endONLINEGame("you");
+                            if(transferObj.whoWon()) {
+                                endONLINEGame("You");
+                            } else {
+                                endONLINEGame("they");
+                            }
                         } else {
                             yourSnake.update(transferObj.getP1X() * 35, transferObj.getP1Y() * 35,transferObj.does1Grow());
                             theirSnake.update(transferObj.getP2X() * 35, transferObj.getP2Y() * 35,transferObj.does2Grow());
+                            if(transferObj.does1Grow() || transferObj.does2Grow()) {
+                                setPoint(transferObj.getAppleX()*35, transferObj.getAppleY()*35);
+                                System.out.println("applex : " + transferObj.getAppleX());
+                                System.out.println("appley : " + transferObj.getAppleY());
+                                if(transferObj.does1Grow()) {
+                                    ONLINELayout.getChildren().addAll(yourSnake.getSnake().lastElement());
+                                }
+                                if(transferObj.does2Grow()) {
+                                    ONLINELayout.getChildren().addAll(theirSnake.getSnake().lastElement());
+                                }
+                            }
                         }
                     }
                 });
             }
         };
     }
+
     private void makePoint() {
         point = new Rectangle(35,35);
         Image apple = new Image("SnakeUtil/Resources/apple.jpg");
         point.setFill(new ImagePattern(apple));
-        setPoint();
     }
-    private void setPoint() {
-        point.setX(transferObj.getAppleX() * 35);
-        point.setY(transferObj.getAppleY() * 35);
+    private void setPoint(double x, double y) {
+       point.setX(x);
+       point.setY(y);
     }
+    private void setRandPoint() {
+        Random rand = new Random();
+        point.setX(rand.nextInt(31) * 35);
+        point.setY(rand.nextInt(21) * 35);
+    }
+
     private void setSpeed() {
         speed -= 10;
         cancelTimer();
         gameTimer = new Timer();
         makeTimerTask();
         gameTimer.scheduleAtFixedRate(task, speed, speed);
+    }
+    private  void setONLINESpeed() {
+        speed -= 10;
+        cancelONLINETimer();
+        gameTimer = new Timer();
+        makeTimerTask();
+        gameTimer.scheduleAtFixedRate(ONLINEtask, speed, speed);
     }
     private void cancelTimer() {
         gameTimer.cancel();

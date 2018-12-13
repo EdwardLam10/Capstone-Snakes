@@ -4,6 +4,4 @@ public enum BoardObject {
 	BLOCK,
 	APPLE,
 	SNAKE;
-	
-	
 }

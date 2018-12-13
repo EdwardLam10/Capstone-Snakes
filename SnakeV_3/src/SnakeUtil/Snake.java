@@ -168,6 +168,8 @@ public class Snake {
 
     public String getName() { return Name; }
 
+    public void setName(String name) {Name=name;}
+
     public void setBorderX(double borderX) {
         this.borderX = borderX - 35;
     }

@@ -146,6 +146,7 @@ public class Scenes {
             @Override
             public void handle(ActionEvent event) {
                 name_label.setText(name1.getText());
+                yourSnake.setName(name1.getText());
             }
         };
         name1.setOnAction(event_name1);

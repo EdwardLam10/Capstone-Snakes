@@ -42,7 +42,7 @@ public class Scenes {
         makeSettings();
         makeCredits();
         Image snake = new Image(getClass().getResourceAsStream("/SnakeUtil/Resources/SnakeIcon.png"));
-        primaryStage.setTitle("Python: Snake Online");
+        primaryStage.setTitle("Viper: Snake Online");
         primaryStage.getIcons().add(snake);
         primaryStage.setScene(mainMenu);
         primaryStage.show();

@@ -2,27 +2,31 @@ package SnakeUtil;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.scene.*;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import java.io.IOException;
-import java.net.UnknownHostException;
 import onlinetestcode.TransferPackage;
 
-import javax.swing.plaf.synth.SynthEditorPaneUI;
+import java.io.IOException;
+import java.net.UnknownHostException;
+import java.nio.file.Paths;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -51,7 +55,7 @@ public class Scenes {
         mainMenuLayout.setId("Blimp");
 
         //START(ONLINE) BUTTON
-        Button startONLINEButton = new Button("Start(Online)");
+        Button startONLINEButton = new Button("Start (Online)");
         //Having the start button send you to game Scene.
         startONLINEButton.setOnAction(e -> {
             primaryStage.setScene(gameONLINE);
@@ -88,38 +92,52 @@ public class Scenes {
             primaryStage.close();
         });
 
-        Label top = new Label("Welcome to Snake Online");
-        Label center = new Label("Waiting for Players to to enter");
-
-        //changing the font and size of the text
-        top.setFont(Font.font(30));
-        center.setFont(Font.font(30));
-
-        VBox cvbox = new VBox(10);
-
-        cvbox.getChildren().addAll(top, center, /*bottom,*/ startButton, startONLINEButton, settingsButton, creditsButton, exit);
-        cvbox.setAlignment(Pos.CENTER);
-
         //Christmas Button
         Button christmas = new Button("Christmas");
         christmas.setOnAction(e-> {
             gameLayout.setId("ChristmasTree");
-            settingLayout.setId("ChristmasTree");
+            settingsLayout.setId("ChristmasTree");
             mainMenuLayout.setId("ChristmasTree");
             creditsLayout.setId("ChristmasTree");
+            yourSnake.setSnakeHead("SnakeUtil/Resources/Santa.jpg");
+            yourSnake.setSnakeBody("SnakeUtil/Resources/MilkCookies.jpg");
+            theirSnake.setSnakeHead("SnakeUtil/Resources/grinch.jpg");
+            theirSnake.setSnakeBody("SnakeUtil/Resources/present1.jpg");
+            pointIMG = new Image("SnakeUtil/Resources/House.jpg");
+            Media media = new Media(Paths.get("Jingle-Bells.mp3").toUri().toString());
+            MediaPlayer player = new MediaPlayer(media);
+            player.play();
         });
+
+        Label top = new Label("Welcome to Viper");
+        //Label bottom = new Label("Waiting for second player to enter \n" + "Waiting for both players to click ready \n" + "Once both players have clicked ready \n" + "please click start \n");
+        Label center = new Label("Waiting for Players to to enter");
+
+        //changing the font and size of the text
+        top.setFont(Font.font(30));
+        //bottom.setFont(Font.font("arial", FontWeight.BOLD,30));
+        center.setFont(Font.font(30));
+
+
+        VBox cvbox = new VBox(10);
+
+        cvbox.getChildren().addAll(top, /*bottom,*/ startButton, startONLINEButton, settingsButton, creditsButton, exit);
+        cvbox.setAlignment(Pos.CENTER);
+
+
 
         //Setting the top, bottom, center, right and left nodes to the pane
         mainMenuLayout.setCenter(cvbox);
         mainMenuLayout.setTop(christmas);
+
     }
     private void makeSettings() {
-        settingLayout = new BorderPane();
-        settings = new Scene(settingLayout, 1085, 735);
+        settingsLayout = new BorderPane();
+        settings = new Scene(settingsLayout, 1085, 735);
         settings.setUserAgentStylesheet("SnakeUtil/Resources/Background.css");
 
-        settingLayout.setId("colorful");
-        settingLayout.setId("Blimp");
+        settingsLayout.setId("colorful");
+        settingsLayout.setId("Blimp");
 
 
         Label setting_title = new Label("Setting");
@@ -217,7 +235,7 @@ public class Scenes {
         background_set.setAlignment(Pos.CENTER);
         background_title.setAlignment(Pos.CENTER);
 
-        VBox all = new VBox(40);
+        VBox all = new VBox(50);
         all.getChildren().addAll(back, title, name, skin_title, background_title);
 
         cur_color_skin.setStyle("-fx-background-color: Red; -fx-font-size: 2em; ");
@@ -225,16 +243,16 @@ public class Scenes {
 
         cur_color_bg.setId("Blimp");
         gameLayout.setId("Blimp");
-        settingLayout.setId("Blimp");
+        settingsLayout.setId("Blimp");
         mainMenuLayout.setId("Blimp");
 
-
-        settingLayout.setCenter(all);
+        settingsLayout.setCenter(all);
 
         back_btn.setOnAction(e -> {
             primaryStage.setScene(mainMenu);
         });
 
+        //START WRITING CONDITIONS TO CHANGE THE DIFFERENT COLORS TO CURRENT COLOR
         //FOR THE SKIN
         skin_color1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -285,9 +303,8 @@ public class Scenes {
             public void handle(ActionEvent event) {
                 cur_color_bg.setId("Blimp");
                 gameLayout.setId("Blimp");
-                settingLayout.setId("Blimp");
+                settingsLayout.setId("Blimp");
                 mainMenuLayout.setId("Blimp");
-                creditsLayout.setId("Blimp");
             }
         });
         bg_color2.setOnAction(new EventHandler<ActionEvent>() {
@@ -295,9 +312,8 @@ public class Scenes {
             public void handle(ActionEvent event) {
                 cur_color_bg.setId("Sky");
                 gameLayout.setId("Sky");
-                settingLayout.setId("Sky");
+                settingsLayout.setId("Sky");
                 mainMenuLayout.setId("Sky");
-                creditsLayout.setId("Sky");
             }
         });
         bg_color3.setOnAction(new EventHandler<ActionEvent>() {
@@ -305,9 +321,8 @@ public class Scenes {
             public void handle(ActionEvent event) {
                 cur_color_bg.setId("SkyIsland");
                 gameLayout.setId("SkyIsland");
-                settingLayout.setId("SkyIsland");
+                settingsLayout.setId("SkyIsland");
                 mainMenuLayout.setId("SkyIsland");
-                creditsLayout.setId("SkyIsland");
             }
         });
         bg_color4.setOnAction(new EventHandler<ActionEvent>() {
@@ -315,9 +330,8 @@ public class Scenes {
             public void handle(ActionEvent event) {
                 cur_color_bg.setId("Train");
                 gameLayout.setId("Train");
-                settingLayout.setId("Train");
+                settingsLayout.setId("Train");
                 mainMenuLayout.setId("Train");
-                creditsLayout.setId("Train");
             }
         });
         bg_color5.setOnAction(new EventHandler<ActionEvent>() {
@@ -325,9 +339,8 @@ public class Scenes {
             public void handle(ActionEvent event) {
                 cur_color_bg.setId("Cloud");
                 gameLayout.setId("Cloud");
-                settingLayout.setId("Cloud");
+                settingsLayout.setId("Cloud");
                 mainMenuLayout.setId("Cloud");
-                creditsLayout.setId("Cloud");
             }
         });
         bg_color6.setOnAction(new EventHandler<ActionEvent>() {
@@ -335,9 +348,8 @@ public class Scenes {
             public void handle(ActionEvent event) {
                 cur_color_bg.setId("NightSky");
                 gameLayout.setId("NightSky");
-                settingLayout.setId("NightSky");
+                settingsLayout.setId("NightSky");
                 mainMenuLayout.setId("NightSky");
-                creditsLayout.setId("NightSky");
             }
         });
 
@@ -457,7 +469,6 @@ public class Scenes {
         HBox line4 = new HBox(10);
         HBox line5 = new HBox(10);
         HBox line6 = new HBox(10);
-        HBox line7 = new HBox(10);
 
         line1.setAlignment(Pos.CENTER);
         line2.setAlignment(Pos.CENTER);
@@ -465,7 +476,6 @@ public class Scenes {
         line4.setAlignment(Pos.CENTER);
         line5.setAlignment(Pos.CENTER);
         line6.setAlignment(Pos.CENTER);
-        line7.setAlignment(Pos.CENTER);
 
         Button line1_btn = new Button("               \n\n");
         Button line2_btn = new Button("               \n\n");
@@ -473,7 +483,6 @@ public class Scenes {
         Button line4_btn = new Button("               \n\n");
         Button line5_btn = new Button("               \n\n");
         Button line6_btn = new Button("               \n\n");
-        Button line7_btn = new Button("               \n\n");
 
         line1_btn.setId("Blimp");
         line2_btn.setId("Sky");
@@ -481,7 +490,6 @@ public class Scenes {
         line4_btn.setId("Train");
         line5_btn.setId("Cloud");
         line6_btn.setId("NightSky");
-        line7_btn.setId("ChristmasTree");
 
         Label line1_link = new Label("https://anime-pictures.net/pictures/view_post/430983?lang=en");
         Label line2_link = new Label("https://wallpapercave.com/w/wp2394212");
@@ -489,7 +497,6 @@ public class Scenes {
         Label line4_link = new Label("https://www.wallpaperup.com/877343/caring201_clouds_original_scenic_tagme_train.html");
         Label line5_link = new Label("http://www.allfinweb.com/single/23256048-anime-wallpaper-feathers.html");
         Label line6_link = new Label("https://images5.alphacoders.com/495/495521.jpg");
-        Label line7_link = new Label("https://wallpapersite.com/images/pages/pic_w/3963.jpg");
 
         line1_link.setFont(Font.font(25));
         line2_link.setFont(Font.font(25));
@@ -497,7 +504,6 @@ public class Scenes {
         line4_link.setFont(Font.font(25));
         line5_link.setFont(Font.font(25));
         line6_link.setFont(Font.font(25));
-        line7_link.setFont(Font.font(25));
 
         line1.getChildren().addAll(line1_btn, line1_link);
         line2.getChildren().addAll(line2_btn, line2_link);
@@ -505,17 +511,15 @@ public class Scenes {
         line4.getChildren().addAll(line4_btn, line4_link);
         line5.getChildren().addAll(line5_btn, line5_link);
         line6.getChildren().addAll(line6_btn, line6_link);
-        line7.getChildren().addAll(line7_btn, line7_link);
 
 
-        center.getChildren().addAll(credit_title, images_credits, line1, line2, line3, line4, line5, line6, line7);
+        center.getChildren().addAll(credit_title, images_credits, line1, line2, line3, line4, line5, line6);
         creditsLayout.setCenter(center);
     };
 
-
     private void startONLINEGame() throws IOException, UnknownHostException{
 
-        online = new Online("146.95.22.237");
+        online = new Online("146.95.21.219");
         online.sendDirection("UP");
 
         transferObj = online.getTP();
@@ -544,7 +548,7 @@ public class Scenes {
 
         makeONLINETimerTask();
 
-        speed = 200;
+        speed = 170;
 
         ONLINETimer = new Timer();
         ONLINETimer.scheduleAtFixedRate(ONLINEtask, 1500, speed);
@@ -574,7 +578,7 @@ public class Scenes {
 
         game.setRoot(gameLayout);
 
-        speed = 200;
+        speed = 170;
 
         makeTimerTask();
 
@@ -746,9 +750,9 @@ public class Scenes {
                                 e.printStackTrace();
                             }
                             if(transferObj.whoWon()) {
-                                endONLINEGame("You");
+                                endONLINEGame(yourSnake.getName());
                             } else {
-                                endONLINEGame("they");
+                                endONLINEGame("!You");
                             }
                         } else {
                             yourSnake.update(transferObj.getP1X() * 35, transferObj.getP1Y() * 35,transferObj.does1Grow());
@@ -773,8 +777,8 @@ public class Scenes {
 
     private void makePoint() {
         point = new Rectangle(35,35);
-        Image apple = new Image("SnakeUtil/Resources/apple.jpg");
-        point.setFill(new ImagePattern(apple));
+        point.setFill(new ImagePattern(pointIMG));
+        point.setStroke(RED);
     }
     private void setPoint(double x, double y) {
        point.setX(x);
@@ -787,14 +791,14 @@ public class Scenes {
     }
 
     private void setSpeed() {
-        speed -= 10;
+        speed -= 5;
         cancelTimer();
         gameTimer = new Timer();
         makeTimerTask();
         gameTimer.scheduleAtFixedRate(task, speed, speed);
     }
     private  void setONLINESpeed() {
-        speed -= 10;
+        speed -= 5;
         cancelONLINETimer();
         gameTimer = new Timer();
         makeTimerTask();
@@ -823,7 +827,7 @@ public class Scenes {
     private Scene mainMenu;
     private BorderPane mainMenuLayout;
     private Scene settings;
-    private BorderPane settingLayout;
+    private BorderPane settingsLayout;
     private Scene gameONLINE;
     private Pane ONLINELayout;
     private Scene game;
@@ -832,12 +836,12 @@ public class Scenes {
     private Timer gameTimer;
     private TimerTask task;
     private TimerTask ONLINEtask;
+    private Image pointIMG = new Image("SnakeUtil/Resources/apple.jpg");
     //Width in pixels of game
     private double layoutX = 1085;
     //Height in pixels of the game
     private double layoutY = 735;
-
     private Rectangle point;
-    private Snake yourSnake = new Snake("SnakeUtil/Resources/cuteface.jpg", "you");
-    private Snake theirSnake = new Snake("SnakeUtil/Resources/angry.jpg", "other");
+    private Snake yourSnake = new Snake("SnakeUtil/Resources/cuteface.jpg", "Player 1");
+    private Snake theirSnake = new Snake("SnakeUtil/Resources/angry.jpg", "Player 2");
 }

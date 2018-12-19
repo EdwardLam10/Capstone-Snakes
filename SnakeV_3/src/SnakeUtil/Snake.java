@@ -41,7 +41,7 @@ public class Snake {
                 if((SnakeVec.firstElement().getY() - 35) >= 0) {
                     update(SnakeVec.firstElement().getX(), SnakeVec.firstElement().getY() - 35, grow);
                 } else {
-                    update(SnakeVec.firstElement().getX(), borderY - 35, grow);
+                    update(SnakeVec.firstElement().getX(), borderY, grow);
                 }
                 System.out.println("UP " + Name);
                 break;
@@ -142,16 +142,25 @@ public class Snake {
 
     //Regular sets and gets as needed
     public void setCurrentDir(String tmp) { CurrentDir = tmp; }
+    public String getSnakeDirection() {
+        return CurrentDir;
+    }
+
     public void setHeadLoc(double X, double Y) {
         SnakeVec.firstElement().setX(X);
         SnakeVec.firstElement().setY(Y);
     }
     public Vector<Rectangle> getSnake() { return SnakeVec; }
 
-    public String getSnakeDirection() {
-        return CurrentDir;
+    public void setSnakeHead(String HeadPic) {
+        Image headPic = new Image(HeadPic);
+        SnakeVec.firstElement().setFill(new ImagePattern(headPic));
     }
-
+    public void setSnakeBody(String BodPic) {
+        Image bodPic = new Image(BodPic);
+        ImagePattern imgptrn = new ImagePattern(bodPic);
+        snakeFill = imgptrn;
+    }
     public Paint getSnakeFill(java.awt.Color yellow) {
         return snakeFill;
     }
@@ -167,13 +176,11 @@ public class Snake {
     }
 
     public String getName() { return Name; }
-
-    public void setName(String name) {Name=name;}
+    public void setName(String tmp) { this.Name = tmp; }
 
     public void setBorderX(double borderX) {
         this.borderX = borderX - 35;
     }
-
     public void setBorderY(double borderY) {
         this.borderY = borderY - 35;
     }

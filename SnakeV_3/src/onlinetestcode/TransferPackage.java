@@ -5,8 +5,10 @@ package onlinetestcode;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+import java.awt.*;
 import java.io.Serializable;
-import java.awt.Point;
+
 public class TransferPackage implements Serializable {
     private Point P1nextpos;
 
@@ -26,7 +28,7 @@ public class TransferPackage implements Serializable {
 
 
 
-    public TransferPackage(int p1x, int p1y,boolean grow1, int p2x, int p2y, boolean grow2, int Ax, int Ay){
+    public TransferPackage(int p1x, int p1y, boolean grow1, int p2x, int p2y, boolean grow2, int Ax, int Ay){
 
         P1nextpos = new Point(p1x,p1y);
 
@@ -64,7 +66,7 @@ public class TransferPackage implements Serializable {
 
 
 
-    public TransferPackage( boolean winner){
+    public TransferPackage(boolean winner){
 
         P1nextpos = null;
 
